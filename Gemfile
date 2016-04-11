@@ -11,7 +11,10 @@ gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 group :development, :test do
-  gem 'byebug'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 group :development do
   gem 'web-console', '~> 2.0'
