@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
