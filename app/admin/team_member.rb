@@ -6,20 +6,29 @@ ActiveAdmin.register TeamMember do
     id_column
     column :name
     column :position
-    column :text
     column :created_at
     actions
   end
 
+  action_item :view, only: :show do
+    link_to 'Volver', admin_team_members_path
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :position
+      row :text
+      row :created_at
+    end
+  end
+
   filter :name
   filter :position
-  filter :text
-  filter :current_sign_in_at
-  filter :sign_in_count
   filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs "Detalles del Integrante" do
       f.input :name
       f.input :position
       f.input :text

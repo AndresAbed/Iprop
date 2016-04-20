@@ -63,6 +63,9 @@ en:
       admin:
         one: "Administrador"
         other: "Administradores"
+      team_member:
+        one: "Integrante"
+        other: "Integrantes"
     attributes:
       post:
         title: "Título"  
@@ -78,7 +81,12 @@ en:
         password: "Contraseña"
         password_confirmation: "Confirmación de contraseña"
         current_sign_in_at: "Última sesión"
-        sign_in_count: "Cantidad de sesiones  "
+        sign_in_count: "Cantidad de sesiones"
+      team_member:
+        name: "Nombre"
+        position: "Puesto"
+        text: "Reseña"
+        created_at: "Fecha de creación"
   active_admin:
     dashboard: Inicio
     dashboard_welcome:

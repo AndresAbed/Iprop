@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418204527) do
+ActiveRecord::Schema.define(version: 20160420203640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160418204527) do
   create_table "team_members", force: :cascade do |t|
     t.string   "name"
     t.string   "position"
-    t.string   "text"
+    t.text     "text"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
