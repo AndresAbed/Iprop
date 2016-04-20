@@ -60,6 +60,9 @@ en:
       post:
         one: "Articulo"
         other: "Articulos"
+      admin:
+        one: "Administrador"
+        other: "Administradores"
     attributes:
       post:
         title: "Título"  
@@ -67,6 +70,15 @@ en:
         body: "Cuerpo"
         created_at: "Fecha de creación"
         image: "Imagen"
+      admin:
+        name: "Nombre"
+        last_name: "Apellido"
+        email: "E-mail"
+        created_at: "Fecha de creación"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        current_sign_in_at: "Última sesión"
+        sign_in_count: "Cantidad de sesiones  "
   active_admin:
     dashboard: Inicio
     dashboard_welcome:

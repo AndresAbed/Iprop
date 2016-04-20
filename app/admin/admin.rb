@@ -13,15 +13,30 @@ ActiveAdmin.register Admin do
     actions
   end
 
+  action_item :view, only: :show do
+    link_to 'Volver', :back
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :last_name
+      row :email
+      row :created_at
+      row :current_sign_in_at
+      row :sign_in_count
+    end
+  end
+
   filter :name
   filter :last_name
   filter :email
+  filter :created_at
   filter :current_sign_in_at
   filter :sign_in_count
-  filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs "Detalles del administrador" do
       f.input :name
       f.input :last_name
       f.input :email
