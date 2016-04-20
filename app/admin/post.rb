@@ -11,7 +11,7 @@ ActiveAdmin.register Post do
   end
 
   action_item :view, only: :show do
-    link_to 'Volver', :back
+    link_to 'Volver', admin_posts_path
   end
 
   show do
