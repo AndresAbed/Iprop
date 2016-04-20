@@ -20,6 +20,53 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  date:
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+  formtastic:
+    actions:
+      create: "Crear %{model}"
+      update: "Guardar cambios"
+      reset: "Reset form"
+      cancel: "Cancelar"
+  activerecord:
+    models:
+      post:
+        one: "Articulo"
+        other: "Articulos"
+    attributes:
+      post:
+        title: "Título"  
+        subtitle: "Subtítulo"
+        body: "Cuerpo"
+        created_at: "Fecha de creación"
+        image: "Imagen"
   active_admin:
     dashboard: Inicio
     dashboard_welcome:
@@ -32,7 +79,7 @@ en:
     new_model: "Añadir %{model}"
     edit_model: "Editar %{model}"
     delete_model: "Eliminar %{model}"
-    details: "Detalles de %{model}"
+    details: "Detalles del %{model}"
     cancel: "Cancelar"
     empty: "Vacío"
     previous: "Anterior"
@@ -52,11 +99,6 @@ en:
         ends_with: "Termina con"
         greater_than: "Mayor que"
         less_than: "Menor que"
-    search_status:
-      headline: "Estado de la búsqueda:"
-      current_scope: "Alcance:"
-      current_filters: "Filtros actuales:"
-      no_current_filters: "Ninguno"
     status_tag:
       "yes": "Sí"
       "no": "No"

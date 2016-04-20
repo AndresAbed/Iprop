@@ -3,7 +3,6 @@ ActiveAdmin.register Post do
   menu label: "Blog"
   index do
     selectable_column
-    id_column
     column :title
     column :subtitle
     column :body
@@ -11,15 +10,26 @@ ActiveAdmin.register Post do
     actions
   end
 
+  action_item :view, only: :show do
+    link_to 'Volver', :back
+  end
+
+  show do
+    attributes_table do
+      row :title
+      row :subtitle
+      row :body
+      row :video_url
+      row :created_at
+    end
+  end
+
   filter :title
   filter :subtitle
-  filter :body
-  filter :current_sign_in_at
-  filter :sign_in_count
   filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs "Detalles del artículo" do
       f.input :title
       f.input :subtitle
       f.input :body
