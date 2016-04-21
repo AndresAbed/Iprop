@@ -1,0 +1,23 @@
+<%= form_for :contact_form, url: contact_path do |customer| %>
+  <div>
+    <label>Nombre</label>
+    <%= customer.text_field :name%>
+  </div>
+  <div>
+    <label>Email</label>
+    <%= customer.email_field :email%>
+  </div>
+  <div>
+    <label>Telefono</label>
+    <%= customer.text_field :phone%>
+  </div>
+  <div>
+    <label>Asunto</label>
+    <%= customer.text_field :subject%>
+  </div>
+  <div>
+    <label >Mensaje</label>
+    <%= customer.text_area :body, rows: "8" %>
+  </div>
+  <%= customer.submit 'Enviar', class: "btn btn-theme" %>
+<% end %>
