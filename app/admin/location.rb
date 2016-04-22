@@ -1,5 +1,6 @@
 ActiveAdmin.register Location do
   permit_params :address
+  actions :all, except: [:destroy]
 
   index do
     selectable_column

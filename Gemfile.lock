@@ -119,6 +119,7 @@ GEM
     geocoder (1.2.13)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -260,6 +261,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   geocoder
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip!

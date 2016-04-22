@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def index
+    @location = Location.first
   end
 
   def contact_form
