@@ -66,6 +66,7 @@ en:
       team_member:
         one: "Integrante"
         other: "Integrantes"
+      location: "Ubicación"
     attributes:
       post:
         title: "Título"  
@@ -87,6 +88,8 @@ en:
         position: "Puesto"
         text: "Reseña"
         created_at: "Fecha de creación"
+      location:
+        address: "Dirección"  
   active_admin:
     dashboard: Inicio
     dashboard_welcome:
@@ -99,7 +102,7 @@ en:
     new_model: "Añadir %{model}"
     edit_model: "Editar %{model}"
     delete_model: "Eliminar %{model}"
-    details: "Detalles del %{model}"
+    details: "Detalles %{model}"
     cancel: "Cancelar"
     empty: "Vacío"
     previous: "Anterior"
