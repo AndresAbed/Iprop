@@ -21,37 +21,3 @@
   </div>
   <%= customer.submit 'Enviar', class: "btn btn-theme" %>
 <% end %>
-
-<div style='width: 800px;'>
-  <div id="map" data-latitude="<%= @location.latitude %>" 
-  data-longitude="<%= @location.longitude %>" 
-  data-markerName="Mark" style='width: 800px; height: 400px;'></div>
-</div>
-
-<!-- Goole maps -->
-  <script type="text/javascript">
-    $(document).ready(function(){
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {
-          maxZoom: 17, 
-          minZoom: 14,
-          //disableDefaultUI: true
-        }, 
-      internal: {id: "map"}}, function(){
-        markers = handler.addMarkers([
-          {
-            "lat": $("#map").data('latitude'),
-            "lng": $("#map").data('longitude'),
-            "picture": {
-              "url": "https://mt.google.com/vt/icon?psize=20&font=fonts/Roboto-Regular.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-blue.png&ax=44&ay=48&scale=1&text=%E2%80%A2",
-              "width":  40,
-              "height": 40
-            }
-          }
-        ]);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        handler.getMap().setZoom(15);
-      });
-    })
-  </script>
