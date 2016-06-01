@@ -21,3 +21,8 @@
   </div>
   <%= customer.submit 'Enviar', class: "btn btn-theme" %>
 <% end %>
+
+<p>
+  Download:
+  <%= link_to "Excel", appraisals_path(format: "xls") %>
+</p>
