@@ -67,6 +67,9 @@ en:
         one: "Integrante"
         other: "Integrantes"
       location: "Ubicación"
+      appraisal:
+        one: "Tasación"
+        other: "Tasaciones"
     attributes:
       post:
         title: "Título"  
@@ -89,7 +92,12 @@ en:
         text: "Reseña"
         created_at: "Fecha de creación"
       location:
-        address: "Dirección"  
+        address: "Dirección"
+      appraisal:
+        neighborhood: "Barrio"
+        min_price: "Precio mínimo"
+        max_price: "Precio máximo"
+        created_at: "Fecha de creación"
   active_admin:
     dashboard: Inicio
     dashboard_welcome:
