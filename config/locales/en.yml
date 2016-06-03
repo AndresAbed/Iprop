@@ -70,6 +70,12 @@ en:
       appraisal:
         one: "Tasación"
         other: "Tasaciones"
+      property:
+        one: "Propiedad"
+        other: "Propiedades"
+      feature:
+        one: "Característica"
+        other: "Características"
     attributes:
       post:
         title: "Título"  
@@ -98,6 +104,16 @@ en:
         min_price: "Precio mínimo"
         max_price: "Precio máximo"
         created_at: "Fecha de creación"
+      property:
+        title: "Título"
+        address: "Dirección"
+        bedrooms: "Dormitorios"
+        bathrooms: "Baños"
+        size: "Tamaño"
+        description: "Descripción"
+        price: "Precio"
+      feature:
+        feature: "Característica"
   active_admin:
     dashboard: Inicio
     dashboard_welcome:
