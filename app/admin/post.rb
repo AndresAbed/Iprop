@@ -1,6 +1,6 @@
 ActiveAdmin.register Post do
   permit_params :title, :subtitle, :body, :image
-  menu label: "Blog"
+  menu label: "Novedades"
   index do
     selectable_column
     column :title
