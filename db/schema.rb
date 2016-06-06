@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603200301) do
+ActiveRecord::Schema.define(version: 20160606212946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,8 +80,45 @@ ActiveRecord::Schema.define(version: 20160603200301) do
     t.integer  "size"
     t.text     "description"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.boolean  "highlight"
+    t.string   "pic_1_file_name"
+    t.string   "pic_1_content_type"
+    t.integer  "pic_1_file_size"
+    t.datetime "pic_1_updated_at"
+    t.string   "pic_2_file_name"
+    t.string   "pic_2_content_type"
+    t.integer  "pic_2_file_size"
+    t.datetime "pic_2_updated_at"
+    t.string   "pic_3_file_name"
+    t.string   "pic_3_content_type"
+    t.integer  "pic_3_file_size"
+    t.datetime "pic_3_updated_at"
+    t.string   "pic_4_file_name"
+    t.string   "pic_4_content_type"
+    t.integer  "pic_4_file_size"
+    t.datetime "pic_4_updated_at"
+    t.string   "pic_5_file_name"
+    t.string   "pic_5_content_type"
+    t.integer  "pic_5_file_size"
+    t.datetime "pic_5_updated_at"
+    t.string   "pic_6_file_name"
+    t.string   "pic_6_content_type"
+    t.integer  "pic_6_file_size"
+    t.datetime "pic_6_updated_at"
+    t.string   "pic_7_file_name"
+    t.string   "pic_7_content_type"
+    t.integer  "pic_7_file_size"
+    t.datetime "pic_7_updated_at"
+    t.string   "pic_8_file_name"
+    t.string   "pic_8_content_type"
+    t.integer  "pic_8_file_size"
+    t.datetime "pic_8_updated_at"
+    t.string   "flat_file_name"
+    t.string   "flat_content_type"
+    t.integer  "flat_file_size"
+    t.datetime "flat_updated_at"
   end
 
 end
