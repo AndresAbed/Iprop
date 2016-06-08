@@ -20,4 +20,247 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  date:
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+  formtastic:
+    actions:
+      create: "Crear %{model}"
+      update: "Guardar cambios"
+      reset: "Reset form"
+      cancel: "Cancelar"
+  activerecord:
+    models:
+      post:
+        one: "Articulo"
+        other: "Articulos"
+      admin:
+        one: "Administrador"
+        other: "Administradores"
+      team_member:
+        one: "Integrante"
+        other: "Integrantes"
+      location: "Ubicación"
+      appraisal:
+        one: "Tasación"
+        other: "Tasaciones"
+      property:
+        one: "Propiedad"
+        other: "Propiedades"
+      feature:
+        one: "Característica"
+        other: "Características"
+    attributes:
+      post:
+        title: "Título"  
+        subtitle: "Subtítulo"
+        body: "Cuerpo"
+        created_at: "Fecha de creación"
+        image: "Imagen"
+      admin:
+        name: "Nombre"
+        last_name: "Apellido"
+        email: "E-mail"
+        created_at: "Fecha de creación"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        current_sign_in_at: "Última sesión"
+        sign_in_count: "Cantidad de sesiones"
+      team_member:
+        name: "Nombre"
+        position: "Puesto"
+        text: "Reseña"
+        created_at: "Fecha de creación"
+      location:
+        address: "Dirección"
+      appraisal:
+        neighborhood: "Barrio"
+        min_price: "Precio mínimo"
+        max_price: "Precio máximo"
+        created_at: "Fecha de creación"
+      property:
+        title: "Título"
+        address: "Dirección"
+        bedrooms: "Dormitorios"
+        bathrooms: "Baños"
+        size: "Tamaño"
+        description: "Descripción"
+        price: "Precio"
+        created_at: "Fecha de creación"
+        highlight: "Propiedad destacada"
+        flat: "Planos"
+        pic_1: "Foto 1"
+        pic_2: "Foto 2"
+        pic_3: "Foto 3"
+        pic_4: "Foto 4"
+        pic_5: "Foto 5"
+        pic_6: "Foto 6"
+        pic_7: "Foto 7"
+        pic_8: "Foto 8"
+        flat_file_name: "Planos"
+        pic_1_file_name: "Foto 1"
+        pic_2_file_name: "Foto 2"
+        pic_3_file_name: "Foto 3"
+        pic_4_file_name: "Foto 4"
+        pic_5_file_name: "Foto 5"
+        pic_6_file_name: "Foto 6"
+        pic_7_file_name: "Foto 7"
+        pic_8_file_name: "Foto 8"
+      feature:
+        feature: "Característica"
+  active_admin:
+    dashboard: Inicio
+    dashboard_welcome:
+      welcome: "Bienvenido a Active Admin. Esta es la página de inicio predeterminada."
+      call_to_action: "Para agregar secciones edite 'app/admin/dashboard.rb'"
+    view: "Ver"
+    edit: "Editar"
+    delete: "Eliminar"
+    delete_confirmation: "¿Está seguro de que quiere eliminar esto?"
+    new_model: "Añadir %{model}"
+    edit_model: "Editar %{model}"
+    delete_model: "Eliminar %{model}"
+    details: "Detalles %{model}"
+    cancel: "Cancelar"
+    empty: "Vacío"
+    previous: "Anterior"
+    next: "Siguiente"
+    download: "Descargar:"
+    has_many_new: "Añadir %{model}"
+    has_many_delete: "Eliminar"
+    has_many_remove: "Quitar"
+    filters:
+      buttons:
+        filter: "Filtrar"
+        clear: "Quitar Filtros"
+      predicates:
+        contains: "Contiene"
+        equals: "Igual a"
+        starts_with: "Empieza con"
+        ends_with: "Termina con"
+        greater_than: "Mayor que"
+        less_than: "Menor que"
+    status_tag:
+      "yes": "Sí"
+      "no": "No"
+    main_content: "Por favor implemente %{model}#main_content para mostrar contenido."
+    logout: "Salir"
+    powered_by: "Funciona con %{active_admin} %{version}"
+    sidebars:
+      filters: "Filtros"
+      search_status: "Estado de la búsqueda"
+    pagination:
+      empty: "No se han encontrado %{model}"
+      one: "Mostrando <b>1</b> %{model}"
+      one_page: "Mostrando <b>un total de %{n}</b> %{model}"
+      multiple: "Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de un total de <b>%{total}</b>"
+      multiple_without_total: "Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>"
+      entry:
+        one: "registro"
+        other: "registros"
+    any: "Cualquiera"
+    blank_slate:
+      content: "No hay %{resource_name} aún."
+      link: "Añadir"
+    dropdown_actions:
+      button_label: "Acciones"
+    batch_actions:
+      button_label: "Acciones en masa"
+      default_confirmation: "¿Seguro que quieres hacer esto?"
+      delete_confirmation: "Eliminar %{plural_model}: ¿Está seguro?"
+      succesfully_destroyed:
+        one: "Se ha destruido 1 %{model} con éxito"
+        other: "Se han destruido %{count} %{plural_model} con éxito"
+      selection_toggle_explanation: "(Cambiar selección)"
+      link: "Añadir"
+      action_label: "%{title} seleccionado"
+      labels:
+        destroy: "Borrar"
+    comments:
+      created_at: "Fecha de creación"
+      resource_type: "Tipo de recurso"
+      author_type: "Tipo de autor"
+      body: "Cuerpo"
+      author: "Autor"
+      title: "Comentario"
+      add: "Comentar"
+      delete: "Borrar Comentario"
+      delete_confirmation: "¿Está seguro que desea borrar este comentario?"
+      resource: "Recurso"
+      no_comments_yet: "No hay comentarios aún."
+      author_missing: "Anónimo"
+      title_content: "Comentarios (%{count})"
+      errors:
+        empty_text: "El comentario no fue guardado, el texto estaba vacío."
+    devise:
+      username:
+        title: "Nombre de usuario"
+      email:
+        title: "Email"
+      subdomain:
+        title: "Subdominio"
+      password:
+        title: "Password"
+      sign_up:
+        title: "Registrarse"
+        submit: "Registrarse"
+      login:
+        title: "iniciar sesión"
+        remember_me: "Recordarme"
+        submit: "iniciar sesión"
+      reset_password:
+        title: "¿Olvidó su contraseña?"
+        submit: "Restablecer mi contraseña"
+      change_password:
+        title: "Cambie su contraseña"
+        submit: "Cambiar mi contraseña"
+      unlock:
+        title: "Reenviar instrucciones de desbloqueo"
+        submit: "Reenviar instrucciones de desbloqueo"
+      resend_confirmation_instructions:
+        title: "Reenviar instrucciones de confirmación"
+        submit: "Reenviar instrucciones de confirmación"
+      links:
+        sign_up: "Ingresar"
+        sign_in: "registrarse"
+        forgot_your_password: "¿Olvidó su contraseña?"
+        sign_in_with_omniauth_provider: "Conéctate con %{provider}"
+        resend_unlock_instructions: "Reenviar instrucciones de desbloqueo"
+        resend_confirmation_instructions: "Reenviar instrucciones de confirmación"
+    unsupported_browser:
+      headline: "Por favor tenga en cuenta que Active Admin no soporta versiones de Internet Explorer menores a 8."
+      recommendation: "Recomendamos que actualice a la última versión de <a href=\"http://windows.microsoft.com/ie\">Internet Explorer</a>, <a href=\"https://chrome.google.com/\">Google Chrome</a>, o <a href=\"https://mozilla.org/firefox/\">Firefox</a>."
+      turn_off_compatibility_view: "Si está usando IE 9 o superior, asegúrese de <a href=\"http://windows.microsoft.com/es-es/windows7/webpages-look-incorrect-in-Internet-Explorer\">apagar la \"Vista de compatibilidad\"</a>."
+    access_denied:
+      message: "No está autorizado/a a realizar esta acción."
+    index_list:
+      table: "Tabla"
+      block: "Lista"
+      grid: "Grilla"
+      blog: "Blog"
