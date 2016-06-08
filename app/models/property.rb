@@ -1,6 +1,9 @@
 class Property < ActiveRecord::Base
   has_many :features, dependent: :destroy
+  has_and_belongs_to_many :tags
+  
   accepts_nested_attributes_for :features
+  accepts_nested_attributes_for :tags
 
   validates :title, presence: true
 
