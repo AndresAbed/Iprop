@@ -112,6 +112,7 @@ en:
         size: "Tamaño"
         description: "Descripción"
         price: "Precio"
+        created_at: "Fecha de creación"
         highlight: "Propiedad destacada"
         flat: "Planos"
         pic_1: "Foto 1"
