@@ -89,7 +89,7 @@
 .photo-slider {
   width: 100%;
   text-align: center;
-  background: url("images/puerto-madero.jpg");
+  background: url("puerto-madero.jpg");
   background-repeat: no-repeat;
   position: relative;
 }

@@ -1,28 +1,206 @@
-<%= form_for :contact_form, url: contact_path do |customer| %>
-  <div>
-    <label>Nombre</label>
-    <%= customer.text_field :name%>
-  </div>
-  <div>
-    <label>Email</label>
-    <%= customer.email_field :email%>
-  </div>
-  <div>
-    <label>Telefono</label>
-    <%= customer.text_field :phone%>
-  </div>
-  <div>
-    <label>Asunto</label>
-    <%= customer.text_field :subject%>
-  </div>
-  <div>
-    <label >Mensaje</label>
-    <%= customer.text_area :body, rows: "8" %>
-  </div>
-  <%= customer.submit 'Enviar', class: "btn btn-theme" %>
-<% end %>
-
-<p>
-  Download:
-  <%= link_to "Excel", appraisals_path(format: "xls") %>
-</p>
+<header class="header">
+      <nav id="nav" class="header-nav">
+        <label for="show-menu" class="show-menu">Menu</label>
+        <input id="show-menu" type="checkbox" role="button">
+        <div class="header-responsive-logo"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></div>
+        <div class="header-responsive-phone">
+          <div class="icon-phone header-icon"> </div>
+          <div class="header-list-item-phone">11 5643 7885</div>
+        </div>
+        <ul id="menu" class="header-list">
+          <li class="header-logo-container"><a href="index.html"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+          <li class="header-list-item"><a href="iprop-online.html" class="header-list-item-link">Iprop Online</a></li>
+          <li class="header-list-item"><a href="tasaciones.html" class="header-list-item-link">Tasaciones</a></li>
+          <li class="header-list-item"><a href="empresa.html" class="header-list-item-link">Empresa</a></li>
+          <li class="header-list-item"><a href="consulting.html" class="header-list-item-link">Consultoría</a></li>
+          <li class="header-list-item"><a href="contacto.html" class="header-list-item-link">Contacto</a></li>
+          <li class="header-list-item">
+            <div class="icon-phone header-icon"> </div>
+            <div class="header-list-item-phone">11 4776 7176      </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!--slider-->
+    <section class="photo-slider">
+      <div class="overlay-darken"></div>
+        <div class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg')%>" class="photo-slider-img"><img src="<%= image_path('pileta.jpg')%>" class="photo-slider-img"><img src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img src="<%= image_path('livingroom.jpg')%>" class="photo-slider-img"></div>
+      <div class="photo-slider-slogan">
+        <h1 class="photo-slider-slogan-title">Transformamos tus ideas en realidad</h1>
+      </div>
+      <div class="buscador">
+        <select placeholder="Tipo de propiedad" class="buscador-select">
+          <option>Tipo de propiedad</option>
+          <option>Casas</option>
+          <option>Countries y barrios cerrados</option>
+          <option>Cocheras</option>
+          <option>Bauleras</option>
+          <option>Guarderías náuticas</option>
+          <option>Terrenos</option>
+          <option>Inmuebles industriales</option>
+          <option>Oficinas</option>
+          <option>Depósitos</option>
+          <option>Locales comerciales</option>
+          <option>Fondo de comercio</option>
+          <option>Estacionamientos</option>
+        </select>
+        <input placeholder="Buscar por ubicación" class="buscador-input">
+        <button class="buscador-button"> <span class="icon-search buscador-icon"> </span>Buscar</button>
+      </div>
+    </section>
+    <!--features-->
+    <section class="features">
+      <div class="features-main">
+        <h2 class="features-main-title">Servicios inmobiliarios para clientes residenciales y corporativos</h2>
+        <p class="features-main-copy">Contamos con una página Web con buscador y tecnología para manejo de bases de datos. Tenemos posicionamiento en Google y  realizamos campañas en las redes sociales. Tomamos fotografías profesionales de los inmuebles, hacemos videos y los subimos a la página y a nuestro canal de Youtube. Publicamos en portales inmobiliarios para lo cual también subimos fotos y videos. En algunos casos publicamos en diarios, colocamos carteles y establecemos guardias. </p>
+      </div>
+    </section>
+    <div class="features-item-wrap">
+      <div class="features-item">
+        <div class="features-icon-container"><img src="<%= image_path('ionline.svg')%>" class="features-icon"></div>
+        <h3 class="features-item-title">Iprop Online</h3>
+        <p class="features-item-copy">Aproveche las oportunidades para hacer un buen negocio inmobiliario</p><a class="features-item-link">Buscar Propiedades</a>
+      </div>
+      <div class="features-item">
+        <div class="features-logo-container"><img src="<%= image_path('tasaciones.svg')%>" class="features-logo"></div>
+        <h3 class="features-item-title">Tasaciones Online</h3>
+        <p class="features-item-copy">Conozca el valor de su propiedad para hacer un negocio inmobiliario</p><a class="features-item-link">¡Tasar ya!</a>
+      </div>
+    </div>
+    <!--destacadas-->
+    <section class="destacadas">
+      <h2 class="destacadas-title">Propiedades destacadas</h2>
+      <div class="destacadas-content">
+        <div class="destacadas-item">
+          <div class="destacadas-img-container"><img src="<%= image_path('destacadas/prop_muestra.jpg')%>" class="destacadas-img"></div>
+          <div class="destacadas-price">$275.936</div>
+          <div class="destacadas-state">Venta </div>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title">Barrio Lomas del Este,</h3>
+            <h4 class="destacadas-item-subtitle">London, 93-107 Shaftesbury Ave, W1D 5DY</h4>
+            <p class="destacadas-item-copy">Aenean quis sem nisi. Aliquam vehicula gravida orci, nec pretium mi ultricies in. Donec fermentum pulvinar mauris sed gravida. Pellentesque neque justo…</p>
+          </div><a class="destacadas-item-link">Ver más >> </a>
+        </div>
+        <div class="destacadas-item">
+          <div class="destacadas-img-container"><img src="<%= image_path('destacadas/img_tasaciones.jpg')%>" class="destacadas-img"></div>
+          <div class="destacadas-price">$275.936</div>
+          <div class="destacadas-state">Venta</div>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title">El Establo, Zona Norte,</h3>
+            <h4 class="destacadas-item-subtitle">London, 93-107 Shaftesbury Ave, W1D 5DY</h4>
+            <p class="destacadas-item-copy">Aenean quis sem nisi. Aliquam vehicula gravida orci, nec pretium mi ultricies in. Donec fermentum pulvinar mauris sed gravida. Pellentesque neque justo…</p>
+          </div><a class="destacadas-item-link">Ver más >> </a>
+        </div>
+        <div class="destacadas-item">
+          <div class="destacadas-img-container"><img src="<%= image_path('destacadas/prop_muestra2.jpg')%>" class="destacadas-img"></div>
+          <div class="destacadas-price">$275.936</div>
+          <div class="destacadas-state">Venta</div>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title">Oficinas en Pilar, Km. 57</h3>
+            <h4 class="destacadas-item-subtitle">London, 93-107 Shaftesbury Ave, W1D 5DY</h4>
+            <p class="destacadas-item-copy">Aenean quis sem nisi. Aliquam vehicula gravida orci, nec pretium mi ultricies in. Donec fermentum pulvinar mauris sed gravida. Pellentesque neque justo…</p>
+          </div><a class="destacadas-item-link">Ver más >> </a>
+        </div>
+        <div class="destacadas-item">
+          <div class="destacadas-img-container"><img src="<%= image_path('destacadas/prop_muestra2.jpg')%>" class="destacadas-img"></div>
+          <div class="destacadas-price">$275.936</div>
+          <div class="destacadas-state">Venta</div>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title">Oficinas en Pilar, Km. 57</h3>
+            <h4 class="destacadas-item-subtitle">London, 93-107 Shaftesbury Ave, W1D 5DY</h4>
+            <p class="destacadas-item-copy">Aenean quis sem nisi. Aliquam vehicula gravida orci, nec pretium mi ultricies in. Donec fermentum pulvinar mauris sed gravida. Pellentesque neque justo…</p>
+          </div><a class="destacadas-item-link">Ver más >> </a>
+        </div>
+        <div class="destacadas-item">
+          <div class="destacadas-img-container"><img src="<%= image_path('destacadas/img_tasaciones.jpg')%>" class="destacadas-img"></div>
+          <div class="destacadas-price">$275.936</div>
+          <div class="destacadas-state">Venta</div>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title">El Establo, Zona Norte,</h3>
+            <h4 class="destacadas-item-subtitle">London, 93-107 Shaftesbury Ave, W1D 5DY</h4>
+            <p class="destacadas-item-copy">Aenean quis sem nisi. Aliquam vehicula gravida orci, nec pretium mi ultricies in. Donec fermentum pulvinar mauris sed gravida. Pellentesque neque justo…</p>
+          </div><a class="destacadas-item-link">Ver más >> </a>
+        </div>
+        <div class="destacadas-item">
+          <div class="destacadas-img-container"><img src="<%= image_path('destacadas/prop_muestra2.jpg')%>" class="destacadas-img"></div>
+          <div class="destacadas-price">$275.936</div>
+          <div class="destacadas-state">Venta</div>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title">Oficinas en Pilar, Km. 57</h3>
+            <h4 class="destacadas-item-subtitle">London, 93-107 Shaftesbury Ave, W1D 5DY</h4>
+            <p class="destacadas-item-copy">Aenean quis sem nisi. Aliquam vehicula gravida orci, nec pretium mi ultricies in. Donec fermentum pulvinar mauris sed gravida. Pellentesque neque justo…</p>
+          </div><a class="destacadas-item-link">Ver más >> </a>
+        </div>
+      </div>
+    </section>
+    <!--novedades-->
+    <section class="novedades">
+      <h2 class="novedades-title">Novedades</h2>
+      <div class="novedades-content">
+        <div class="novedades-item">
+          <div class="novedades-img-container"><img src="<%= image_path('novedades/novedades01.jpg')%>" class="novedades-img"></div>
+          <p class="novedades-item-copy">Nuevos lugares para invertir: Donado Holmberg</p>
+          <div class="novedades-item-overlay">
+            <div class="novedades-item-mas">+ </div>
+          </div>
+        </div>
+        <div class="novedades-item">
+          <div class="novedades-img-container">
+            <iframe src="https://www.youtube.com/embed/0obJrUjm-jw" frameborder="0" allowfullscreen class="novedades-video"></iframe>
+          </div>
+          <p class="novedades-item-copy">Nuevos depósitos a la venta para potenciar tu negocio.</p>
+        </div>
+        <div class="novedades-item">
+          <div class="novedades-img-container"><img src="<%= image_path('novedades/novedades03.jpg')%>" class="novedades-img"></div>
+          <p class="novedades-item-copy">IPROP en clarín: Una nueva propuesta de desarrollos inmobiliarios.</p>
+          <div class="novedades-item-overlay">
+            <div class="novedades-item-mas">+</div>
+          </div>
+        </div>
+        <div class="novedades-item">
+          <div class="novedades-img-container"><img src="<%= image_path('novedades/novedades04.jpg')%>" class="novedades-img"></div>
+          <p class="novedades-item-copy">Inversiones de pozo - Las mejores propuestas de zona norte.</p>
+          <div class="novedades-item-overlay">
+            <div class="novedades-item-mas">+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="compartir"> 
+      <h2 class="compartir-title">Compartir en redes sociales</h2>
+      <div class="compartir-redes">
+        <div class="compartir-redes-fb"><span class="icon-facebook m-r-5"></span></div>
+        <div class="compartir-redes-twitter"><span class="icon-twitter m-r-5"></span></div>
+        <div class="compartir-redes-google"><span class="icon-google m-r-5"></span></div>
+        <div class="compartir-redes-linkedin"><span class="icon-linkedin m-r-5"></span></div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-column2 m-r-5">
+        <ul class="footer-list">
+          <li class="footer-item"> 
+            <div class="footer-item-icon icon-phone"> </div>
+            <p class="footer-item-text">(11) 4776‐7176</p>
+          </li>
+          <li class="footer-item"> 
+            <div class="footer-item-icon icon-envelope"> </div>
+            <p class="footer-item-text">info@iproponline.com.ar</p>
+          </li>
+          <li class="footer-item"> 
+            <div class="footer-item-icon icon-location"></div>
+            <p class="footer-item-text">Teodoro García 1721<br>Of. 704 (C1426DMC) <br>C.A.B.A.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-column1 m-r-5">
+        <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
+        <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
+        <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png')%>" class="footer-img"></div>
+      </div>
+      <div class="footer-column1">
+        <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>
+      </div>
+    </footer>
+    <div class="footer-copyright">
+      <p> © Nestor H. Royo 2016</p>
+    </div>
