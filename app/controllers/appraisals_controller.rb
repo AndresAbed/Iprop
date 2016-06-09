@@ -1,5 +1,5 @@
 class AppraisalsController < ApplicationController
-  def index
+  def excel
     @appraisals = Appraisal.order(:neighborhood)
     respond_to do |format|
       format.html
