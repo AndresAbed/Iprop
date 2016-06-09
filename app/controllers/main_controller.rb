@@ -5,6 +5,9 @@ class MainController < ApplicationController
   def iprop
   end
 
+  def company
+  end
+
   def contact_form
     message = Message.new(params[:contact_form])
     if message.valid?

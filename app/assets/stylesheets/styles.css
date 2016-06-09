@@ -414,7 +414,7 @@
   color: #005fa9;
 }
 .empresa-cover {
-  background: url("images/empresa.png");
+  background: url("empresa.png");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -457,11 +457,11 @@
   height: 200px;
 }
 .empresa-text-destacado-casa {
-  background-image: url("../images/manos-casa.jpg");
+  background-image: url("manos-casa.jpg");
   background-position-y: 30%;
 }
 .empresa-text-destacado-escucha {
-  background-image: url("../images/escuchar.jpg");
+  background-image: url("escuchar.jpg");
   background-position-y: 35%;
 }
 .empresa-text-list {
@@ -469,7 +469,7 @@
   margin-bottom: none;
 }
 .empresa-text-list-item {
-  background: url("images/checking.png") no-repeat left 12px;
+  background: url("checking.png") no-repeat left 12px;
   padding-left: 2em;
   padding-bottom: 0.5em;
 }

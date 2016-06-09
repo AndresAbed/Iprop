@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post "/" => "main#contact_form", as: :contact  
   get '/Iprop-tasaciones' => 'appraisals#excel', as: :appraisals_excel
   get '/iprop-online' => 'main#iprop', as: :iprop
+  get '/empresa' => 'main#company', as: :company
 
   devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
