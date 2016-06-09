@@ -12,7 +12,7 @@ index do
 end
 
 action_item :view, only: :show do
-  link_to 'Volver', admin_appraisals_path
+  link_to 'Volver', admin_appraisals_excel_path
 end
 
 action_item :view, only: :index do
