@@ -1,6 +1,8 @@
 class MainController < ApplicationController
   def index
-    
+  end
+
+  def iprop
   end
 
   def contact_form
