@@ -10,11 +10,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'activeadmin', github: 'activeadmin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'rails-assets-jquery-cycle2', source: 'https://rails-assets.org'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
