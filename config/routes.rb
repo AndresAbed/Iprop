@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/empresa' => 'main#company', as: :company
   get '/consultoria' => 'main#consultancy', as: :consultancy
   get '/contacto' => 'main#contact', as: :contact
-  get '/novedades' => 'main#news', as: :news
 
   resources :properties, only: [:show], path: '/propiedades'
   resources :news, only: [:show], path: '/novedades'
