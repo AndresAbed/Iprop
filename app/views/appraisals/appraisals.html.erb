@@ -56,8 +56,7 @@
   <!--solo para visualización-->
   <section class="tasaciones-valores">
   <div class="tasaciones-valores-img-container"><img src="<%= image_path('tasaciones-valores.png')%>" class="tasaciones-valores-img"></div>
-  <button class="tasaciones-valores-button">Descargar Excel</button>
-  <%= link_to 'Descargar Excel', appraisals_excel_path(format: "xls") %>
+  <%= link_to 'Descargar Excel', appraisals_excel_path(format: "xls"), class: "tasaciones-valores-button" %>
   </section>
   <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>
