@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery-cycle2
 //= require underscore
 //= require gmaps/google
+//= require turbolinks
 //= require_tree .

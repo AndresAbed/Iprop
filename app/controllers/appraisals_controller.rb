@@ -1,5 +1,8 @@
 class AppraisalsController < ApplicationController
-  def index
+  def appraisals
+  end
+
+  def tasaciones
     @appraisals = Appraisal.order(:neighborhood)
     respond_to do |format|
       format.html

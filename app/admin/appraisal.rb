@@ -12,11 +12,11 @@ index do
 end
 
 action_item :view, only: :show do
-  link_to 'Volver', admin_appraisals_path
+  link_to 'Volver', admin_appraisals_excel_path
 end
 
 action_item :view, only: :index do
-  link_to "Descargar en Excel", appraisals_path(format: "xls")
+  link_to "Descargar en Excel", appraisals_excel_path(format: "xls")
 end
 
 show title: proc{|appraisal| appraisal.neighborhood } do

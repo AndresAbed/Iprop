@@ -1,0 +1,77 @@
+<header class="header">
+  <nav id="nav" class="header-nav">
+    <label for="show-menu" class="show-menu">Menu</label>
+    <input id="show-menu" type="checkbox" role="button">
+    <div class="header-responsive-logo"><img src="<%= image_path('logo.png')%>" class="header-logo-img"></div>
+    <div class="header-responsive-phone">
+      <div class="icon-phone header-icon"> </div>
+      <div class="header-list-item-phone">11 5643 7885</div>
+    </div>
+    <ul id="menu" class="header-list">
+      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-list-item"><a href="/iprop-online" class="header-list-item-link">Iprop Online</a></li>
+      <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
+      <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
+      <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
+      <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
+      <li class="header-list-item">
+        <div class="icon-phone header-icon"> </div>
+        <div class="header-list-item-phone">11 4776 7176      </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section class="contacto-header">
+  <h1 class="contacto-header-title">Su consulta nos interesa</h1>
+</section>
+<section class="contacto-info-formulario">
+  <form class="contacto-form">
+    <label required class="contacto-form-label">Nombre: </label>
+    <input class="contacto-form-input"><br>
+    <label required class="contacto-form-label">E-mail:</label>
+    <input class="contacto-form-input"><br>
+    <label required class="contacto-form-label">Teléfono:</label>
+    <input class="contacto-form-input"><br>
+    <label class="contacto-form-label">Mensajes/Consultas </label>
+    <textarea rows="4" cols="50" class="contacto-form-textarea"></textarea>
+    <button class="contacto-form-button">Enviar</button>
+  </form>
+</section>
+<section class="compartir"> 
+  <h2 class="compartir-title">Compartir en redes sociales</h2>
+  <div class="compartir-redes">
+    <div class="compartir-redes-fb"><span class="icon-facebook m-r-5"></span></div>
+    <div class="compartir-redes-twitter"><span class="icon-twitter m-r-5"></span></div>
+    <div class="compartir-redes-google"><span class="icon-google m-r-5"></span></div>
+    <div class="compartir-redes-linkedin"><span class="icon-linkedin m-r-5"></span></div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-column2 m-r-5">
+    <ul class="footer-list">
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-phone"> </div>
+        <p class="footer-item-text">(11) 4776‐7176</p>
+      </li>
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-envelope"> </div>
+        <p class="footer-item-text">info@iproponline.com.ar</p>
+      </li>
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-location"></div>
+        <p class="footer-item-text">Teodoro García 1721<br>Of. 704 (C1426DMC) <br>C.A.B.A.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-column1 m-r-5">
+    <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
+    <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
+    <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png')%>" class="footer-img"></div>
+  </div>
+  <div class="footer-column1">
+    <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>
+  </div>
+</footer>
+<div class="footer-copyright">
+  <p> © Nestor H. Royo 2016</p>
+</div>
