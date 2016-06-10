@@ -14,6 +14,9 @@ class MainController < ApplicationController
   def contact
   end
 
+  def news
+  end
+
   def contact_form
     message = Message.new(params[:contact_form])
     if message.valid?
