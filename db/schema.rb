@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607191804) do
+ActiveRecord::Schema.define(version: 20160610225719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,8 @@ ActiveRecord::Schema.define(version: 20160607191804) do
     t.string   "flat_content_type"
     t.integer  "flat_file_size"
     t.datetime "flat_updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "properties_tags", id: false, force: :cascade do |t|
