@@ -5,7 +5,10 @@ class Property < ActiveRecord::Base
   accepts_nested_attributes_for :features
   accepts_nested_attributes_for :tags
 
-  validates :title, presence: true
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
+  validates :title, :address, :bedrooms, :bathrooms, :size, :description, presence: true
 
   has_attached_file :pic_1, 
   url: "/images/properties/:id/:style/:basename.:extension"
