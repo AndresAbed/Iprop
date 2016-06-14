@@ -1,0 +1,20 @@
+<head>
+  <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+</head>
+
+<p><%= @property.title %></p>
+<p>Dirección: <%= @property.address %></p>
+<p>Dormitorios: <%= @property.bedrooms %></p>
+<p>Baños: <%= @property.bathrooms %></p>
+<p>Tamaño: <%= @property.size %>m2</p>
+<p>Descripción: <%= @property.description %></p>
+<p>Características:</p>
+<ul>
+  <% @property.features.each do |f| %>
+    <li><%= f.feature %></li>
+  <% end %>
+</ul>
+<p>Planos:</p>
+<%= wicked_pdf_image_tag (@property.flat.url) %>
+
+<p>Publicación: <%= request.url.split('.pdf')[0] %></p>

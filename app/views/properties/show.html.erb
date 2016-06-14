@@ -63,7 +63,7 @@
   </div>
   <div class="ficha-acciones">
     <div class="ficha-acciones-compartir">Compartir</div>
-    <div class="ficha-acciones-imprimir">Imprimir</div>
+    <%= link_to 'Ver en PDF', property_path(@property, :format => :pdf), target: "_blank", class: "ficha-acciones-imprimir" %>
   </div>
 </section>
 <section class="ficha-descripcion">

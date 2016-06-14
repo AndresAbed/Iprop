@@ -16,7 +16,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'rails-assets-jquery-cycle2', source: 'https://rails-assets.org'
+gem 'rails-assets-jquery-cycle2'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
