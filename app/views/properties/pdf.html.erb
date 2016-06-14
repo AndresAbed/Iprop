@@ -3,18 +3,25 @@
 </head>
 
 <p><%= @property.title %></p>
+<% if @property.price.present? %>
+  <p>Precio: $<%= @property.price %></p>
+<%  end %>
 <p>Dirección: <%= @property.address %></p>
 <p>Dormitorios: <%= @property.bedrooms %></p>
 <p>Baños: <%= @property.bathrooms %></p>
 <p>Tamaño: <%= @property.size %>m2</p>
 <p>Descripción: <%= @property.description %></p>
-<p>Características:</p>
-<ul>
-  <% @property.features.each do |f| %>
-    <li><%= f.feature %></li>
-  <% end %>
-</ul>
-<p>Planos:</p>
-<%= wicked_pdf_image_tag (@property.flat.url) %>
+<% if @property.features.present? %>
+  <p>Características:</p>
+  <ul>
+    <% @property.features.each do |f| %>
+      <li><%= f.feature %></li>
+    <% end %>
+  </ul>
+<% end %>  
+<% if @property.flat.present? %>
+  <p>Planos:</p>
+  <%= wicked_pdf_image_tag (@property.flat.url) %>
+<% end %>  
 
 <p>Publicación: <%= request.url.split('.pdf')[0] %></p>
