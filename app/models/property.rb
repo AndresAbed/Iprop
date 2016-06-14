@@ -15,7 +15,7 @@ class Property < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  validates :title, :address, :bedrooms, :bathrooms, :size, :description, presence: true
+  validates :title, :address, :bedrooms, :bathrooms, :size, :description, :pic_1, presence: true
 
   has_attached_file :pic_1, 
   url: "/images/properties/:id/:style/:basename.:extension"
