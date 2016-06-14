@@ -3,6 +3,7 @@ class MainController < ApplicationController
   end
 
   def iprop
+    @properties = Property.all.order('created_at DESC')
   end
 
   def company
