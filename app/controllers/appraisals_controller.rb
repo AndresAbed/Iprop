@@ -5,7 +5,6 @@ class AppraisalsController < ApplicationController
   def tasaciones
     @appraisals = Appraisal.order(:neighborhood)
     respond_to do |format|
-      format.html
       format.xls
     end
   end
