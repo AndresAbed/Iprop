@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def show
-    @property = Property.find(params[:id])
+    @property = Property.friendly.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do

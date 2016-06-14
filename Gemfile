@@ -19,6 +19,7 @@ gem 'gmaps4rails'
 gem 'rails-assets-jquery-cycle2'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'friendly_id'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

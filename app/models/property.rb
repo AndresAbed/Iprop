@@ -5,6 +5,13 @@ class Property < ActiveRecord::Base
   accepts_nested_attributes_for :features
   accepts_nested_attributes_for :tags
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
+  
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 

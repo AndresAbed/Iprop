@@ -4,6 +4,12 @@ ActiveAdmin.register Property do
   features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :tag_name]
   menu label: "Propiedades"
 
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end
+
   index do
     selectable_column
     column :title
