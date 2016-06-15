@@ -1,3 +1,5 @@
+<div class="contact_messages">
+</div>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
@@ -25,27 +27,27 @@
   <div class="tasaciones-title-container">
     <h1 class="tasaciones-title">El éxito de una operación inmobiliaria depende en gran parte de una buena tasación</h1>
   </div>
-  <div class="tasaciones-form">
+  <%= form_for :contact_form, url: appraisals_contact_path, html: {class: "tasaciones-form"}, remote: true do |message| %>
     <label required class="tasaciones-form-label">Nombre:</label>
-    <input class="tasaciones-form-input"><br>
+    <%= message.text_field :name, class: "tasaciones-form-input" %><br>
     <label required class="tasaciones-form-label">E-mail:</label>
-    <input class="tasaciones-form-input"><br>
+    <%= message.email_field :email, class: "tasaciones-form-input"%><br>
     <label required class="tasaciones-form-label">Teléfono:</label>
-    <input class="tasaciones-form-input"><br>
+    <%= message.text_field :phone, class: "tasaciones-form-input"%><br>
     <label required class="tasaciones-form-label">Dirección:</label>
-    <input class="tasaciones-form-input"><br>
+    <%= message.text_field :address, class: "tasaciones-form-input"%><br>
     <div class="tasaciones-form-group m-r-1em">
       <label required class="tasaciones-form-group-label">Superficie (m2):</label>
-      <input class="tasaciones-form-group-input">
+      <%= message.number_field :size, class: "tasaciones-form-group-input"%>
     </div>
     <div class="tasaciones-form-group">
       <label required class="tasaciones-form-group-label">Cantidad de ambientes:</label>
-      <input class="tasaciones-form-group-input">
+      <%= message.number_field :rooms_amount, class: "tasaciones-form-group-input"%>
     </div>
     <label class="tasaciones-form-label">Comentarios adicionales:</label>
-    <textarea rows="5" class="tasaciones-form-input"></textarea>
-    <button class="tasaciones-form-button">¡Tasar ya!</button>
-  </div>
+    <%= message.text_area :comments, class: "tasaciones-form-input", rows: "5"%>
+    <%= message.submit '¡Tasar ya!', class: "tasaciones-form-button" %>
+  <% end %>
   </section>
   <section class="tasaciones-text">
   <p class="tasaciones-text-paragraph">Nuestras tasaciones persiguen determinar <span class="tasaciones-text-orange">un valor que facilite la venta de la propiedad </span>en un plazo de tiempo razonable. Una tasación profesional se basa en aplicar determinados criterios que tienen su base no solo en los atributos de la misma, sino también en cómo se está comportando el mercado a la hora de tasar. La experiencia del tasador es un factor de relevancia, ya que las técnicas que utilizan valores comparables son fundamentales para obtener el valor real de la propiedad.</p>

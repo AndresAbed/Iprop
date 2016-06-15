@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'main#index'
   get '/iprop-online' => 'main#iprop', as: :iprop
   get '/tasaciones' => 'appraisals#appraisals', as: :appraisals
+  post '/tasaciones' => 'appraisals#contact', as: :appraisals_contact
   get '/empresa' => 'main#company', as: :company
   get '/consultoria' => 'main#consultancy', as: :consultancy
   get '/contacto' => 'main#contact', as: :contact
