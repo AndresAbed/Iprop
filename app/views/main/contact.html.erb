@@ -25,17 +25,18 @@
   <h1 class="contacto-header-title">Su consulta nos interesa</h1>
 </section>
 <section class="contacto-info-formulario">
-  <form class="contacto-form">
-    <label required class="contacto-form-label">Nombre: </label>
-    <input class="contacto-form-input"><br>
+  <div class="contact_messages">
+  </div>
+  <%= form_for :contact_form, url: contact_path, html: {class: "contacto-form"}, remote: true do |message| %>
+    <label required class="contacto-form-label">Nombre:</label>
+    <%= message.text_field :name, class: "contacto-form-input" %><br>
     <label required class="contacto-form-label">E-mail:</label>
-    <input class="contacto-form-input"><br>
+    <%= message.email_field :email, class: "contacto-form-input"%><br>
     <label required class="contacto-form-label">Teléfono:</label>
-    <input class="contacto-form-input"><br>
-    <label class="contacto-form-label">Mensajes/Consultas </label>
-    <textarea rows="4" cols="50" class="contacto-form-textarea"></textarea>
-    <button class="contacto-form-button">Enviar</button>
-  </form>
+    <%= message.text_field :phone, class: "contacto-form-input"%><br>
+    <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
+    <%= message.submit 'Enviar', class: "contacto-form-button" %>
+  <% end %>
 </section>
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>

@@ -5,4 +5,9 @@ class Contact < ApplicationMailer
     @message = message
     mail(to: 'test@iproponline.com.ar', subject: "Tasación")
   end
+
+  def contact_message(message)
+    @message = message
+    mail(to: 'test@iproponline.com.ar', subject: "Contacto Iproponline")
+  end
 end

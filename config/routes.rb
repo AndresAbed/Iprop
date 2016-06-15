@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/tasaciones' => 'appraisals#contact', as: :appraisals_contact
   get '/empresa' => 'main#company', as: :company
   get '/consultoria' => 'main#consultancy', as: :consultancy
-  get '/contacto' => 'main#contact', as: :contact
+  get '/contacto' => 'main#contact'
+  post '/contacto' => 'main#contact_message', as: :contact
 
   resources :properties, only: [:show], path: '/propiedades'
   resources :news, only: [:show], path: '/novedades'
