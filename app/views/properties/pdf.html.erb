@@ -1,27 +1,34 @@
 <head>
-  <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+  <%= wicked_pdf_stylesheet_link_tag "pdf-styles" %>
+  <%= wicked_pdf_stylesheet_link_tag "normalize" %>
 </head>
 
-<p><%= @property.title %></p>
-<% if @property.price.present? %>
-  <p>Precio: $<%= @property.price %></p>
-<%  end %>
-<p>Dirección: <%= @property.address %></p>
-<p>Dormitorios: <%= @property.bedrooms %></p>
-<p>Baños: <%= @property.bathrooms %></p>
-<p>Tamaño: <%= @property.size %>m2</p>
-<p>Descripción: <%= @property.description %></p>
-<% if @property.features.present? %>
-  <p>Características:</p>
-  <ul>
-    <% @property.features.each do |f| %>
-      <li><%= f.feature %></li>
-    <% end %>
-  </ul>
-<% end %>  
-<% if @property.flat.present? %>
-  <p>Planos:</p>
-  <%= wicked_pdf_image_tag (@property.flat.url) %>
-<% end %>  
-
-<p>Publicación: <%= request.url.split('.pdf')[0] %></p>
+<div class="pdf-container">
+  <h1 class="pdf-title"><%= @property.title %></h1>
+  <p class="pdf-direccion">Dirección: <%= @property.address %></p>
+  <% if @property.price.present? %>
+    <p class="pdf-precio">
+      <p>Precio: $<%= @property.price %></p>
+    </p>
+  <% end %>
+  <div class="pdf-data-wrap">
+    <p class="pdf-data m-r-1">Dormitorios: <span class="bold"><%= @property.bedrooms %></span></p>
+    <p class="pdf-data m-r-1">Baños: <span class="bold"><%= @property.bathrooms %></span></p>
+    <p class="pdf-data">Tamaño: <span class="bold"><%= @property.size %>m2</span></p>
+  </div>
+  <h2 class="pdf-subtitle">Descripción</h2> 
+  <p class="pdf-copy"><%= @property.description %></p>
+  <% if @property.features.present? %>
+    <h2 class="pdf-subtitle">Características</h2>
+    <ul class="pdf-list">
+      <% @property.features.each do |f| %>
+        <li class="pdf-item"><%= f.feature %></li>
+      <% end %>
+    </ul>
+  <% end %>  
+  <% if @property.flat.present? %>
+    <h2 class="pdf-subtitle flat">Planos:</h2>
+    <%= wicked_pdf_image_tag (@property.flat.url), class: "pdf-image" %>
+  <% end %>
+  <p class="pdf-link"><span class="bold">Publicación:</span><%= request.url.split('.pdf')[0] %></p>
+</div>
