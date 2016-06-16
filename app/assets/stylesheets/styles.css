@@ -89,7 +89,7 @@
 .photo-slider {
   width: 100%;
   text-align: center;
-  background: url("images/puerto-madero.jpg");
+  background: url("puerto-madero.jpg");
   background-repeat: no-repeat;
   position: relative;
 }
@@ -419,7 +419,7 @@
   color: #005fa9;
 }
 .empresa-cover {
-  background: url("images/empresa.png");
+  background: url("empresa.png");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -462,11 +462,11 @@
   height: 200px;
 }
 .empresa-text-destacado-casa {
-  background-image: url("../images/manos-casa.jpg");
+  background-image: url("manos-casa.jpg");
   background-position-y: 30%;
 }
 .empresa-text-destacado-escucha {
-  background-image: url("../images/escuchar.jpg");
+  background-image: url("escuchar.jpg");
   background-position-y: 35%;
 }
 .empresa-text-list {
@@ -474,7 +474,7 @@
   margin-bottom: none;
 }
 .empresa-text-list-item {
-  background: url("images/checking.png") no-repeat left 12px;
+  background: url("checking.png") no-repeat left 12px;
   padding-left: 2em;
   padding-bottom: 0.5em;
 }
@@ -519,7 +519,7 @@
   padding: 0.5em 1em;
 }
 .tasaciones {
-  background-image: url("images/buenos-aires-aerea.jpg");
+  background-image: url("buenos-aires-aerea.jpg");
   background-size: cover;
   background-repeat: no background-repeat;
   display: -webkit-box;
@@ -640,7 +640,7 @@
   border: none;
 }
 .re {
-  background: url("images/img_realconsulting.jpg");
+  background: url("img_realconsulting.jpg");
   background-repeat: no-repeat;
   padding-top: 20em;
 }
@@ -732,7 +732,7 @@
   padding-right: 1em;
 }
 .team {
-  background: url("images/img_team.jpg");
+  background: url("img_team.jpg");
   background-repeat: no-repeat;
   padding-top: 20em;
 }
@@ -832,7 +832,7 @@
   color: #605e5c;
 }
 .residenciales {
-  background: url("images/img_residenciales.jpg");
+  background: url("img_residenciales.jpg");
   background-repeat: no-repeat;
   padding-top: 18em;
 }
@@ -936,7 +936,7 @@
   font-size: 0.8em;
 }
 .filtros-select {
-  background: url("images/dropdown.png") no-repeat right;
+  background: url("dropdown.png") no-repeat right;
   background-color: #e6e6e6;
   color: #0056b9;
   text-transform: uppercase;
@@ -1191,7 +1191,7 @@
   height: 350px;
 }
 .consulting-cover {
-  background: url("images/img_consulting.jpg");
+  background: url("img_consulting.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -1258,7 +1258,7 @@
   padding-top: 2em;
 }
 .contacto-header {
-  background-image: url("images/buenos-aires-aerea.jpg");
+  background-image: url("buenos-aires-aerea.jpg");
   background-size: cover;
   background-repeat: no background-repeat;
   text-align: center;
