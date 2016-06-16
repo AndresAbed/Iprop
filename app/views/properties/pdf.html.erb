@@ -12,8 +12,12 @@
     </p>
   <% end %>
   <div class="pdf-data-wrap">
-    <p class="pdf-data m-r-1">Dormitorios: <span class="bold"><%= @property.bedrooms %></span></p>
-    <p class="pdf-data m-r-1">Baños: <span class="bold"><%= @property.bathrooms %></span></p>
+    <% if @property.bedrooms.present? %>
+      <p class="pdf-data m-r-1">Dormitorios: <span class="bold"><%= @property.bedrooms %></span></p>
+    <% end %>
+    <% if @property.bathrooms.present? %>  
+      <p class="pdf-data m-r-1">Baños: <span class="bold"><%= @property.bathrooms %></span></p>
+    <% end %>
     <p class="pdf-data">Tamaño: <span class="bold"><%= @property.size %>m2</span></p>
   </div>
   <h2 class="pdf-subtitle">Descripción</h2> 

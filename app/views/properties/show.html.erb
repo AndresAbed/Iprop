@@ -68,30 +68,42 @@
 </section>
 <section class="ficha-descripcion">
   <h2 class="ficha-descripcion-title">Descripción</h2>
-  <p class="ficha-descripcion-short"> <strong><%=@property.bedrooms%></strong> Dormitorios  / <strong><%=@property.bathrooms%></strong> Baño  / <strong><%=@property.size%></strong> mts2 </p>
+  <p class="ficha-descripcion-short">
+    <% if @property.bedrooms.present? %>
+      <strong><%=@property.bedrooms%></strong> Dormitorios  / 
+    <% end %>
+    <% if @property.bathrooms.present? %>
+      <strong><%=@property.bathrooms%></strong> Baño  / 
+    <% end %>
+    <strong><%=@property.size%></strong> mts2 
+  </p>
   <p class="ficha-descripcion-copy"><%=@property.description%></p>
 </section>
-<section class="ficha-caracteristicas">
-  <h2 class="ficha-caracteristicas-title">Características</h2>
-  <div class="ficha-caracteristicas-lists">
-    <ul class="caracteristicas-list m-r-6em">
-      <% @property.features.each do |f| %>
-        <li class="caracteristicas-item"><%=f.feature%></li>
-      <% end %>
-    </ul>
-  </div>
-</section>
-<section class="ficha-planos">
-  <h2 class="ficha-planos-title">Planos de la propiedad</h2>
-  <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
-</section>
-<section class="ficha-mapa">
-  <div>
-     <div id="map" data-latitude="<%= @property.latitude %>" 
-     data-longitude="<%= @property.longitude %>" 
-     data-markerName="Mark"></div>
-   </div>
-</section>
+<% if @property.features.any? %>
+  <section class="ficha-caracteristicas">
+    <h2 class="ficha-caracteristicas-title">Características</h2>
+    <div class="ficha-caracteristicas-lists">
+      <ul class="caracteristicas-list m-r-6em">
+        <% @property.features.each do |f| %>
+          <li class="caracteristicas-item"><%=f.feature%></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>
+<% if @property.bedrooms.present? %>
+  <section class="ficha-planos">
+    <h2 class="ficha-planos-title">Planos de la propiedad</h2>
+    <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
+  </section>
+  <section class="ficha-mapa">
+    <div>
+       <div id="map" data-latitude="<%= @property.latitude %>" 
+       data-longitude="<%= @property.longitude %>" 
+       data-markerName="Mark"></div>
+     </div>
+  </section>
+<% end %>  
 <footer class="footer">
   <div class="footer-column2 m-r-5">
     <ul class="footer-list">
