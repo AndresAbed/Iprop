@@ -34,7 +34,7 @@
       <span id="next" class="ficha-slider-controls-next">
       <img src="<%= image_path('right-arrow.png') %>"></span>
     </div>
-    <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow">
+    <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow ficha-slider">
       <% if @property.pic_1.file? %>
         <img src="<%= @property.pic_1.url %>" class="photo-slider-img">
       <% end %>  

@@ -89,7 +89,7 @@
 .photo-slider {
   width: 100%;
   text-align: center;
-  background: url("puerto-madero.jpg");
+  background: url("images/puerto-madero.jpg");
   background-repeat: no-repeat;
   position: relative;
 }
@@ -282,7 +282,12 @@
   width: 100%;
 }
 .destacadas-img-container {
-  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 378px;
+  height: 261px;
   font-size: 0;
 }
 .destacadas-price {
@@ -414,7 +419,7 @@
   color: #005fa9;
 }
 .empresa-cover {
-  background: url("empresa.png");
+  background: url("images/empresa.png");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -457,11 +462,11 @@
   height: 200px;
 }
 .empresa-text-destacado-casa {
-  background-image: url("manos-casa.jpg");
+  background-image: url("../images/manos-casa.jpg");
   background-position-y: 30%;
 }
 .empresa-text-destacado-escucha {
-  background-image: url("escuchar.jpg");
+  background-image: url("../images/escuchar.jpg");
   background-position-y: 35%;
 }
 .empresa-text-list {
@@ -469,7 +474,7 @@
   margin-bottom: none;
 }
 .empresa-text-list-item {
-  background: url("checking.png") no-repeat left 12px;
+  background: url("images/checking.png") no-repeat left 12px;
   padding-left: 2em;
   padding-bottom: 0.5em;
 }
@@ -514,7 +519,7 @@
   padding: 0.5em 1em;
 }
 .tasaciones {
-  background-image: url("buenos-aires-aerea.jpg");
+  background-image: url("images/buenos-aires-aerea.jpg");
   background-size: cover;
   background-repeat: no background-repeat;
   display: -webkit-box;
@@ -1186,7 +1191,7 @@
   height: 350px;
 }
 .consulting-cover {
-  background: url("img_consulting.jpg");
+  background: url("images/img_consulting.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -1253,7 +1258,7 @@
   padding-top: 2em;
 }
 .contacto-header {
-  background-image: url("buenos-aires-aerea.jpg");
+  background-image: url("images/buenos-aires-aerea.jpg");
   background-size: cover;
   background-repeat: no background-repeat;
   text-align: center;
@@ -1683,6 +1688,20 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     width: 100%;
     margin: 0 auto;
   }
+  .ficha-header {
+    margin: 3em 2em 1.5em;
+  }
+  .ficha-slider-wrap {
+    margin: 0 2em;
+  }
+  .ficha-acciones {
+    right: 2em;
+  }
+  .ficha-descripcion,
+  .ficha-caracteristicas,
+  .ficha-planos {
+    padding: 0 2em;
+  }
 }
 @media (max-width: 570px) {
   .photo-slider-slogan-title {
@@ -1736,6 +1755,17 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .footer-img-qr {
     margin: 1em auto;
   }
+  .ficha-slider {
+    width: 100%;
+  }
+  .ficha-slider-wrap {
+    margin: 0;
+  }
+  .ficha-acciones {
+    position: static;
+    text-align: center;
+    margin: 0.5em auto;
+  }
 }
 @media (max-width: 450px) {
   .photo-slider-slogan {
@@ -1753,6 +1783,15 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .compartir-title {
     font-size: 1.2em;
+  }
+  .ficha-descripcion-copy,
+  .ficha-caracteristicas-lists {
+    padding: 0;
+    margin: 1em 0 0;
+    border: none;
+  }
+  .m-r-6em {
+    margin: 0 !important;
   }
 }
 @media (max-width: 375px) {
