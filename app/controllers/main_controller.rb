@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def index
+    @featured_properties = Property.where("highlight = ?", true)
   end
 
   def company
