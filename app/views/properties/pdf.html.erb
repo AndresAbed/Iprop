@@ -6,11 +6,12 @@
 <div class="pdf-container">
   <h1 class="pdf-title"><%= @property.title %></h1>
   <p class="pdf-direccion">Dirección: <%= @property.address %></p>
-  <% if @property.price.present? %>
-    <p class="pdf-precio">
-      <p>Precio: $<%= @property.price %></p>
-    </p>
-  <% end %>
+  <p class="pdf-precio">
+    <%= @property.state %> - 
+    <% if @property.price.present? %>
+      Precio: $<%= @property.price %>
+    <% end %>
+  </p>
   <div class="pdf-data-wrap">
     <% if @property.bedrooms.present? %>
       <p class="pdf-data m-r-1">Dormitorios: <span class="bold"><%= @property.bedrooms %></span></p>

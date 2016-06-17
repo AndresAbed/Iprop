@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
-  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :tag_ids => [],
+  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, :tag_ids => [],
   features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :tag_name]
   menu label: "Propiedades"
 
@@ -83,6 +83,7 @@ ActiveAdmin.register Property do
       f.input :pic_6
       f.input :pic_7
       f.input :pic_8
+      f.input :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
       f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.tag_name}", u.id]}
     end
     f.has_many :features, new_record: 'Nuevo item' do |f|

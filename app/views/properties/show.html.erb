@@ -23,7 +23,7 @@
 </header>
 <section class="ficha">
   <div class="ficha-header">
-    <p class="ficha-header-state">Departamento en venta</p>
+    <p class="ficha-header-state"><%= @property.state %></p>
     <h2 class="ficha-header-title"><%=@property.title%></h2>
     <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
   </div>

@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.search(params[:address], params[:property_type])
+    @properties = Property.search(params[:address], params[:property_type], params[:state])
   end
 
   def show
