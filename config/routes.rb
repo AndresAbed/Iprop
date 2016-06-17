@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get 'properties/show'
 
   root 'main#index'
-  get '/iprop-online' => 'main#iprop', as: :iprop
   get '/tasaciones' => 'appraisals#appraisals', as: :appraisals
   post '/tasaciones' => 'appraisals#contact', as: :appraisals_contact
   get '/empresa' => 'main#company', as: :company
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
   get '/contacto' => 'main#contact'
   post '/contacto' => 'main#contact_message', as: :contact
 
-  resources :properties, only: [:show], path: '/propiedades'
+  resources :properties, only: [:index, :show], path: '/propiedades'
   resources :news, only: [:show], path: '/novedades'
 
   post "/" => "main#contact_form"

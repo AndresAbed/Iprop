@@ -9,7 +9,7 @@
         </div>
         <ul id="menu" class="header-list">
           <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
-          <li class="header-list-item"><a href="/iprop-online" class="header-list-item-link">Propiedades</a></li>
+          <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
           <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
           <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
           <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
@@ -28,25 +28,14 @@
       <div class="photo-slider-slogan">
         <h1 class="photo-slider-slogan-title">Transformamos tus ideas en realidad</h1>
       </div>
-      <div class="buscador">
-        <select placeholder="Tipo de propiedad" class="buscador-select">
-          <option>Tipo de propiedad</option>
-          <option>Casas</option>
-          <option>Countries y barrios cerrados</option>
-          <option>Cocheras</option>
-          <option>Bauleras</option>
-          <option>Guarderías náuticas</option>
-          <option>Terrenos</option>
-          <option>Inmuebles industriales</option>
-          <option>Oficinas</option>
-          <option>Depósitos</option>
-          <option>Locales comerciales</option>
-          <option>Fondo de comercio</option>
-          <option>Estacionamientos</option>
-        </select>
-        <input placeholder="Buscar por ubicación" class="buscador-input">
-        <button class="buscador-button"> <span class="icon-search buscador-icon"> </span>Buscar</button>
-      </div>
+      <%= form_tag properties_path, method: 'get', class: "buscador" do %>
+        <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.tag_name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
+        <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input" %>
+        <%= button_tag(type: "submit", class: "buscador-button", name: nil) do %>
+          <span class="icon-search buscador-icon"></span>
+          Buscar
+        <% end %>
+      <% end %>
     </section>
     <!--features-->
     <section class="features">

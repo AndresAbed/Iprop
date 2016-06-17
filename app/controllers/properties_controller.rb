@@ -1,4 +1,8 @@
 class PropertiesController < ApplicationController
+  def index
+    @properties = Property.search(params[:address], params[:property_type])
+  end
+
   def show
     @property = Property.friendly.find(params[:id])
     respond_to do |format|

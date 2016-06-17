@@ -17,6 +17,17 @@ class Property < ActiveRecord::Base
 
   validates :title, :address, :size, :description, :pic_1, presence: true
 
+  def self.search(address, property_type)
+    properties = Property.all
+    if address.present?
+      properties = properties.where('address ilike ?', "%#{address}%")
+    end
+    if property_type.present?
+    properties = properties.joins(:tags).where('tag_name ilike ?', "%#{property_type}%")
+    end
+    return properties
+  end
+
   has_attached_file :pic_1, 
   url: "/images/properties/:id/:style/:basename.:extension"
   validates_attachment :pic_1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
