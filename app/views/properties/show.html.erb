@@ -96,14 +96,12 @@
     <h2 class="ficha-planos-title">Planos de la propiedad</h2>
     <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
   </section>
-  <section class="ficha-mapa">
-    <div>
-       <div id="map" data-latitude="<%= @property.latitude %>" 
-       data-longitude="<%= @property.longitude %>" 
-       data-markerName="Mark"></div>
-     </div>
-  </section>
-<% end %>  
+<% end %>
+<section class="ficha-mapa">
+   <div id="map" data-latitude="<%= @property.latitude %>" 
+   data-longitude="<%= @property.longitude %>" 
+   data-markerName="Mark"></div>
+</section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">
     <ul class="footer-list">
@@ -147,11 +145,6 @@
         {
           "lat": $("#map").data('latitude'),
           "lng": $("#map").data('longitude'),
-          "picture": {
-            "url": "https://mt.google.com/vt/icon?psize=20&font=fonts/Roboto-Regular.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-blue.png&ax=44&ay=48&scale=1&text=%E2%80%A2",
-            "width":  40,
-            "height": 40
-          }
         }
       ]);
       handler.bounds.extendWith(markers);

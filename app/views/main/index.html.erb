@@ -31,7 +31,7 @@
       <%= form_tag properties_path, method: 'get', class: "buscador" do %>
         <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select", prompt: "Estado" %>
         <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.tag_name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
-        <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input" %>
+        <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
         <%= button_tag(type: "submit", class: "buscador-button", name: nil) do %>
           <span class="icon-search buscador-icon"></span>
           Buscar
