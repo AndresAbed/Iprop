@@ -17,14 +17,19 @@ ActiveAdmin.register Property do
     column :bedrooms
     column :bathrooms
     column :size
+    column :state
     column :price
     column :highlight
     actions
   end
 
   action_item :view, only: :show do
+    link_to 'Ver en PDF', property_path(property, :format => :pdf), target: "_blank"
+  end
+  action_item :view, only: :show do
     link_to 'Volver', admin_properties_path
   end
+
 
   show title: proc{|property| property.title } do
     attributes_table do
@@ -46,6 +51,7 @@ ActiveAdmin.register Property do
       row :pic_6_file_name
       row :pic_7_file_name
       row :pic_8_file_name
+      row :state
       row "Tipo de propiedad" do |property|
         (property.tags.map{ |p| p.tag_name }).join(' - ').html_safe
       end
@@ -63,6 +69,7 @@ ActiveAdmin.register Property do
   filter :price
   filter :highlight
   filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.tag_name}", u.id]}}, as: :select
+  filter :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
 
   form do |f|
     f.inputs "Detalles de la propiedad" do

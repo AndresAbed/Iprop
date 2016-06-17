@@ -7,9 +7,9 @@
   <h1 class="pdf-title"><%= @property.title %></h1>
   <p class="pdf-direccion">Dirección: <%= @property.address %></p>
   <p class="pdf-precio">
-    <%= @property.state %> - 
+    <%= @property.state %> 
     <% if @property.price.present? %>
-      Precio: $<%= @property.price %>
+      - Precio: $<%= @property.price %>
     <% end %>
   </p>
   <div class="pdf-data-wrap">

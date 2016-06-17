@@ -132,6 +132,7 @@ en:
         pic_6_file_name: "Foto 6"
         pic_7_file_name: "Foto 7"
         pic_8_file_name: "Foto 8"
+        state: "Estado"
       feature:
         feature: "Característica"
   active_admin:
