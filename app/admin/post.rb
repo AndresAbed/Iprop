@@ -19,7 +19,6 @@ ActiveAdmin.register Post do
       row :title
       row :subtitle
       row :body
-      row :video_url
       row :created_at
     end
   end

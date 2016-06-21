@@ -84,33 +84,15 @@
     <section class="novedades">
       <h2 class="novedades-title">Novedades</h2>
       <div class="novedades-content">
-        <div class="novedades-item">
-          <div class="novedades-img-container"><img src="<%= image_path('novedades/novedades01.jpg')%>" class="novedades-img"></div>
-          <p class="novedades-item-copy">Nuevos lugares para invertir: Donado Holmberg</p>
-          <div class="novedades-item-overlay">
-            <div class="novedades-item-mas">+ </div>
+        <% @posts.each do |post| %>
+          <div class="novedades-item">
+            <div class="novedades-img-container"><img src="<%= post.image.url %>" class="novedades-img"></div>
+            <p class="novedades-item-copy"><%= post.title %></p>
+            <div class="novedades-item-overlay">
+              <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
+            </div>
           </div>
-        </div>
-        <div class="novedades-item">
-          <div class="novedades-img-container">
-            <iframe src="https://www.youtube.com/embed/0obJrUjm-jw" frameborder="0" allowfullscreen class="novedades-video"></iframe>
-          </div>
-          <p class="novedades-item-copy">Nuevos depósitos a la venta para potenciar tu negocio.</p>
-        </div>
-        <div class="novedades-item">
-          <div class="novedades-img-container"><img src="<%= image_path('novedades/novedades03.jpg')%>" class="novedades-img"></div>
-          <p class="novedades-item-copy">IPROP en clarín: Una nueva propuesta de desarrollos inmobiliarios.</p>
-          <div class="novedades-item-overlay">
-            <div class="novedades-item-mas">+</div>
-          </div>
-        </div>
-        <div class="novedades-item">
-          <div class="novedades-img-container"><img src="<%= image_path('novedades/novedades04.jpg')%>" class="novedades-img"></div>
-          <p class="novedades-item-copy">Inversiones de pozo - Las mejores propuestas de zona norte.</p>
-          <div class="novedades-item-overlay">
-            <div class="novedades-item-mas">+</div>
-          </div>
-        </div>
+        <% end %>  
       </div>
     </section>
     <section class="compartir"> 

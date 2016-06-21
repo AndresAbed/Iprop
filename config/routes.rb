@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   post '/contacto' => 'main#contact_message', as: :contact
 
   resources :properties, only: [:index, :show], path: '/propiedades'
-  resources :news, only: [:show], path: '/novedades'
+  resources :posts, only: [:show], path: '/novedades'
 
-  post "/" => "main#contact_form"
   get  'appraisals/tasaciones', as: :appraisals_excel
 
   devise_for :admins, ActiveAdmin::Devise.config

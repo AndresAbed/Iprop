@@ -1415,6 +1415,12 @@
   font-size: 2em;
   margin: 0;
 }
+.novedades-inside-header-subtitle {
+  max-width: 500px;
+  font-size: 1em;
+  margin: 10px 0;
+  color: #8a8a8a;
+}
 .novedades-inside-tag {
   background: #787878;
   color: #fff;
@@ -1454,6 +1460,7 @@
 .novedades-aside-item-title {
   margin-bottom: 0;
 }
+.novedades-aside-item-title > a{color: #4a4a4a;}
 .novedades-aside-item-date {
   margin-top: 0;
   font-size: 0.8em;
