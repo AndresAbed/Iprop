@@ -10,4 +10,5 @@ Devise.setup do |config|
   config.password_length = 5..72
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
+  config.secret_key = 'ad0a90e47097b2394c397b92481458442fda99a7cbc6ee0192f5b5b6896a9e2f4e477a0150c26e713503cb73ab87341bd6a8f6a71efa97a97427fea24d77a4d9'
 end
