@@ -1,0 +1,17 @@
+<% @properties.each do |property| %>
+  <div class="destacadas-item">
+    <div class="destacadas-img-container"><img src="<%= property.pic_1.url %>" class="destacadas-img"></div>
+    <% if property.price.present? %>
+      <div class="destacadas-price">
+        $<%= property.price %>
+      </div>
+    <% end%>  
+    <div class="destacadas-state"><%= property.state %></div>
+    <div class="destacadas-item-info">
+      <h3 class="destacadas-item-title"><%= property.title %>,</h3>
+      <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
+      <p class="destacadas-item-copy"><%= property.description[0,200] %>...</p>
+    </div>
+    <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
+  </div>
+<% end %>

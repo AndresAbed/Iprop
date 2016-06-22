@@ -20,6 +20,7 @@ gem 'rails-assets-jquery-cycle2', source: 'https://rails-assets.org'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'friendly_id'
+gem 'kaminari'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

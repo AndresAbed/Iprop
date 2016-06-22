@@ -1,6 +1,10 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.search(params[:address], params[:property_type], params[:state])
+    @properties = Property.search(params[:address], params[:property_type], params[:state]).page(params[:page]).per(16)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

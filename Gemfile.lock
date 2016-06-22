@@ -286,6 +286,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kaminari
   meta_request
   paperclip!
   pg
