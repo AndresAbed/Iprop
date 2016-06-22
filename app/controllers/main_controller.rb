@@ -19,11 +19,11 @@ class MainController < ApplicationController
       Contact.contact_message(message).deliver_now
       @flag = true
       respond_to do |format|
-        format.js {flash[:notice] = "Mensaje enviado. Gracias por contactarnos"}
+        format.js {flash.now[:notice] = "Mensaje enviado. Gracias por contactarnos"}
       end
     else
       respond_to do |format|
-        format.js {flash[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."}
+        format.js {flash.now[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."}
       end
     end
   end
