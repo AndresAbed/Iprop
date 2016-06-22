@@ -1,135 +1,153 @@
+<head>
+  <% content_for :head do %>
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:site_name" content="Iprop Online" />
+    <meta property="og:title" content="Iprop Online">
+    <meta property="og:image" content="<%= image_path('puerto-madero.jpg')%>" />
+  <% end %>
+</head>
 <header class="header">
-      <nav id="nav" class="header-nav">
-        <label for="show-menu" class="show-menu">Menu</label>
-        <input id="show-menu" type="checkbox" role="button">
-        <div class="header-responsive-logo"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></div>
-        <div class="header-responsive-phone">
-          <div class="icon-phone header-icon"> </div>
-          <div class="header-list-item-phone">11 5643 7885</div>
+  <nav id="nav" class="header-nav">
+    <label for="show-menu" class="show-menu">Menu</label>
+    <input id="show-menu" type="checkbox" role="button">
+    <div class="header-responsive-logo"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></div>
+    <div class="header-responsive-phone">
+      <div class="icon-phone header-icon"> </div>
+      <div class="header-list-item-phone">11 5643 7885</div>
+    </div>
+    <ul id="menu" class="header-list">
+      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
+      <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
+      <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
+      <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
+      <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
+      <li class="header-list-item">
+        <div class="icon-phone header-icon"> </div>
+        <div class="header-list-item-phone">11 4776 7176      </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<!--slider-->
+<section class="photo-slider">
+  <div class="overlay-darken"></div>
+    <div class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg')%>" class="photo-slider-img"><img src="<%= image_path('pileta.jpg')%>" class="photo-slider-img"><img src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img src="<%= image_path('livingroom.jpg')%>" class="photo-slider-img"></div>
+  <div class="photo-slider-slogan">
+    <h1 class="photo-slider-slogan-title">Transformamos tus ideas en realidad</h1>
+  </div>
+  <%= form_tag properties_path, method: 'get', class: "buscador" do %>
+    <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select", prompt: "Estado" %>
+    <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.tag_name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
+    <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
+    <%= button_tag(type: "submit", class: "buscador-button", name: nil) do %>
+      <span class="icon-search buscador-icon"></span>
+      Buscar
+    <% end %>
+  <% end %>
+</section>
+<!--features-->
+<section class="features">
+  <div class="features-main">
+    <h2 class="features-main-title">Servicios inmobiliarios para clientes residenciales y corporativos</h2>
+    <p class="features-main-copy">Contamos con una página Web con buscador y tecnología para manejo de bases de datos. Tenemos posicionamiento en Google y  realizamos campañas en las redes sociales. Tomamos fotografías profesionales de los inmuebles, hacemos videos y los subimos a la página y a nuestro canal de Youtube. Publicamos en portales inmobiliarios para lo cual también subimos fotos y videos. En algunos casos publicamos en diarios, colocamos carteles y establecemos guardias. </p>
+  </div>
+</section>
+<div class="features-item-wrap">
+  <div class="features-item">
+    <div class="features-icon-container"><img src="<%= image_path('ionline.svg')%>" class="features-icon"></div>
+    <h3 class="features-item-title">Iprop Online</h3>
+    <p class="features-item-copy">Aproveche las oportunidades para hacer un buen negocio inmobiliario</p><a href="/propiedades" class="features-item-link">Buscar Propiedades</a>
+  </div>
+  <div class="features-item">
+    <div class="features-logo-container"><img src="<%= image_path('tasaciones.svg')%>" class="features-logo"></div>
+    <h3 class="features-item-title">Tasaciones Online</h3>
+    <p class="features-item-copy">Conozca el valor de su propiedad para hacer un negocio inmobiliario</p><a href="/tasaciones" class="features-item-link">¡Tasar ya!</a>
+  </div>
+</div>
+<!--destacadas-->
+<section class="destacadas">
+  <h2 class="destacadas-title">Propiedades destacadas</h2>
+  <div class="destacadas-content">
+    <% @featured_properties.each do |property| %>
+      <div class="destacadas-item">
+        <div class="destacadas-img-container"><img src="<%= property.pic_1.url %>" class="destacadas-img"></div>
+        <% if property.price.present? %>
+          <div class="destacadas-price">
+            $<%= property.price %>
+          </div>
+        <% end%>  
+        <div class="destacadas-state"><%= property.state %></div>
+        <div class="destacadas-item-info">
+          <h3 class="destacadas-item-title"><%= property.title %>,</h3>
+          <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
+          <p class="destacadas-item-copy"><%= property.description[0,200] %>...</p>
         </div>
-        <ul id="menu" class="header-list">
-          <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
-          <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
-          <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
-          <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
-          <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
-          <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
-          <li class="header-list-item">
-            <div class="icon-phone header-icon"> </div>
-            <div class="header-list-item-phone">11 4776 7176      </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!--slider-->
-    <section class="photo-slider">
-      <div class="overlay-darken"></div>
-        <div class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg')%>" class="photo-slider-img"><img src="<%= image_path('pileta.jpg')%>" class="photo-slider-img"><img src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img src="<%= image_path('livingroom.jpg')%>" class="photo-slider-img"></div>
-      <div class="photo-slider-slogan">
-        <h1 class="photo-slider-slogan-title">Transformamos tus ideas en realidad</h1>
+        <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
       </div>
-      <%= form_tag properties_path, method: 'get', class: "buscador" do %>
-        <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select", prompt: "Estado" %>
-        <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.tag_name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
-        <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
-        <%= button_tag(type: "submit", class: "buscador-button", name: nil) do %>
-          <span class="icon-search buscador-icon"></span>
-          Buscar
-        <% end %>
-      <% end %>
-    </section>
-    <!--features-->
-    <section class="features">
-      <div class="features-main">
-        <h2 class="features-main-title">Servicios inmobiliarios para clientes residenciales y corporativos</h2>
-        <p class="features-main-copy">Contamos con una página Web con buscador y tecnología para manejo de bases de datos. Tenemos posicionamiento en Google y  realizamos campañas en las redes sociales. Tomamos fotografías profesionales de los inmuebles, hacemos videos y los subimos a la página y a nuestro canal de Youtube. Publicamos en portales inmobiliarios para lo cual también subimos fotos y videos. En algunos casos publicamos en diarios, colocamos carteles y establecemos guardias. </p>
+    <% end %>
+  </div>
+</section>
+<!--novedades-->
+<section class="novedades">
+  <h2 class="novedades-title">Novedades</h2>
+  <div class="novedades-content">
+    <% @posts.each do |post| %>
+      <div class="novedades-item">
+        <div class="novedades-img-container"><img src="<%= post.image.url %>" class="novedades-img"></div>
+        <p class="novedades-item-copy"><%= post.title %></p>
+        <div class="novedades-item-overlay">
+          <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
+        </div>
       </div>
-    </section>
-    <div class="features-item-wrap">
-      <div class="features-item">
-        <div class="features-icon-container"><img src="<%= image_path('ionline.svg')%>" class="features-icon"></div>
-        <h3 class="features-item-title">Iprop Online</h3>
-        <p class="features-item-copy">Aproveche las oportunidades para hacer un buen negocio inmobiliario</p><a href="/propiedades" class="features-item-link">Buscar Propiedades</a>
-      </div>
-      <div class="features-item">
-        <div class="features-logo-container"><img src="<%= image_path('tasaciones.svg')%>" class="features-logo"></div>
-        <h3 class="features-item-title">Tasaciones Online</h3>
-        <p class="features-item-copy">Conozca el valor de su propiedad para hacer un negocio inmobiliario</p><a href="/tasaciones" class="features-item-link">¡Tasar ya!</a>
-      </div>
-    </div>
-    <!--destacadas-->
-    <section class="destacadas">
-      <h2 class="destacadas-title">Propiedades destacadas</h2>
-      <div class="destacadas-content">
-        <% @featured_properties.each do |property| %>
-          <div class="destacadas-item">
-            <div class="destacadas-img-container"><img src="<%= property.pic_1.url %>" class="destacadas-img"></div>
-            <% if property.price.present? %>
-              <div class="destacadas-price">
-                $<%= property.price %>
-              </div>
-            <% end%>  
-            <div class="destacadas-state"><%= property.state %></div>
-            <div class="destacadas-item-info">
-              <h3 class="destacadas-item-title"><%= property.title %>,</h3>
-              <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
-              <p class="destacadas-item-copy"><%= property.description[0,200] %>...</p>
-            </div>
-            <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
-          </div>
-        <% end %>
-      </div>
-    </section>
-    <!--novedades-->
-    <section class="novedades">
-      <h2 class="novedades-title">Novedades</h2>
-      <div class="novedades-content">
-        <% @posts.each do |post| %>
-          <div class="novedades-item">
-            <div class="novedades-img-container"><img src="<%= post.image.url %>" class="novedades-img"></div>
-            <p class="novedades-item-copy"><%= post.title %></p>
-            <div class="novedades-item-overlay">
-              <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
-            </div>
-          </div>
-        <% end %>  
-      </div>
-    </section>
-    <section class="compartir"> 
-      <h2 class="compartir-title">Compartir en redes sociales</h2>
-      <div class="compartir-redes">
-        <div class="compartir-redes-fb"><span class="icon-facebook m-r-5"></span></div>
-        <div class="compartir-redes-twitter"><span class="icon-twitter m-r-5"></span></div>
-        <div class="compartir-redes-google"><span class="icon-google m-r-5"></span></div>
-        <div class="compartir-redes-linkedin"><span class="icon-linkedin m-r-5"></span></div>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="footer-column2 m-r-5">
-        <ul class="footer-list">
-          <li class="footer-item"> 
-            <div class="footer-item-icon icon-phone"> </div>
-            <p class="footer-item-text">(11) 4776‐7176</p>
-          </li>
-          <li class="footer-item"> 
-            <div class="footer-item-icon icon-envelope"> </div>
-            <p class="footer-item-text">info@iproponline.com.ar</p>
-          </li>
-          <li class="footer-item"> 
-            <div class="footer-item-icon icon-location"></div>
-            <p class="footer-item-text">Teodoro García 1721<br>Of. 704 (C1426DMC) <br>C.A.B.A.</p>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-column1 m-r-5">
-        <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
-        <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
-        <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png')%>" class="footer-img"></div>
-      </div>
-      <div class="footer-column1">
-        <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>
-      </div>
-    </footer>
-    <div class="footer-copyright">
-      <p> © Nestor H. Royo 2016</p>
-    </div>
+    <% end %>  
+  </div>
+</section>
+<section class="compartir"> 
+  <h2 class="compartir-title">Compartir en redes sociales</h2>
+  <div class="compartir-redes">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
+    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
+    title="Compartir en Facebook" class="compartir-redes-fb">
+    <span class="icon-facebook m-r-5"></a>
+    <a href="http://twitter.com/share?url=<%=request.url%>&text=Iproponline&via=Iprop&hashtags=iprop"
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Tweet" class="compartir-redes-twitter">
+    <span class="icon-twitter m-r-5"></span></a>
+    <a href="https://plus.google.com/share?url=<%= request.url%>" 
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Compartir en Google+" class="compartir-redes-google">
+    <span class="icon-google m-r-5"></span></a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-column2 m-r-5">
+    <ul class="footer-list">
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-phone"> </div>
+        <p class="footer-item-text">(11) 4776‐7176</p>
+      </li>
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-envelope"> </div>
+        <p class="footer-item-text">info@iproponline.com.ar</p>
+      </li>
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-location"></div>
+        <p class="footer-item-text">Teodoro García 1721<br>Of. 704 (C1426DMC) <br>C.A.B.A.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-column1 m-r-5">
+    <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
+    <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
+    <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png')%>" class="footer-img"></div>
+  </div>
+  <div class="footer-column1">
+    <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>
+  </div>
+</footer>
+<div class="footer-copyright">
+  <p> © Nestor H. Royo 2016</p>
+</div>

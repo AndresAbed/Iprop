@@ -1,3 +1,12 @@
+<head>
+  <% content_for :head do %>
+    <meta property="og:url" content="<%= request.url %>" />    
+    <meta property="og:site_name" content="Iprop Online" />
+    <meta property="og:title" content="Consultoría">
+    <meta property="og:description" content="Iproponline consultoría">
+    <meta property="og:image" content="<%= image_path('consultoria.jpg')%>" />
+  <% end %>
+</head>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
@@ -57,10 +66,20 @@
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>
   <div class="compartir-redes">
-    <div class="compartir-redes-fb"><span class="icon-facebook m-r-5"></span></div>
-    <div class="compartir-redes-twitter"><span class="icon-twitter m-r-5"></span></div>
-    <div class="compartir-redes-google"><span class="icon-google m-r-5"></span></div>
-    <div class="compartir-redes-linkedin"><span class="icon-linkedin m-r-5"></span></div>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
+    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
+    title="Compartir en Facebook" class="compartir-redes-fb">
+    <span class="icon-facebook m-r-5"></a>
+    <a href="http://twitter.com/share?url=<%=request.url%>&text=Iproponline&via=Iprop&hashtags=iprop"
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Tweet" class="compartir-redes-twitter">
+    <span class="icon-twitter m-r-5"></span></a>
+    <a href="https://plus.google.com/share?url=<%= request.url%>" 
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Compartir en Google+" class="compartir-redes-google">
+    <span class="icon-google m-r-5"></span></a>
   </div>
 </section>
 <footer class="footer">

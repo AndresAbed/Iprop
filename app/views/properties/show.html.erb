@@ -1,3 +1,13 @@
+<head>
+  <% content_for :head do %>
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Iprop Online" />
+    <meta property="og:title" content="<%= @property.title %>">
+    <meta property="og:description" content="<%= @property.description[0,200] %>...">
+    <meta property="og:image" content="<%= @property.pic_1.url %>" />
+  <% end %>
+</head>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
@@ -62,7 +72,6 @@
     </div>
   </div>
   <div class="ficha-acciones">
-    <div class="ficha-acciones-compartir">Compartir</div>
     <%= link_to 'Ver en PDF', property_path(@property, :format => :pdf), target: "_blank", class: "ficha-acciones-imprimir" %>
   </div>
 </section>
@@ -97,6 +106,25 @@
     <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
   </section>
 <% end %>
+<section class="compartir"> 
+  <h2 class="compartir-title">Compartir en redes sociales</h2>
+  <div class="compartir-redes">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
+    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
+    title="Compartir en Facebook" class="compartir-redes-fb">
+    <span class="icon-facebook m-r-5"></a>
+    <a href="http://twitter.com/share?url=<%=request.url%>&text=Iproponline&via=Iprop&hashtags=iprop"
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Tweet" class="compartir-redes-twitter">
+    <span class="icon-twitter m-r-5"></span></a>
+    <a href="https://plus.google.com/share?url=<%= request.url%>" 
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Compartir en Google+" class="compartir-redes-google">
+    <span class="icon-google m-r-5"></span></a>
+  </div>
+</section>
 <section class="ficha-mapa">
    <div id="map" data-latitude="<%= @property.latitude %>" 
    data-longitude="<%= @property.longitude %>" 
