@@ -42,15 +42,16 @@ form fieldset.actions li.cancel a:not(.disabled):hover{
   text-shadow: none;
   box-shadow: none;
 }
-form .actions input[type=submit]{
+.actions input[type=submit]{
   border: none;
   background: #2b88d8;
   color: #fff;
   text-shadow: none;
   box-shadow: none;
+  outline: none;
 }
 
-form input[type=submit]:not(.disabled):hover{
+.actions input[type=submit]:not(.disabled):hover{
   border: none;
   background: #1a6eb7;
   color: #fff;

@@ -15,7 +15,7 @@ class Property < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  validates :title, :address, :size, :description, :pic_1, :state, presence: true
+  validates :title, :address, :size, :description, :pic_1, :state, presence: {message: "Requerido"}
 
   def self.search(address, property_type, state)
     properties = Property.all

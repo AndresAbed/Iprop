@@ -1,5 +1,5 @@
 class Appraisal < ActiveRecord::Base
-  validates :neighborhood, :min_price, :max_price, presence: true
+  validates :neighborhood, :min_price, :max_price, presence: {message: "Requerido"}
   def self.to_csv
     CSV.generate do |csv|
       csv << column_names
