@@ -369,9 +369,8 @@
 .novedades-item-mas {
   color: #fff;
   font-size: 3rem;
-  position: absolute;
-  top: 40%;
-  left: 45%;
+  display: block;
+  line-height: 323px;
 }
 .novedades-img {
   width: 100%;

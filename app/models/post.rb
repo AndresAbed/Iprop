@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :title, :subtitle, :body, :image, presence: true
+  validates :title, :body, :image, presence: true
 
   extend FriendlyId
   friendly_id :title, use: :slugged

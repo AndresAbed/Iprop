@@ -19,3 +19,55 @@
 #search-status-_sidebar_section{
   display: none;
 }
+
+body{
+  font-size: 75%;
+}
+
+form .actions input,
+form .cancel a{
+  padding: 10px 16px !important;
+}
+form fieldset.actions li.cancel a{
+    border: none;
+    background: #ea3838;
+    color: #fff;
+    text-shadow: none;
+    box-shadow: none;
+}
+form fieldset.actions li.cancel a:not(.disabled):hover{
+  border: none;
+  background: #d41010;
+  color: #fff;
+  text-shadow: none;
+  box-shadow: none;
+}
+form .actions input[type=submit]{
+  border: none;
+  background: #2b88d8;
+  color: #fff;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+form input[type=submit]:not(.disabled):hover{
+  border: none;
+  background: #1a6eb7;
+  color: #fff;
+  text-shadow: none;
+}
+a.button, a:link.button{
+  border: none;
+  background: #24b554;
+  color: #fff;
+  text-shadow: none;
+  box-shadow: none;
+}
+a.button:not(.disabled):hover,
+a:link.button:not(.disabled):hover{
+  border: none;
+  background: #36a55b;
+  color: #fff;
+  text-shadow: none;
+  box-shadow: none;
+}

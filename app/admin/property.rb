@@ -1,12 +1,27 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
-  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, :tag_ids => [],
+  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, tag_ids: [],
   features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :tag_name]
   menu label: "Propiedades"
 
   controller do
     def find_resource
       scoped_collection.friendly.find(params[:id])
+    end
+    def create
+      create! do |format|
+        format.html { redirect_to admin_properties_path, notice: "Propiedad creada correctamente" } if resource.valid?
+      end
+    end
+    def update
+      update! do |format|
+        format.html { redirect_to admin_properties_path, notice: "Propiedad actualizada" } if resource.valid?
+      end
+    end
+    def destroy
+      destroy! do |format|
+        format.html { redirect_to admin_properties_path, notice: "Propiedad eliminada" }
+      end
     end
   end
 
