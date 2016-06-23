@@ -1,0 +1,17 @@
+<% if @flag %>
+  $(".contact_messages").html("<%= escape_javascript(render("success")) %>");
+  $(".tasaciones-form")[0].reset();
+  $(document).ready(function() {
+    setTimeout(function() {
+      $(".contact_messages .alert").slideUp();
+    }, 5000);
+  });
+<% else %>
+  $(".contact_messages").html("<%= escape_javascript(render("error")) %>");
+  $(document).ready(function() {
+    setTimeout(function() {
+      $(".contact_messages .alert").slideUp();
+    }, 5000);
+  });
+  $('.form-process').fadeOut();
+<% end %>

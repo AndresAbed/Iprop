@@ -1,6 +1,23 @@
 ActiveAdmin.register Admin do
   permit_params :name, :last_name, :email, :password, :password_confirmation
   menu label: "Administradores"
+  controller do
+    def create
+      create! do |format|
+        format.html { redirect_to admin_admins_path, notice: "Admin creado correctamente" } if resource.valid?
+      end
+    end
+    def update
+      update! do |format|
+        format.html { redirect_to admin_admins_path, notice: "Admin actualizado" } if resource.valid?
+      end
+    end
+    def destroy
+      destroy! do |format|
+        format.html { redirect_to admin_admins_path, notice: "Admin eliminado" }
+      end
+    end
+  end
   index do
     selectable_column
     id_column

@@ -1,0 +1,53 @@
+.pdf-container {
+  margin: 0 auto;
+  padding: 4em;
+  color: #505050;
+  width: 100%;
+}
+.pdf-title {
+  margin: 0;
+  font-size: 2em;
+}
+.pdf-direccion {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+.pdf-precio {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.pdf-data {
+  display: inline-block;
+  margin: 0.2em;
+}
+.pdf-data-wrap {
+  border-top: 1px solid #505050;
+  border-bottom: 1px solid #505050;
+  display: inline-block;
+}
+.pdf-subtitle {
+  font-size: 1.6em;
+  color: #505050;
+  text-transform: uppercase;
+  margin: 1em 0 0;
+}
+.pdf-copy {
+  color: #505050;
+  margin-bottom: 2.5em;
+}
+.pdf-list {
+  color: #505050;
+  margin: 1em;
+  padding: 0;
+  margin-bottom: 2.5em;
+}
+.pdf-image {
+  width: 100%;
+}
+.bold {
+  font-weight: 700;
+}
+.m-r-1 {
+  margin-right: 1em;
+}

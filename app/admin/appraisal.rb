@@ -2,6 +2,24 @@ ActiveAdmin.register Appraisal do
 permit_params :neighborhood, :min_price, :max_price
 menu label: "Tasaciones"
 
+controller do
+  def create
+    create! do |format|
+      format.html { redirect_to admin_appraisals_path, notice: "Tasación creada correctamente" } if resource.valid?
+    end
+  end
+  def update
+    update! do |format|
+      format.html { redirect_to admin_appraisals_path, notice: "Tasación actualizada" } if resource.valid?
+    end
+  end
+  def destroy
+    destroy! do |format|
+      format.html { redirect_to admin_appraisals_path, notice: "Tasación eliminada" }
+    end
+  end
+end
+
 index do
   selectable_column
   column :neighborhood
@@ -12,7 +30,7 @@ index do
 end
 
 action_item :view, only: :show do
-  link_to 'Volver', admin_appraisals_excel_path
+  link_to 'Volver', admin_appraisals_path
 end
 
 action_item :view, only: :index do

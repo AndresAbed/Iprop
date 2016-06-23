@@ -1,8 +1,13 @@
 class Contact < ApplicationMailer
-  default from: 'example@iproponline.com.ar'
+  default from: 'no-reply@iproponline.com.ar'
 
-  def contact(message)
+  def appraisal_contact(message)
     @message = message
-    mail(to: 'test@iproponline.com.ar', subject: "Subject test")
+    mail(to: 'test@iproponline.com.ar', subject: "Tasación")
+  end
+
+  def contact_message(message)
+    @message = message
+    mail(to: 'test@iproponline.com.ar', subject: "Contacto Iproponline")
   end
 end

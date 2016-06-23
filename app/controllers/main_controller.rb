@@ -1,8 +1,7 @@
 class MainController < ApplicationController
   def index
-  end
-
-  def iprop
+    @featured_properties = Property.where("highlight = ?", true)
+    @posts = Post.all
   end
 
   def company
@@ -14,15 +13,18 @@ class MainController < ApplicationController
   def contact
   end
 
-  def contact_form
-    message = Message.new(params[:contact_form])
+  def contact_message
+    message = ContactMessage.new(params[:contact_form])
     if message.valid?
-      Contact.contact(message).deliver
-      flash[:notice] = "Mensaje enviado. Gracias por contactarnos"
-      render :index
+      Contact.contact_message(message).deliver_now
+      @flag = true
+      respond_to do |format|
+        format.js {flash.now[:notice] = "Mensaje enviado. Gracias por contactarnos"}
+      end
     else
-      flash[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."
-      render :index
+      respond_to do |format|
+        format.js {flash.now[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."}
+      end
     end
   end
 end

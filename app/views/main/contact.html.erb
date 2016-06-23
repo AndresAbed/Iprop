@@ -9,7 +9,7 @@
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
-      <li class="header-list-item"><a href="/iprop-online" class="header-list-item-link">Iprop Online</a></li>
+      <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
       <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
@@ -25,26 +25,18 @@
   <h1 class="contacto-header-title">Su consulta nos interesa</h1>
 </section>
 <section class="contacto-info-formulario">
-  <form class="contacto-form">
-    <label required class="contacto-form-label">Nombre: </label>
-    <input class="contacto-form-input"><br>
-    <label required class="contacto-form-label">E-mail:</label>
-    <input class="contacto-form-input"><br>
-    <label required class="contacto-form-label">Teléfono:</label>
-    <input class="contacto-form-input"><br>
-    <label class="contacto-form-label">Mensajes/Consultas </label>
-    <textarea rows="4" cols="50" class="contacto-form-textarea"></textarea>
-    <button class="contacto-form-button">Enviar</button>
-  </form>
-</section>
-<section class="compartir"> 
-  <h2 class="compartir-title">Compartir en redes sociales</h2>
-  <div class="compartir-redes">
-    <div class="compartir-redes-fb"><span class="icon-facebook m-r-5"></span></div>
-    <div class="compartir-redes-twitter"><span class="icon-twitter m-r-5"></span></div>
-    <div class="compartir-redes-google"><span class="icon-google m-r-5"></span></div>
-    <div class="compartir-redes-linkedin"><span class="icon-linkedin m-r-5"></span></div>
+  <div class="contact_messages">
   </div>
+  <%= form_for :contact_form, url: contact_path, html: {class: "contacto-form"}, remote: true do |message| %>
+    <label required class="contacto-form-label">Nombre:</label>
+    <%= message.text_field :name, class: "contacto-form-input" %><br>
+    <label required class="contacto-form-label">E-mail:</label>
+    <%= message.email_field :email, class: "contacto-form-input"%><br>
+    <label required class="contacto-form-label">Teléfono:</label>
+    <%= message.text_field :phone, class: "contacto-form-input"%><br>
+    <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
+    <%= message.submit 'Enviar', class: "contacto-form-button" %>
+  <% end %>
 </section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">

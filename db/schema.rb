@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607191804) do
+ActiveRecord::Schema.define(version: 20160622042055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,26 +51,20 @@ ActiveRecord::Schema.define(version: 20160607191804) do
     t.integer  "property_id"
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "subtitle"
     t.text     "body"
-    t.string   "video_url"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
 
   create_table "properties", force: :cascade do |t|
     t.string   "title"
@@ -119,7 +113,13 @@ ActiveRecord::Schema.define(version: 20160607191804) do
     t.string   "flat_content_type"
     t.integer  "flat_file_size"
     t.datetime "flat_updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "slug"
+    t.string   "state"
   end
+
+  add_index "properties", ["slug"], name: "index_properties_on_slug", using: :btree
 
   create_table "properties_tags", id: false, force: :cascade do |t|
     t.integer "property_id"

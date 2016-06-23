@@ -282,7 +282,12 @@
   width: 100%;
 }
 .destacadas-img-container {
-  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 378px;
+  height: 261px;
   font-size: 0;
 }
 .destacadas-price {
@@ -364,9 +369,8 @@
 .novedades-item-mas {
   color: #fff;
   font-size: 3rem;
-  position: absolute;
-  top: 40%;
-  left: 45%;
+  display: block;
+  line-height: 323px;
 }
 .novedades-img {
   width: 100%;
@@ -507,11 +511,33 @@
   list-style: none;
   padding: 0;
 }
+.pager-list > .prev,
+.pager-list > .next{
+  display: inline-block;
+  border: 1px solid #4a90e2;
+  color: #4a90e2;
+}
+.pager-list > .prev > a,
+.pager-list > .next > a{
+  display: block;
+  padding: 0.5em 1em;
+  color: #4a90e2;
+}
 .pager-list-item {
   display: inline-block;
   border: 1px solid #4a90e2;
   color: #4a90e2;
+}
+.pager-list-item > .current{
+  display: block;
   padding: 0.5em 1em;
+  color: #fff;
+  background-color: #4a90e2;
+}
+.pager-list-item > .page > a{
+  display: block;
+  padding: 0.5em 1em;
+  color: #4a90e2;
 }
 .tasaciones {
   background-image: url("buenos-aires-aerea.jpg");
@@ -635,7 +661,7 @@
   border: none;
 }
 .re {
-  background: url("images/img_realconsulting.jpg");
+  background: url("img_realconsulting.jpg");
   background-repeat: no-repeat;
   padding-top: 20em;
 }
@@ -727,7 +753,7 @@
   padding-right: 1em;
 }
 .team {
-  background: url("images/img_team.jpg");
+  background: url("img_team.jpg");
   background-repeat: no-repeat;
   padding-top: 20em;
 }
@@ -827,7 +853,7 @@
   color: #605e5c;
 }
 .residenciales {
-  background: url("images/img_residenciales.jpg");
+  background: url("img_residenciales.jpg");
   background-repeat: no-repeat;
   padding-top: 18em;
 }
@@ -931,7 +957,7 @@
   font-size: 0.8em;
 }
 .filtros-select {
-  background: url("images/dropdown.png") no-repeat right;
+  background: url("dropdown.png") no-repeat right;
   background-color: #e6e6e6;
   color: #0056b9;
   text-transform: uppercase;
@@ -1410,6 +1436,12 @@
   font-size: 2em;
   margin: 0;
 }
+.novedades-inside-header-subtitle {
+  max-width: 500px;
+  font-size: 1em;
+  margin: 10px 0;
+  color: #8a8a8a;
+}
 .novedades-inside-tag {
   background: #787878;
   color: #fff;
@@ -1449,6 +1481,7 @@
 .novedades-aside-item-title {
   margin-bottom: 0;
 }
+.novedades-aside-item-title > a{color: #4a4a4a;}
 .novedades-aside-item-date {
   margin-top: 0;
   font-size: 0.8em;
@@ -1683,6 +1716,20 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     width: 100%;
     margin: 0 auto;
   }
+  .ficha-header {
+    margin: 3em 2em 1.5em;
+  }
+  .ficha-slider-wrap {
+    margin: 0 2em;
+  }
+  .ficha-acciones {
+    right: 2em;
+  }
+  .ficha-descripcion,
+  .ficha-caracteristicas,
+  .ficha-planos {
+    padding: 0 2em;
+  }
 }
 @media (max-width: 570px) {
   .photo-slider-slogan-title {
@@ -1736,6 +1783,17 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .footer-img-qr {
     margin: 1em auto;
   }
+  .ficha-slider {
+    width: 100%;
+  }
+  .ficha-slider-wrap {
+    margin: 0;
+  }
+  .ficha-acciones {
+    position: static;
+    text-align: center;
+    margin: 0.5em auto;
+  }
 }
 @media (max-width: 450px) {
   .photo-slider-slogan {
@@ -1754,6 +1812,15 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .compartir-title {
     font-size: 1.2em;
   }
+  .ficha-descripcion-copy,
+  .ficha-caracteristicas-lists {
+    padding: 0;
+    margin: 1em 0 0;
+    border: none;
+  }
+  .m-r-6em {
+    margin: 0 !important;
+  }
 }
 @media (max-width: 375px) {
   .slider {
@@ -1770,4 +1837,23 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .empresa-cover-title {
     padding: 1em;
   }
+}
+
+.alert{
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.alert-success{
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
 }

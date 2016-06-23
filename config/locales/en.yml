@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  views:
+    pagination:
+      first: "<<"
+      previous: "<"
+      last: ">>"
+      next: ">"
   date:
     abbr_month_names:
     -
@@ -109,9 +115,9 @@ en:
         address: "Dirección"
         bedrooms: "Dormitorios"
         bathrooms: "Baños"
-        size: "Tamaño"
+        size: "Tamaño m2"
         description: "Descripción"
-        price: "Precio"
+        price: "Precio (ARS)"
         created_at: "Fecha de creación"
         highlight: "Propiedad destacada"
         flat: "Planos"
@@ -132,6 +138,7 @@ en:
         pic_6_file_name: "Foto 6"
         pic_7_file_name: "Foto 7"
         pic_8_file_name: "Foto 8"
+        state: "Tipo de operación"
       feature:
         feature: "Característica"
   active_admin:
@@ -171,7 +178,7 @@ en:
       "no": "No"
     main_content: "Por favor implemente %{model}#main_content para mostrar contenido."
     logout: "Salir"
-    powered_by: "Funciona con %{active_admin} %{version}"
+    powered_by: ""
     sidebars:
       filters: "Filtros"
       search_status: "Estado de la búsqueda"
@@ -248,7 +255,7 @@ en:
         submit: "Reenviar instrucciones de confirmación"
       links:
         sign_up: "Ingresar"
-        sign_in: "registrarse"
+        sign_in: "Iniciar sesión"
         forgot_your_password: "¿Olvidó su contraseña?"
         sign_in_with_omniauth_provider: "Conéctate con %{provider}"
         resend_unlock_instructions: "Reenviar instrucciones de desbloqueo"

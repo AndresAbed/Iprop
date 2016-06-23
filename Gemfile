@@ -13,10 +13,16 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'activeadmin', github: 'activeadmin'
+gem 'aws-sdk', '~> 2'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'rails-assets-jquery-cycle2', source: 'https://rails-assets.org'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'friendly_id'
+gem 'kaminari'
+gem "figaro"
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -26,5 +32,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'meta_request'
 end
 

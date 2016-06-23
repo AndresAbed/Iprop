@@ -1,6 +1,28 @@
 ActiveAdmin.register Post do
   permit_params :title, :subtitle, :body, :image
   menu label: "Novedades"
+
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+    def create
+      create! do |format|
+        format.html { redirect_to admin_posts_path, notice: "Artículo creado correctamente" } if resource.valid?
+      end
+    end
+    def update
+      update! do |format|
+        format.html { redirect_to admin_posts_path, notice: "Artículo actualizado" } if resource.valid?
+      end
+    end
+    def destroy
+      destroy! do |format|
+        format.html { redirect_to admin_posts_path, notice: "Artículo eliminado" }
+      end
+    end
+  end
+
   index do
     selectable_column
     column :title
@@ -19,8 +41,8 @@ ActiveAdmin.register Post do
       row :title
       row :subtitle
       row :body
-      row :video_url
       row :created_at
+      row :image_file_name
     end
   end
 

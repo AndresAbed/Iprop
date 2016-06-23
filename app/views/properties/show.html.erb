@@ -1,3 +1,13 @@
+<head>
+  <% content_for :head do %>
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Iprop Online" />
+    <meta property="og:title" content="<%= @property.title %>">
+    <meta property="og:description" content="<%= @property.description[0,200] %>...">
+    <meta property="og:image" content="<%= @property.pic_1.url %>" />
+  <% end %>
+</head>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
@@ -9,7 +19,7 @@
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
-      <li class="header-list-item"><a href="/iprop-online" class="header-list-item-link">Iprop Online</a></li>
+      <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
       <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
@@ -23,63 +33,102 @@
 </header>
 <section class="ficha">
   <div class="ficha-header">
-    <p class="ficha-header-state">Departamento en venta</p>
-    <h2 class="ficha-header-title">Condomino Plaza América</h2>
-    <p class="ficha-header-direccion">Av. San Martín 2723, San Isidro </p>
+    <p class="ficha-header-state"><%= @property.state %></p>
+    <h2 class="ficha-header-title"><%=@property.title%></h2>
+    <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
   </div>
   <div class="ficha-slider-wrap">
-    <div class="ficha-slider-controls"><span id="prev" class="ficha-slider-controls-prev"> <img src="<%= image_path('left-arrow.png') %>"></span><span id="next" class="ficha-slider-controls-next"><img src="<%= image_path('right-arrow.png') %>"></span></div>
-    <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg') %>" class="photo-slider-img"><img src="<%= image_path('pileta.jpg') %>" class="photo-slider-img"><img src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img src="<%= image_path('livingroom.jpg') %>" class="photo-slider-img"></div>
+    <div class="ficha-slider-controls">
+      <span id="prev" class="ficha-slider-controls-prev">
+      <img src="<%= image_path('left-arrow.png') %>"></span>
+      <span id="next" class="ficha-slider-controls-next">
+      <img src="<%= image_path('right-arrow.png') %>"></span>
+    </div>
+    <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow ficha-slider">
+      <% if @property.pic_1.file? %>
+        <img src="<%= @property.pic_1.url %>" class="photo-slider-img">
+      <% end %>  
+      <% if @property.pic_2.file? %>
+        <img src="<%= @property.pic_2.url %>" class="photo-slider-img">
+      <% end %>
+      <% if @property.pic_3.file? %>
+        <img src="<%= @property.pic_3.url %>" class="photo-slider-img">
+      <% end %>
+      <% if @property.pic_4.file? %>
+        <img src="<%= @property.pic_4.url %>" class="photo-slider-img">
+      <% end %>
+      <% if @property.pic_5.file? %>
+        <img src="<%= @property.pic_5.url %>" class="photo-slider-img">
+      <% end %>
+      <% if @property.pic_6.file? %>
+        <img src="<%= @property.pic_6.url %>" class="photo-slider-img">
+      <% end %>
+      <% if @property.pic_7.file? %>
+        <img src="<%= @property.pic_7.url %>" class="photo-slider-img">
+      <% end %>
+      <% if @property.pic_8.file? %>
+        <img src="<%= @property.pic_8.url %>" class="photo-slider-img">
+      <% end %>
+    </div>
   </div>
   <div class="ficha-acciones">
-    <div class="ficha-acciones-compartir">Compartir</div>
-    <div class="ficha-acciones-imprimir">Imprimir</div>
+    <%= link_to 'Ver en PDF', property_path(@property, :format => :pdf), target: "_blank", class: "ficha-acciones-imprimir" %>
   </div>
 </section>
 <section class="ficha-descripcion">
   <h2 class="ficha-descripcion-title">Descripción</h2>
-  <p class="ficha-descripcion-short"> <strong>3</strong> Dormitorios  / <strong>1</strong> Baño  / <strong>109</strong> mts2 </p>
-  <p class="ficha-descripcion-copy">Why not let someone else worry about Christmas and New Year this year and book a last minute stay in a hotel over the festive period. Forget about buying the food, cooking the dinner, washing it up or organising the New Year party – just relax and concentrate on spending time with your loved ones. It’s not too late to down tools – short break specialist Superbreak still has availability for those wanting a real rest this year. From a candlelit dinner for two to a trip to the local pantomime there is something for everyone.</p>
+  <p class="ficha-descripcion-short">
+    <% if @property.bedrooms.present? %>
+      <strong><%=@property.bedrooms%></strong> Dormitorios  / 
+    <% end %>
+    <% if @property.bathrooms.present? %>
+      <strong><%=@property.bathrooms%></strong> Baño  / 
+    <% end %>
+    <strong><%=@property.size%></strong> mts2 
+  </p>
+  <p class="ficha-descripcion-copy"><%=@property.description%></p>
 </section>
-<section class="ficha-caracteristicas">
-  <h2 class="ficha-caracteristicas-title">Características</h2>
-  <div class="ficha-caracteristicas-lists">
-    <ul class="caracteristicas-list m-r-6em">
-      <li class="caracteristicas-item">Centro de Negocios abiero las 24hs</li>
-      <li class="caracteristicas-item">Mantenimiento de emergencia las 24hs</li>
-      <li class="caracteristicas-item">Gimnasio abierto las 24hs</li>
-      <li class="caracteristicas-item">Centro de negocios</li>
-      <li class="caracteristicas-item">Casa club  </li>
-      <li class="caracteristicas-item">Casa club</li>
-      <li class="caracteristicas-item">Común de la Comunidad Jardín Planta</li>
-      <li class="caracteristicas-item">Aparcamiento Cubierto</li>
-      <li class="caracteristicas-item">Pileta de diseño con fuente</li>
-      <li class="caracteristicas-item">Pesas Libres</li>
-      <li class="caracteristicas-item">Acesso a internet de alta velocidad</li>
-    </ul>
-    <ul class="caracteristicas-list">
-      <li class="caracteristicas-item">Cocina</li>
-      <li class="caracteristicas-item">Mantenimiento en el sitio</li>
-      <li class="caracteristicas-item">Fuera de la calle</li>
-      <li class="caracteristicas-item">Paquete de servicios</li>
-      <li class="caracteristicas-item">Spa / Jacuzzi /Sauna</li>
-      <li class="caracteristicas-item">Espacio de Almacenamiento</li>
-      <li class="caracteristicas-item">Solarium</li>
-      <li class="caracteristicas-item">Canchas de Tennis</li>
-      <li class="caracteristicas-item">Salón de TV</li>
-      <li class="caracteristicas-item">Lavadora secadora</li>
-      <li class="caracteristicas-item">Club de Tejido</li>
-      <li class="caracteristicas-item">WIFI</li>
-      <li class="caracteristicas-item">Calefacion</li>
-    </ul>
+<% if @property.features.any? %>
+  <section class="ficha-caracteristicas">
+    <h2 class="ficha-caracteristicas-title">Características</h2>
+    <div class="ficha-caracteristicas-lists">
+      <ul class="caracteristicas-list m-r-6em">
+        <% @property.features.each do |f| %>
+          <li class="caracteristicas-item"><%=f.feature%></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>
+<% if @property.bedrooms.present? %>
+  <section class="ficha-planos">
+    <h2 class="ficha-planos-title">Planos de la propiedad</h2>
+    <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
+  </section>
+<% end %>
+<section class="compartir"> 
+  <h2 class="compartir-title">Compartir en redes sociales</h2>
+  <div class="compartir-redes">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
+    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
+    title="Compartir en Facebook" class="compartir-redes-fb">
+    <span class="icon-facebook m-r-5"></a>
+    <a href="http://twitter.com/share?url=<%=request.url%>&text=Iproponline&via=Iprop&hashtags=iprop"
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Tweet" class="compartir-redes-twitter">
+    <span class="icon-twitter m-r-5"></span></a>
+    <a href="https://plus.google.com/share?url=<%= request.url%>" 
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Compartir en Google+" class="compartir-redes-google">
+    <span class="icon-google m-r-5"></span></a>
   </div>
 </section>
-<section class="ficha-planos">
-  <h2 class="ficha-planos-title">Planos de la propiedad</h2>
-  <div class="ficha-planos-img-container"><img src="<%= image_path('plano.png') %>" class="ficha-planos-img"></div>
-</section>
 <section class="ficha-mapa">
-  <div id="map"></div>
+   <div id="map" data-latitude="<%= @property.latitude %>" 
+   data-longitude="<%= @property.longitude %>" 
+   data-markerName="Mark"></div>
 </section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">
@@ -110,3 +159,25 @@
 <div class="footer-copyright">
   <p> © Nestor H. Royo 2016</p>
 </div>
+
+<!-- Goole maps -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {
+        maxZoom: 17, 
+        minZoom: 13
+      }, 
+    internal: {id: "map"}}, function(){
+      markers = handler.addMarkers([
+        {
+          "lat": $("#map").data('latitude'),
+          "lng": $("#map").data('longitude'),
+        }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(15);
+    });
+  })
+</script>

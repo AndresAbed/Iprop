@@ -1,0 +1,105 @@
+<head>
+  <% content_for :head do %>
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Iprop Online" />
+    <meta property="og:title" content="<%= @post.title %>">
+    <meta property="og:description" content="<%= @post.body[0,200] %>...">
+    <meta property="og:image" content="<%= @post.image.url %>" />
+  <% end %>
+</head>
+<header class="header">
+  <nav id="nav" class="header-nav">
+    <label for="show-menu" class="show-menu">Menu</label>
+    <input id="show-menu" type="checkbox" role="button">
+    <div class="header-responsive-logo"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></div>
+    <div class="header-responsive-phone">
+      <div class="icon-phone header-icon"> </div>
+      <div class="header-list-item-phone">11 5643 7885</div>
+    </div>
+    <ul id="menu" class="header-list">
+      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
+      <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
+      <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
+      <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
+      <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
+      <li class="header-list-item">
+        <div class="icon-phone header-icon"> </div>
+        <div class="header-list-item-phone">11 4776 7176      </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section class="novedades-inside">
+  <h1 class="novedades-inside-title">Novedades</h1>
+  <article class="novedades-inside-article">
+    <header class="novedades-inside-header">
+      <h2 class="novedades-inside-header-title"><%= @post.title %></h2>
+      <h4 class="novedades-inside-header-subtitle"><%= @post.subtitle %></h4>
+      <p class="novedades-inside-date"> <span class="icon-clock"> </span><%= l @post.created_at, format: "%B %d - %Y, %H:%M" %></p>
+    </header>
+    <div class="novedades-inside-img-container"><img src="<%= image_path('article1-inside.png') %>" class="novedades-inside-img"></div>
+    <p class="novedades-inside-copy"><%= @post.body %></p>
+  </article>  
+  <aside class="novedades-aside">
+    <h3 class="novedades-aside-title">Más novedades</h3>
+    <div class="novedades-aside-item-wrap">
+      <% @posts.each do |post| %>
+        <div class="novedades-aside-item">
+          <h4 class="novedades-aside-item-title"><%= link_to post.title, post_path(post) %></h4>
+          <p class="novedades-aside-item-date"> <span class="icon-clock"> </span><%= l post.created_at, format: "%B %d - %Y, %H:%M" %></p>
+        </div>
+      <% end %>
+    </div>
+  </aside>
+</section>
+<novedades-inside-aside class="jade"></novedades-inside-aside>
+<section class="compartir"> 
+  <h2 class="compartir-title">Compartir en redes sociales</h2>
+  <div class="compartir-redes">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
+    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
+    title="Compartir en Facebook" class="compartir-redes-fb">
+    <span class="icon-facebook m-r-5"></a>
+    <a href="http://twitter.com/share?url=<%=request.url%>&text=Iproponline&via=Iprop&hashtags=iprop"
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Tweet" class="compartir-redes-twitter">
+    <span class="icon-twitter m-r-5"></span></a>
+    <a href="https://plus.google.com/share?url=<%= request.url%>" 
+    target="popup" onClick="window.open(this.href, this.target, 
+    'width=600,height=400, top=200, left=300'); return false;" 
+    title="Compartir en Google+" class="compartir-redes-google">
+    <span class="icon-google m-r-5"></span></a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-column2 m-r-5">
+    <ul class="footer-list">
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-phone"> </div>
+        <p class="footer-item-text">(11) 4776‐7176</p>
+      </li>
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-envelope"> </div>
+        <p class="footer-item-text">info@iproponline.com.ar</p>
+      </li>
+      <li class="footer-item"> 
+        <div class="footer-item-icon icon-location"></div>
+        <p class="footer-item-text">Teodoro García 1721<br>Of. 704 (C1426DMC) <br>C.A.B.A.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-column1 m-r-5">
+    <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
+    <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
+    <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png') %>" class="footer-img"></div>
+  </div>
+  <div class="footer-column1">
+    <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>
+  </div>
+</footer>
+<div class="footer-copyright">
+  <p> © Nestor H. Royo 2016</p>
+</div>
