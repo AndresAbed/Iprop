@@ -89,20 +89,22 @@
   </div>
 </section>
 <!--novedades-->
-<section class="novedades">
-  <h2 class="novedades-title">Novedades</h2>
-  <div class="novedades-content">
-    <% @posts.each do |post| %>
-      <div class="novedades-item">
-        <div class="novedades-img-container"><img src="<%= post.image.url %>" class="novedades-img"></div>
-        <p class="novedades-item-copy"><%= post.title %></p>
-        <div class="novedades-item-overlay">
-          <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
+<% if @posts.present? %>
+  <section class="novedades">
+    <h2 class="novedades-title">Novedades</h2>
+    <div class="novedades-content">
+      <% @posts.each do |post| %>
+        <div class="novedades-item">
+          <div class="novedades-img-container"><img src="<%= post.image.url %>" class="novedades-img"></div>
+          <p class="novedades-item-copy"><%= post.title %></p>
+          <div class="novedades-item-overlay">
+            <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
+          </div>
         </div>
-      </div>
-    <% end %>  
-  </div>
-</section>
+      <% end %>  
+    </div>
+  </section>
+<% end %>  
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>
   <div class="compartir-redes">
