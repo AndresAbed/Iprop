@@ -6,19 +6,21 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
-  host: localhost
-  pool: 5
+  encoding: utf-8
+  database: <%= ENV["database"] %>
   username: <%= ENV["username"] %>
   password: <%= ENV["password"] %>
+  host: <%= ENV["host"] %>
+  pool: 5
 
 development:
   <<: *default
-  database: iprop_development
+
 test:
   <<: *default
   database: iprop_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  port: 5432
+  timeout: 5000
