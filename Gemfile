@@ -35,4 +35,6 @@ group :development do
   gem 'spring'
   gem 'meta_request'
 end
-
+group :production do
+  gem 'unicorn'
+end
