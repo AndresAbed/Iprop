@@ -23,6 +23,7 @@ gem 'wkhtmltopdf-binary'
 gem 'friendly_id'
 gem 'kaminari'
 gem "figaro"
+gem "passenger"
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
