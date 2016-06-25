@@ -32,30 +32,30 @@ class Property < ActiveRecord::Base
     return properties
   end
 
-  has_attached_file :pic_1, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_1, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_2, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_2, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_2, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_3, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_3, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_3, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_4, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_4, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_4, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_5, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_5, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_5, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_6, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_6, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_6, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_7, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_7, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_7, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :pic_8, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :pic_8, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_8, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
-  has_attached_file :flat, storage: :s3, bucket: "iprop-imagenes"
+  has_attached_file :flat, storage: :s3, bucket: ENV['bucket']
   validates_attachment :flat, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 end
