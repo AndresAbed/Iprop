@@ -16,7 +16,7 @@
     <div class="header-responsive-logo"><img src="<%= image_path('logo.png')%>" class="header-logo-img"></div>
     <div class="header-responsive-phone">
       <div class="icon-phone header-icon"> </div>
-      <div class="header-list-item-phone">11 5643 7885</div>
+      <div class="header-list-item-phone">11 4776 7176</div>
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
@@ -33,29 +33,33 @@
   </nav>
   </header>
   <section class="tasaciones">
-  <div class="tasaciones-title-container">
     <h1 class="tasaciones-title">El éxito de una operación inmobiliaria depende en gran parte de una buena tasación</h1>
-  </div>
+  </section>
+  <section class="tasaciones-form-container">
   <%= form_for :contact_form, url: appraisals_contact_path, html: {class: "tasaciones-form"}, remote: true do |message| %>
-    <label required class="tasaciones-form-label">Nombre:</label>
-    <%= message.text_field :name, class: "tasaciones-form-input" %><br>
-    <label required class="tasaciones-form-label">E-mail:</label>
-    <%= message.email_field :email, class: "tasaciones-form-input"%><br>
-    <label required class="tasaciones-form-label">Teléfono:</label>
-    <%= message.text_field :phone, class: "tasaciones-form-input"%><br>
-    <label required class="tasaciones-form-label">Dirección:</label>
-    <%= message.text_field :address, class: "tasaciones-form-input"%><br>
-    <div class="tasaciones-form-group m-r-1em">
-      <label required class="tasaciones-form-group-label">Superficie (m2):</label>
-      <%= message.number_field :size, class: "tasaciones-form-group-input"%>
+    <div class="tasaciones-form-left">
+      <label required class="tasaciones-form-label">Nombre:</label>
+      <%= message.text_field :name, class: "tasaciones-form-input" %><br>
+      <label required class="tasaciones-form-label">E-mail:</label>
+      <%= message.email_field :email, class: "tasaciones-form-input"%><br>
+      <label required class="tasaciones-form-label">Teléfono:</label>
+      <%= message.text_field :phone, class: "tasaciones-form-input"%><br>
+      <label required class="tasaciones-form-label">Dirección:</label>
+      <%= message.text_field :address, class: "tasaciones-form-input"%><br>
+      <div class="tasaciones-form-group m-r-1em">
+        <label required class="tasaciones-form-group-label">Superficie (m2):</label>
+        <%= message.number_field :size, class: "tasaciones-form-group-input"%>
+      </div>
+      <div class="tasaciones-form-group">
+        <label required class="tasaciones-form-group-label">Cantidad de ambientes:</label>
+        <%= message.number_field :rooms_amount, class: "tasaciones-form-group-input"%>
+      </div>
     </div>
-    <div class="tasaciones-form-group">
-      <label required class="tasaciones-form-group-label">Cantidad de ambientes:</label>
-      <%= message.number_field :rooms_amount, class: "tasaciones-form-group-input"%>
-    </div>
-    <label class="tasaciones-form-label">Comentarios adicionales:</label>
-    <%= message.text_area :comments, class: "tasaciones-form-input", rows: "5"%>
-    <%= message.submit '¡Tasar ya!', class: "tasaciones-form-button" %>
+    <div class="tasaciones-form-left">  
+      <label class="tasaciones-form-label">Comentarios adicionales:</label>
+      <%= message.text_area :comments, class: "tasaciones-form-input tasaciones-form-textarea", rows: "6"%>
+      <%= message.submit '¡Tasar ya!', class: "tasaciones-form-button" %>
+    </div>  
   <% end %>
   </section>
   <section class="tasaciones-text">
@@ -63,11 +67,6 @@
   <p class="tasaciones-text-paragraph">Le haremos una devolución acerca del valor de la propiedad por este medio dentro de las <span class="tasaciones-text-orange">24 horas siguientes de recibida la solicitud.</span></p>
   <p class="tasaciones-text-paragraph">Para ajustar aún más el valor coordine luego con nosotros una visita a su propiedad para poder entregarle una tasación ajustada por escrito y firmada por un profesional.</p>
   <p class="tasaciones-text-small">(*)  Solo se cobran honorarios por las tasaciones cuyo propósito no sea la venta por ejemplo, tasaciones judiciales. </p>
-  </section>
-  <!--solo para visualización-->
-  <section class="tasaciones-valores">
-  <div class="tasaciones-valores-img-container"><img src="<%= image_path('tasaciones-valores.png')%>" class="tasaciones-valores-img"></div>
-  <%= link_to 'Descargar Excel', appraisals_excel_path(format: "xls"), class: "tasaciones-valores-button" %>
   </section>
   <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>

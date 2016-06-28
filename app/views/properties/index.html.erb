@@ -13,7 +13,7 @@
     <div class="header-responsive-logo"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></div>
     <div class="header-responsive-phone">
       <div class="icon-phone header-icon"> </div>
-      <div class="header-list-item-phone">11 5643 7885</div>
+      <div class="header-list-item-phone">11 4776 7176</div>
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
@@ -30,13 +30,22 @@
   </nav>
 </header>
 <!--slider-->
-<section class="photo-slider">
+<section class="photo-slider photo-slider-propiedades">
   <div class="overlay-darken"></div>
   <div class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg') %>" class="photo-slider-img"><img src="<%= image_path('iproponline/slider01.jpg') %>" class="photo-slider-img"><img src="<%= image_path('iproponline/slider02.jpg') %>" class="photo-slider-img"><img src="<%= image_path('iproponline/slider03.jpg') %>" class="photo-slider-img"></div>
   <div class="photo-slider-slogan">
     <h1 class="photo-slider-slogan-title">Transformamos tus ideas en realidad</h1>
   </div>
-  <%= form_tag properties_path, method: 'get', class: "buscador" do %>
+</section>
+<!--features-->
+<section class="features">
+  <div class="features-main">
+    <h2 class="features-main-title">Servicios inmobiliarios para clientes residenciales y corporativos</h2>
+    <p class="features-main-copy">Contamos con una página Web con buscador y tecnología para manejo de bases de datos. Tenemos posicionamiento en Google y  realizamos campañas en las redes sociales. Tomamos fotografías profesionales de los inmuebles, hacemos videos y los subimos a la página y a nuestro canal de Youtube. Publicamos en portales inmobiliarios para lo cual también subimos fotos y videos. En algunos casos publicamos en diarios, colocamos carteles y establecemos guardias. </p>
+  </div>
+</section>
+<section class="propiedades-buscador-container">
+  <%= form_tag properties_path, method: 'get', class: "propiedades-buscador" do %>
     <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select", prompt: "Tipo de operación" %>
     <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.tag_name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
     <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
@@ -45,13 +54,6 @@
       Buscar
     <% end %>
   <% end %>
-</section>
-<!--features-->
-<section class="features">
-  <div class="features-main">
-    <h2 class="features-main-title">Servicios inmobiliarios para clientes residenciales y corporativos</h2>
-    <p class="features-main-copy">Contamos con una página Web con buscador y tecnología para manejo de bases de datos. Tenemos posicionamiento en Google y  realizamos campañas en las redes sociales. Tomamos fotografías profesionales de los inmuebles, hacemos videos y los subimos a la página y a nuestro canal de Youtube. Publicamos en portales inmobiliarios para lo cual también subimos fotos y videos. En algunos casos publicamos en diarios, colocamos carteles y establecemos guardias. </p>
-  </div>
 </section>
 <section class="inmuebles">
   <h2 class="destacadas-title">Inmuebles</h2>
