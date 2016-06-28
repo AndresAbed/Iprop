@@ -1,7 +1,7 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
   :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, tag_ids: [],
-  features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :tag_name]
+  features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :name]
   menu label: "Propiedades"
 
   controller do
@@ -68,7 +68,7 @@ ActiveAdmin.register Property do
       row :pic_8_file_name
       row :state
       row "Tipo de propiedad" do |property|
-        (property.tags.map{ |p| p.tag_name }).join(' - ').html_safe
+        (property.tags.map{ |p| p.name }).join(' - ').html_safe
       end
       row "Características" do |property|
         (property.features.map { |p| p.feature }).join(' - ').html_safe
@@ -83,7 +83,7 @@ ActiveAdmin.register Property do
   filter :size
   filter :price
   filter :highlight
-  filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.tag_name}", u.id]}}, as: :select
+  filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.name}", u.id]}}, as: :select
   filter :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
 
   form do |f|
@@ -106,7 +106,7 @@ ActiveAdmin.register Property do
       f.input :pic_7
       f.input :pic_8
       f.input :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
-      f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.tag_name}", u.id]}
+      f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.name}", u.id]}
     end
     f.has_many :features, new_record: 'Nuevo item' do |f|
       f.input :feature
