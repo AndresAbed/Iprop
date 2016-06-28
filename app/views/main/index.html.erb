@@ -110,12 +110,16 @@
 <% end %>
 <section class="videos">
   <h2 class="novedades-title">Videos</h2>
-  <div class="novedades-item">
-    <div class="novedades-img-container">
-      <iframe src="https://www.youtube.com/embed/0obJrUjm-jw" frameborder="0" allowfullscreen="" class="novedades-video"></iframe>
-    </div>
-    <p class="novedades-item-copy">Nuevos depósitos a la venta para potenciar tu negocio.</p>
-  </div>
+  <div class="novedades-content">
+    <% @videos.each do |video| %>
+      <div class="novedades-item">
+        <div class="novedades-img-container">
+          <iframe src="<%= video.url %>" frameborder="0" allowfullscreen="" class="novedades-video"></iframe>
+        </div>
+        <p class="novedades-item-copy"><%= video.description %></p>
+      </div>
+    <% end %>  
+  </div>  
 </section>
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>

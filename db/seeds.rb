@@ -19,3 +19,8 @@ Tag.create(tag_name:'Depósitos')
 Tag.create(tag_name:'Locales comerciales')
 Tag.create(tag_name:'Fondo de comercio')
 Tag.create(tag_name:'Estacionamiento')
+
+Video.create(url: '', description: '')
+Video.create(url: '', description: '')
+Video.create(url: '', description: '')
+Video.create(url: '', description: '')
