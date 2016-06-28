@@ -7,8 +7,6 @@
     <meta property="og:image" content="<%= image_path('buenos-aires-aerea.jpg')%>" />
   <% end %>
 </head>
-<div class="contact_messages">
-</div>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
@@ -35,6 +33,8 @@
   <section class="tasaciones">
     <h1 class="tasaciones-title">El éxito de una operación inmobiliaria depende en gran parte de una buena tasación</h1>
   </section>
+  <div class="contact_messages">
+  </div>
   <section class="tasaciones-form-container">
   <%= form_for :contact_form, url: appraisals_contact_path, html: {class: "tasaciones-form"}, remote: true do |message| %>
     <div class="tasaciones-form-left">
