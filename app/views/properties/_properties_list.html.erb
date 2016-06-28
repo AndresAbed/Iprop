@@ -2,9 +2,9 @@
   <div class="destacadas-item">
     <div class="destacadas-img-container"><img src="<%= property.pic_1.url %>" class="destacadas-img"></div>
     <% if property.price.present? %>
-      <div class="destacadas-price">
-        $<%= property.price %>
-      </div>
+      <div class="destacadas-price">$<%= property.price %></div>
+    <% else %>
+      <div class="destacadas-price">Consultar</div>
     <% end%>  
     <div class="destacadas-state"><%= property.state %></div>
     <div class="destacadas-item-info">

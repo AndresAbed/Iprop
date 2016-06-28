@@ -10,6 +10,8 @@
     <%= @property.state %> 
     <% if @property.price.present? %>
       - Precio: $<%= @property.price %>
+    <% else %>
+      - Precio: Consultar  
     <% end %>
   </p>
   <div class="pdf-data-wrap">

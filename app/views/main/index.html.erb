@@ -71,11 +71,14 @@
   <div class="destacadas-content">
     <% @featured_properties.each do |property| %>
       <div class="destacadas-item">
-        <div class="destacadas-img-container"><img src="<%= property.pic_1.url %>" class="destacadas-img"></div>
+        <div class="destacadas-img-container">
+          <!--<img src="<%= property.pic_1.url %>" class="destacadas-img">-->
+          <iframe src="https://www.youtube.com/embed/AAt2o__gazE" frameborder="0" allowfullscreen class="destacadas-video"></iframe>
+        </div>
         <% if property.price.present? %>
-          <div class="destacadas-price">
-            $<%= property.price %>
-          </div>
+          <div class="destacadas-price">$<%= property.price %></div>
+        <% else %>
+          <div class="destacadas-price">Consultar</div>  
         <% end%>  
         <div class="destacadas-state"><%= property.state %></div>
         <div class="destacadas-item-info">
@@ -104,7 +107,16 @@
       <% end %>  
     </div>
   </section>
-<% end %>  
+<% end %>
+<section class="videos">
+  <h2 class="novedades-title">Videos</h2>
+  <div class="novedades-item">
+    <div class="novedades-img-container">
+      <iframe src="https://www.youtube.com/embed/0obJrUjm-jw" frameborder="0" allowfullscreen="" class="novedades-video"></iframe>
+    </div>
+    <p class="novedades-item-copy">Nuevos depósitos a la venta para potenciar tu negocio.</p>
+  </div>
+</section>
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>
   <div class="compartir-redes">
