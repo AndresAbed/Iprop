@@ -93,6 +93,10 @@
   background-repeat: no-repeat;
   position: relative;
 }
+.photo-slider-propiedades {
+  overflow: hidden;
+  height: 300px;
+}
 .photo-slider-img {
   width: 100%;
 }
@@ -104,7 +108,14 @@
   left: 0;
   right: 0;
 }
+.photo-slider-slogan-propiedades {
+  top: 6em;
+}
 .photo-slider-slogan-title {
+  color: #fff;
+}
+.photo-slider-slogan-title-propiedades {
+  font-size: 3em;
   color: #fff;
 }
 .overlay-darken {
@@ -114,6 +125,17 @@
   z-index: 9;
   background-color: #000;
   opacity: 0.3;
+}
+.propiedades-buscador {
+  width: 90%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.propiedades-buscador-container {
+  position: relative;
+  padding: 1em 0;
 }
 .buscador {
   position: absolute;
@@ -125,6 +147,9 @@
   margin: 0 auto;
 }
 .buscador-select {
+  background-image: url("triangle.png");
+  background-repeat: no-repeat;
+  background-position: right;
   background-color: rgba(255,255,255,1);
   border: none;
   border-radius: 0px;
@@ -134,6 +159,9 @@
   color: #5f5f5f;
   min-width: 300px;
   outline: none;
+  cursor: pointer;
+  background-size: 25px;
+  border: 1.5px solid #7b7b7b;
 }
 .buscador-input {
   padding: 0.8em 1.8em 0.8em 0.5em;
@@ -141,6 +169,7 @@
   border: none;
   min-width: 430px;
   outline: none;
+  border: 1.5px solid #7b7b7b;
 }
 .buscador-button {
   position: relative;
@@ -291,6 +320,26 @@
   width: 378px;
   height: 261px;
   font-size: 0;
+  overflow: hidden;
+}
+.destacadas-video {
+  width: 378px;
+}
+.destacadas-video-play {
+  text-align: center;
+}
+.destacadas-video-play-img {
+  margin: 80px auto;
+}
+.destacadas-video-price {
+  color: #fff;
+  background: #4a90e2;
+  display: inline-block;
+  position: absolute;
+  right: 0em;
+  bottom: 1em;
+  padding: 0.1em 0.3em;
+  font-size: 1.2em;
 }
 .destacadas-price {
   color: #fff;
@@ -311,6 +360,15 @@
   left: 0.5em;
   padding: 0.3em;
   font-size: 0.9em;
+}
+.destacadas .destacadas-video-overlay {
+  top: 0;
+  height: 261px;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  cursor: pointer;
 }
 .novedades {
   margin-bottom: 2em;
@@ -545,42 +603,36 @@
   background-image: url("buenos-aires-aerea.jpg");
   background-size: cover;
   background-repeat: no background-repeat;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  justify-contect: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.tasaciones-title-container {
-  color: #fff;
-  margin: 0;
-  display: inline-block;
-  width: 60%;
-  padding: 2em;
+  text-align: center;
+  padding: 5em 0;
 }
 .tasaciones-title {
+  width: 60%;
+  color: #fff;
   text-align: center;
-  max-width: 450px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: 2.2em;
 }
 .tasaciones-form {
-  background: rgba(0,0,0,0.48);
-  width: 40%;
   padding: 1em 1.5em;
-  display: inline-block;
-  color: #fff;
   font-size: 0.8em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-right: 4em;
+  color: #6a6a6a;
+  text-align: center;
+  background: #f1f1f1;
 }
+.tasaciones-form-left,
+.tasaciones-form-right {
+  width: 42%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+.tasaciones-form-left {
+  margin: 2%;
+}  
 .tasaciones-form-input {
-  background: rgba(255,255,255,0.6);
+  background: #fff;
   display: block;
   border: none;
   border-radius: 4px;
@@ -592,7 +644,7 @@
 .tasaciones-form-button {
   background-color: #ff191f;
   border: none;
-  padding: 0.5em;
+  padding: 0.68em 0.5em;
   border-radius: 4px;
   text-transform: uppercase;
   font-weight: 700;
@@ -600,14 +652,18 @@
   width: 101%;
   margin-top: 1em;
   font-size: 1.3em;
+  color: #fff;
 }
+.tasaciones-form-textarea {
+  height: 14em;
+ }
 .tasaciones-form-group {
   display: inline-block;
   margin-bottom: 1.1em;
-  width: 48%;
+  width: 48.3%;
 }
 .tasaciones-form-group-input {
-  background: rgba(255,255,255,0.6);
+  background: #fff;
   display: block;
   border: none;
   border-radius: 4px;
@@ -1091,7 +1147,8 @@
   position: relative;
 }
 .ficha-header {
-  margin: 3em 6em 1.5em;
+  margin: 3em 6em 1em;
+  position: relative;
 }
 .ficha-header-state {
   background: #ff191f;
@@ -1107,6 +1164,30 @@
 }
 .ficha-header-direccion {
   margin-top: 0;
+}
+.ficha-header-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+}
+.ficha-tags {
+  margin-bottom: 1em;
+  margin-left: 6em;
+}
+.ficha-tags-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ficha-tags-item {
+  display: inline-block;
+  background: #d6d6d6;
+  padding: 0.3em 1em;
+  margin: 0 1em;
+  font-size: 0.8em;
+  font-weight: 400;
+  border-radius: 1px;
+  border-right: 2px solid #ff191f;
 }
 .ficha-slider-wrap {
   margin: 0 6em;
@@ -1209,10 +1290,25 @@
 .ficha-planos-img {
   width: 100%;
 }
+.ficha-mapa {
+  width: 50%;
+  font-size: 0;
+  display: inline-block;
+  vertical-align: bottom;
+}
 #map {
   width: 100%;
-  height: 350px;
+  height: 558px;
 }
+.ficha-contacto {
+  width: 50%;
+  display: inline-block;
+  margin-left: -5px;
+}
+.ficha-contacto-form {
+  background-color: #e6e6e6;
+  padding: 2em;
+ }
 .consulting-cover {
   background: url("img_consulting.jpg");
   background-repeat: no-repeat;
@@ -1720,6 +1816,7 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .ficha-header {
     margin: 3em 2em 1.5em;
+    position: relative;
   }
   .ficha-slider-wrap {
     margin: 0 2em;
@@ -1731,6 +1828,22 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .ficha-caracteristicas,
   .ficha-planos {
     padding: 0 2em;
+  }
+  .ficha-tags {
+    margin-left: 2em;
+  }
+  .ficha-tags-icon {
+    margin-bottom: 0.5em;
+  }
+}
+@media (max-width: 610px) {
+  .ficha-header-price {
+    position: static;
+    margin-top: -0.5em;
+    margin-bottom: 0;
+  }
+  .ficha-header {
+    margin-bottom: 0.5em;
   }
 }
 @media (max-width: 570px) {
@@ -1795,6 +1908,14 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     position: static;
     text-align: center;
     margin: 0.5em auto;
+  }
+  .ficha-mapa,
+  .ficha-contacto {
+    display: block;
+    width: 100%;
+  }
+  #map {
+    height: 300px;
   }
 }
 @media (max-width: 450px) {

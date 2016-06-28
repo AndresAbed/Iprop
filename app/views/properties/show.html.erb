@@ -6,6 +6,7 @@
     <meta property="og:title" content="<%= @property.title %>">
     <meta property="og:description" content="<%= @property.description[0,200] %>...">
     <meta property="og:image" content="<%= @property.pic_1.url %>" />
+    <meta property="og:title" content="ContWeb">
   <% end %>
 </head>
 <header class="header">
@@ -15,7 +16,7 @@
     <div class="header-responsive-logo"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></div>
     <div class="header-responsive-phone">
       <div class="icon-phone header-icon"> </div>
-      <div class="header-list-item-phone">11 5643 7885</div>
+      <div class="header-list-item-phone">11 4776 7176</div>
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
@@ -36,6 +37,14 @@
     <p class="ficha-header-state"><%= @property.state %></p>
     <h2 class="ficha-header-title"><%=@property.title%></h2>
     <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
+    <h2 class="ficha-header-price">$250.090</h2>
+  </div>
+  <div class="ficha-tags">
+    <div class="ficha-tags-icon"><img src="<%=image_path('tag.png')%>" class="ficha-tags-icon-img"></div>
+    <h3 class="ficha-tags-item">Tag Name</h3>
+    <h3 class="ficha-tags-item">Tag Name</h3>
+    <h3 class="ficha-tags-item">Tag Name</h3>
+    <h3 class="ficha-tags-item">Tag Name</h3>
   </div>
   <div class="ficha-slider-wrap">
     <div class="ficha-slider-controls">
@@ -129,6 +138,19 @@
    <div id="map" data-latitude="<%= @property.latitude %>" 
    data-longitude="<%= @property.longitude %>" 
    data-markerName="Mark"></div>
+</section>
+<section class="ficha-contacto">
+  <form class="ficha-contacto-form">
+    <label required class="contacto-form-label">Nombre: </label>
+    <input class="contacto-form-input"><br>
+    <label required class="contacto-form-label">E-mail:</label>
+    <input class="contacto-form-input"><br>
+    <label required class="contacto-form-label">Teléfono:</label>
+    <input class="contacto-form-input"><br>
+    <label class="contacto-form-label">Mensajes/Consultas  </label>
+    <textarea rows="4" cols="50" class="contacto-form-textarea"></textarea>
+    <button class="contacto-form-button">Enviar</button>
+  </form>
 </section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">
