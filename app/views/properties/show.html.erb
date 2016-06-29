@@ -37,14 +37,20 @@
     <p class="ficha-header-state"><%= @property.state %></p>
     <h2 class="ficha-header-title"><%=@property.title%></h2>
     <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
-    <h2 class="ficha-header-price">$250.090</h2>
+    <% if @property.price %>
+      <h2 class="ficha-header-price">$<%= @property.price %></h2>
+    <% else %>
+      <h2 class="ficha-header-price">Consultar</h2>
+    <% end %>    
   </div>
   <div class="ficha-tags">
     <div class="ficha-tags-icon"><img src="<%=image_path('tag.png')%>" class="ficha-tags-icon-img"></div>
-    <h3 class="ficha-tags-item">Tag Name</h3>
-    <h3 class="ficha-tags-item">Tag Name</h3>
-    <h3 class="ficha-tags-item">Tag Name</h3>
-    <h3 class="ficha-tags-item">Tag Name</h3>
+    <% @property.tags.each do |tag| %>
+      <%= form_tag properties_path, method: 'post', class: "ficha-tags-item" do %>
+        <%= text_field_tag :property_type, params[:property_type], value: "#{tag.name}", type: "hidden" %>
+        <%= button_tag "#{tag.name}", type: "submit", name: nil %>
+      <% end %>
+    <% end %>
   </div>
   <div class="ficha-slider-wrap">
     <div class="ficha-slider-controls">

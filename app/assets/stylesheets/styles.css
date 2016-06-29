@@ -1182,12 +1182,17 @@
 .ficha-tags-item {
   display: inline-block;
   background: #d6d6d6;
-  padding: 0.3em 1em;
   margin: 0 1em;
   font-size: 0.8em;
   font-weight: 400;
   border-radius: 1px;
   border-right: 2px solid #ff191f;
+}
+.ficha-tags-item button{
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 0.4em 1em;
 }
 .ficha-slider-wrap {
   margin: 0 6em;
