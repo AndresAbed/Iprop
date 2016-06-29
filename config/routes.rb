@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :properties, only: [:index, :show], path: '/propiedades'
   post '/propiedades', to: 'properties#index'
+  post '/propiedades/:id', to: 'properties#contact', as: :properties_contact
   resources :posts, only: [:show], path: '/novedades'
 
   #get  'appraisals/tasaciones', as: :appraisals_excel

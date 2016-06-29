@@ -140,23 +140,24 @@
     <span class="icon-google m-r-5"></span></a>
   </div>
 </section>
+<div class="contact_messages">
+</div>
 <section class="ficha-mapa">
    <div id="map" data-latitude="<%= @property.latitude %>" 
    data-longitude="<%= @property.longitude %>" 
    data-markerName="Mark"></div>
 </section>
 <section class="ficha-contacto">
-  <form class="ficha-contacto-form">
-    <label required class="contacto-form-label">Nombre: </label>
-    <input class="contacto-form-input"><br>
+  <%= form_for :contact_form, url: properties_contact_path, html: {class: "ficha-contacto-form"}, remote: true do |message| %>
+    <label required class="contacto-form-label">Nombre:</label>
+    <%= message.text_field :name, class: "contacto-form-input" %><br>
     <label required class="contacto-form-label">E-mail:</label>
-    <input class="contacto-form-input"><br>
+    <%= message.email_field :email, class: "contacto-form-input"%><br>
     <label required class="contacto-form-label">Teléfono:</label>
-    <input class="contacto-form-input"><br>
-    <label class="contacto-form-label">Mensajes/Consultas  </label>
-    <textarea rows="4" cols="50" class="contacto-form-textarea"></textarea>
-    <button class="contacto-form-button">Enviar</button>
-  </form>
+    <%= message.text_field :phone, class: "contacto-form-input"%><br>
+    <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
+    <%= message.submit 'Enviar', class: "contacto-form-button" %>
+  <% end %>
 </section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">

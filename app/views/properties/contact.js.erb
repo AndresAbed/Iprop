@@ -1,13 +1,13 @@
 <% if @flag %>
-  $(".contact_messages").html("<%= escape_javascript(render("/contact/success")) %>");
-  $(".contacto-form")[0].reset();
+  $(".contact_messages").html("<%= escape_javascript(render("success")) %>");
+  $(".ficha-contacto-form")[0].reset();
   $(document).ready(function() {
     setTimeout(function() {
       $(".contact_messages .alert").slideUp();
     }, 5000);
   });
 <% else %>
-  $(".contact_messages").html("<%= escape_javascript(render("/contact/error")) %>");
+  $(".contact_messages").html("<%= escape_javascript(render("error")) %>");
   $(document).ready(function() {
     setTimeout(function() {
       $(".contact_messages .alert").slideUp();
