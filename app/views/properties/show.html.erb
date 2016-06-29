@@ -37,14 +37,20 @@
     <p class="ficha-header-state"><%= @property.state %></p>
     <h2 class="ficha-header-title"><%=@property.title%></h2>
     <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
-    <h2 class="ficha-header-price">$250.090</h2>
+    <% if @property.price %>
+      <h2 class="ficha-header-price">$<%= @property.price %></h2>
+    <% else %>
+      <h2 class="ficha-header-price">Consultar</h2>
+    <% end %>    
   </div>
   <div class="ficha-tags">
     <div class="ficha-tags-icon"><img src="<%=image_path('tag.png')%>" class="ficha-tags-icon-img"></div>
-    <h3 class="ficha-tags-item">Tag Name</h3>
-    <h3 class="ficha-tags-item">Tag Name</h3>
-    <h3 class="ficha-tags-item">Tag Name</h3>
-    <h3 class="ficha-tags-item">Tag Name</h3>
+    <% @property.tags.each do |tag| %>
+      <%= form_tag properties_path, method: 'post', class: "ficha-tags-item" do %>
+        <%= text_field_tag :property_type, params[:property_type], value: "#{tag.name}", type: "hidden" %>
+        <%= button_tag "#{tag.name}", type: "submit", name: nil %>
+      <% end %>
+    <% end %>
   </div>
   <div class="ficha-slider-wrap">
     <div class="ficha-slider-controls">
@@ -134,23 +140,24 @@
     <span class="icon-google m-r-5"></span></a>
   </div>
 </section>
+<div class="contact_messages">
+</div>
 <section class="ficha-mapa">
    <div id="map" data-latitude="<%= @property.latitude %>" 
    data-longitude="<%= @property.longitude %>" 
    data-markerName="Mark"></div>
 </section>
 <section class="ficha-contacto">
-  <form class="ficha-contacto-form">
-    <label required class="contacto-form-label">Nombre: </label>
-    <input class="contacto-form-input"><br>
+  <%= form_for :contact_form, url: properties_contact_path, html: {class: "ficha-contacto-form"}, remote: true do |message| %>
+    <label required class="contacto-form-label">Nombre:</label>
+    <%= message.text_field :name, class: "contacto-form-input" %><br>
     <label required class="contacto-form-label">E-mail:</label>
-    <input class="contacto-form-input"><br>
+    <%= message.email_field :email, class: "contacto-form-input"%><br>
     <label required class="contacto-form-label">Teléfono:</label>
-    <input class="contacto-form-input"><br>
-    <label class="contacto-form-label">Mensajes/Consultas  </label>
-    <textarea rows="4" cols="50" class="contacto-form-textarea"></textarea>
-    <button class="contacto-form-button">Enviar</button>
-  </form>
+    <%= message.text_field :phone, class: "contacto-form-input"%><br>
+    <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
+    <%= message.submit 'Enviar', class: "contacto-form-button" %>
+  <% end %>
 </section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">

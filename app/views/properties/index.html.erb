@@ -45,7 +45,7 @@
   </div>
 </section>
 <section class="propiedades-buscador-container">
-  <%= form_tag properties_path, method: 'get', class: "propiedades-buscador", remote: true do %>
+  <%= form_tag properties_path, method: 'post', class: "propiedades-buscador", remote: true do %>
     <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select", prompt: "Tipo de operación" %>
     <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
     <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
