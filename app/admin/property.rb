@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
-  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, tag_ids: [],
+  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, :video, tag_ids: [],
   features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :name]
   menu label: "Propiedades"
 
@@ -67,6 +67,7 @@ ActiveAdmin.register Property do
       row :pic_7_file_name
       row :pic_8_file_name
       row :state
+      row :video
       row "Tipo de propiedad" do |property|
         (property.tags.map{ |p| p.name }).join(' - ').html_safe
       end
@@ -95,6 +96,7 @@ ActiveAdmin.register Property do
       f.input :size
       f.input :description
       f.input :price
+      f.input :video
       f.input :highlight, as: :boolean
       f.input :flat
       f.input :pic_1

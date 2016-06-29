@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-    @featured_properties = Property.where("highlight = ?", true)
+    @featured_properties = Property.where("highlight = ?", true).order("created_at DESC")
     @posts = Post.all
     @videos = Video.all
   end
