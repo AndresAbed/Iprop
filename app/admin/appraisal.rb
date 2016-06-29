@@ -1,4 +1,4 @@
-ActiveAdmin.register Appraisal do
+=begin ActiveAdmin.register Appraisal do
 permit_params :neighborhood, :min_price, :max_price
 menu label: "Tasaciones"
 
@@ -58,5 +58,5 @@ form do |f|
   end
   f.actions
 end
-
 end
+=end

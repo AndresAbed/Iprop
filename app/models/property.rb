@@ -27,7 +27,7 @@ class Property < ActiveRecord::Base
       properties = properties.where('state ilike ?', "%#{state}%")
     end
     if property_type.present?
-    properties = properties.joins(:tags).where('tag_name ilike ?', "%#{property_type}%")
+    properties = properties.joins(:tags).where('name ilike ?', "%#{property_type}%")
     end
     return properties
   end
