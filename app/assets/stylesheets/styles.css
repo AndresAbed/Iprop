@@ -2000,3 +2000,5 @@ input#show-menu[type=checkbox]:checked ~ #menu {
 :-ms-input-placeholder {
   color: #5f5f5f;
 }
+
+.pac-logo:after { content: none !important;}
