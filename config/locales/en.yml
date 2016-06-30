@@ -117,7 +117,7 @@ en:
         bathrooms: "Baños"
         size: "Tamaño m2"
         description: "Descripción"
-        price: "Precio (ARS)"
+        price: "Precio (USD)"
         created_at: "Fecha de creación"
         highlight: "Propiedad destacada"
         flat: "Planos"

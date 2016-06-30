@@ -99,7 +99,7 @@ ActiveAdmin.register Property do
       f.input :size
       f.input :description
       f.input :price
-      f.input :video
+      f.input :video, label: 'Video Url', input_html: {placeholder: "Ejemplo: https://www.youtube.com/embed/0obJrUjm-jw"}
       f.input :highlight, as: :boolean
       f.input :flat
       f.input :pic_1
