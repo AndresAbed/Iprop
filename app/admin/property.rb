@@ -5,6 +5,8 @@ ActiveAdmin.register Property do
   tag_ids: [], features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :name]
   menu label: "Propiedades"
 
+  config.per_page = 50
+
   controller do
     def find_resource
       scoped_collection.friendly.find(params[:id])

@@ -571,30 +571,35 @@
   list-style: none;
   padding: 0;
 }
-.pager-list > .prev,
-.pager-list > .next{
+.pagination > .first,
+.pagination > .last{
+  display: none;
+}
+.pagination > .prev,
+.pagination > .next{
   display: inline-block;
   border: 1px solid #4a90e2;
   color: #4a90e2;
 }
-.pager-list > .prev > a,
-.pager-list > .next > a{
+.pagination > .first > a,
+.pagination > .prev > a,
+.pagination > .next > a,
+.pagination > .last > a{
   display: block;
   padding: 0.5em 1em;
   color: #4a90e2;
 }
-.pager-list-item {
+.page {
   display: inline-block;
   border: 1px solid #4a90e2;
   color: #4a90e2;
 }
-.pager-list-item > .current{
-  display: block;
+.pagination .current{
   padding: 0.5em 1em;
   color: #fff;
   background-color: #4a90e2;
 }
-.pager-list-item > .page > a{
+.pagination > .page > a{
   display: block;
   padding: 0.5em 1em;
   color: #4a90e2;
