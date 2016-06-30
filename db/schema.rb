@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628225533) do
+ActiveRecord::Schema.define(version: 20160630152532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 20160628225533) do
     t.integer  "size"
     t.text     "description"
     t.integer  "price"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.boolean  "highlight"
     t.string   "pic_1_file_name"
     t.string   "pic_1_content_type"
@@ -118,6 +118,14 @@ ActiveRecord::Schema.define(version: 20160628225533) do
     t.string   "slug"
     t.string   "state"
     t.string   "video"
+    t.string   "pic_9_file_name"
+    t.string   "pic_9_content_type"
+    t.integer  "pic_9_file_size"
+    t.datetime "pic_9_updated_at"
+    t.string   "pic_10_file_name"
+    t.string   "pic_10_content_type"
+    t.integer  "pic_10_file_size"
+    t.datetime "pic_10_updated_at"
   end
 
   add_index "properties", ["slug"], name: "index_properties_on_slug", using: :btree

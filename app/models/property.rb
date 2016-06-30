@@ -56,6 +56,12 @@ class Property < ActiveRecord::Base
   has_attached_file :pic_8, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_8, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
+  has_attached_file :pic_9, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_9, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_10, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_10, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
   has_attached_file :flat, storage: :s3, bucket: ENV['bucket']
   validates_attachment :flat, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 end
