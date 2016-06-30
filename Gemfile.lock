@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 0ac35b7ff05246c3bc143c74fab38c4fdc0e875b
+  revision: 23be8c68d855d46d2c225ad2ab95956042ceabfc
   specs:
-    activeadmin (1.0.0.pre2)
+    activeadmin (1.0.0.pre3)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails
@@ -16,6 +16,15 @@ GIT
       ransack (~> 1.3)
       sass-rails
       sprockets (< 4)
+
+GIT
+  remote: git://github.com/boontdustie/active_admin_editor.git
+  revision: efc7df212173cbac65dc95ed50e6f5917ae049c0
+  specs:
+    active_admin_editor (1.1.0)
+      activeadmin (>= 0.4.0)
+      ejs
+      rails (>= 3.0.0)
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
@@ -113,6 +122,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.7.0)
@@ -288,6 +298,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_editor!
   activeadmin!
   aws-sdk (~> 2)
   capybara

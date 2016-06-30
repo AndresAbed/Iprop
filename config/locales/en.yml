@@ -88,7 +88,8 @@ en:
         subtitle: "Subtítulo"
         body: "Cuerpo"
         created_at: "Fecha de creación"
-        image: "Imagen"
+        image: "Imagen de portada"
+        shown: "Mostrar artículo"
       admin:
         name: "Nombre"
         last_name: "Apellido"
@@ -117,7 +118,7 @@ en:
         bathrooms: "Baños"
         size: "Tamaño m2"
         description: "Descripción"
-        price: "Precio (ARS)"
+        price: "Precio (USD)"
         created_at: "Fecha de creación"
         highlight: "Propiedad destacada"
         flat: "Planos"

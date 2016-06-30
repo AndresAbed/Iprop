@@ -39,8 +39,8 @@
       <h4 class="novedades-inside-header-subtitle"><%= @post.subtitle %></h4>
       <p class="novedades-inside-date"> <span class="icon-clock"> </span><%= l @post.created_at, format: "%B %d - %Y, %H:%M" %></p>
     </header>
-    <div class="novedades-inside-img-container"><img src="<%= image_path('article1-inside.png') %>" class="novedades-inside-img"></div>
-    <p class="novedades-inside-copy"><%= @post.body %></p>
+    <div class="novedades-inside-img-container"><img src="<%= @post.image.url %>" class="novedades-inside-img"></div>
+    <p class="novedades-inside-copy"><%= raw(@post.body) %></p>
   </article>  
   <aside class="novedades-aside">
     <h3 class="novedades-aside-title">Más novedades</h3>

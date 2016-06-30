@@ -1,33 +1,33 @@
 ActiveAdmin.register_page "Dashboard" do
 
-  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
+  menu priority: 1, label: 'Home preview'
 
-  content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
-    end
-
-    # Here is an example of a simple dashboard with columns and panels.
-    #
+  content title: 'Home preview' do
     columns do
       column do
-        panel "Admins" do
-          ul do
-            Admin.all.map do |admin|
-              li admin.name
-            end
+        panel "Propiedades destacadas" do
+          table_for Property.where('highlight = true').limit(20).each do |property|
+            column("Título", :title) {|property| link_to(property.title, admin_property_path(property)) }
+            column  "Dirección", :address
+            column "Tipo de operación", :state
           end
         end
       end
-
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel "Videos" do
+          table_for Video.where('url != ?', "").each do |video|
+            column :url
+            column "Descripción", :description
+          end
+        end
+        panel "Novedades activas" do
+          table_for Post.where('shown = true').limit(10).each do |post|
+            column("Título", :title) {|post| link_to(post.title, admin_post_path(post)) }
+            column  "Subtítulo", :subtitle
+            column "Fecha de creación", :created_at
+          end
         end
       end
     end
-  end # content
+  end
 end
