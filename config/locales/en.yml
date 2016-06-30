@@ -89,6 +89,7 @@ en:
         body: "Cuerpo"
         created_at: "Fecha de creación"
         image: "Imagen"
+        shown: "Mostrar artículo"
       admin:
         name: "Nombre"
         last_name: "Apellido"

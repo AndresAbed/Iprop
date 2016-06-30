@@ -22,5 +22,16 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end
+    columns do
+      column do
+        panel "Novedades activas" do
+          table_for Post.where('shown = true').limit(10).each do |post|
+            column("Título", :title) {|post| link_to(post.title, admin_post_path(post)) }
+            column  "Subtítulo", :subtitle
+            column "Fecha de creación", :created_at
+          end
+        end
+      end
+    end
   end
 end

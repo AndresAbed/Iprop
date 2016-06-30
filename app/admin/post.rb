@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  permit_params :title, :subtitle, :body, :image
+  permit_params :title, :subtitle, :body, :image, :shown
   menu label: "Novedades"
 
   controller do
@@ -27,7 +27,7 @@ ActiveAdmin.register Post do
     selectable_column
     column :title
     column :subtitle
-    column :body
+    column :shown
     column :created_at
     actions
   end
@@ -41,6 +41,7 @@ ActiveAdmin.register Post do
       row :title
       row :subtitle
       row :body
+      row :shown
       row :created_at
       row :image_file_name
     end
@@ -56,6 +57,7 @@ ActiveAdmin.register Post do
       f.input :subtitle
       f.input :body
       f.input :image
+      f.input :shown
     end
     f.actions
   end

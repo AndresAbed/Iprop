@@ -16,7 +16,7 @@ class Property < ActiveRecord::Base
   after_validation :geocode, :if => :address_changed?
 
   validates :title, :address, :size, :description, :pic_1, :state, presence: {message: "Requerido"}
-  validates :title, uniqueness: {message: "Ya existe una propiedad con este nombre"}
+  validates :title, uniqueness: {message: "Ya existe una propiedad con este título"}
 
   def self.search(address, property_type, state)
     properties = Property.all
