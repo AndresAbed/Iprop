@@ -23,6 +23,7 @@ gem 'friendly_id'
 gem 'kaminari'
 gem "figaro"
 gem "passenger"
+gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

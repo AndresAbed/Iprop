@@ -88,7 +88,7 @@ en:
         subtitle: "Subtítulo"
         body: "Cuerpo"
         created_at: "Fecha de creación"
-        image: "Imagen"
+        image: "Imagen de portada"
         shown: "Mostrar artículo"
       admin:
         name: "Nombre"

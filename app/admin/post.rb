@@ -40,7 +40,7 @@ ActiveAdmin.register Post do
     attributes_table do
       row :title
       row :subtitle
-      row :body
+      row (:body) { |html| raw(html.body) }
       row :shown
       row :created_at
       row :image_file_name
@@ -55,7 +55,7 @@ ActiveAdmin.register Post do
     f.inputs "Detalles del artículo" do
       f.input :title
       f.input :subtitle
-      f.input :body
+      f.input :body, as: :html_editor
       f.input :image
       f.input :shown
     end

@@ -18,6 +18,15 @@ GIT
       sprockets (< 4)
 
 GIT
+  remote: git://github.com/boontdustie/active_admin_editor.git
+  revision: efc7df212173cbac65dc95ed50e6f5917ae049c0
+  specs:
+    active_admin_editor (1.1.0)
+      activeadmin (>= 0.4.0)
+      ejs
+      rails (>= 3.0.0)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 431d1e8bfcf2c9a49bf3a4db2725684fc377d7e8
   specs:
@@ -113,6 +122,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.7.0)
@@ -288,6 +298,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_editor!
   activeadmin!
   aws-sdk (~> 2)
   capybara
