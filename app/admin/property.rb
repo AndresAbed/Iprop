@@ -1,7 +1,8 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
-  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, :pic_8, :state, :video, tag_ids: [],
-  features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :name]
+  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
+  :pic_8, :pic_9, :pic_10, :state, :video, 
+  tag_ids: [], features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :name]
   menu label: "Propiedades"
 
   controller do
@@ -66,6 +67,8 @@ ActiveAdmin.register Property do
       row :pic_6_file_name
       row :pic_7_file_name
       row :pic_8_file_name
+      row :pic_9_file_name
+      row :pic_10_file_name
       row :state
       row :video
       row "Tipo de propiedad" do |property|
@@ -107,6 +110,8 @@ ActiveAdmin.register Property do
       f.input :pic_6
       f.input :pic_7
       f.input :pic_8
+      f.input :pic_9
+      f.input :pic_10
       f.input :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
       f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.name}", u.id]}
     end
