@@ -1,9 +1,21 @@
 <% @properties.each do |property| %>
   <div class="destacadas-item">
     <% if property.video.present? %>
-      <div class="destacadas-img-container">
-        <iframe src="https://www.youtube.com/embed/AAt2o__gazE" frameborder="0" allowfullscreen class="destacadas-video"></iframe>
+      <div class="video-overlay">
+        <div class="destacadas-video-overlay">
+          <div class="destacadas-video-play"><img src="<%= image_path('play.png')%>" class="destacadas-video-play-img"></div>
+          <% if property.price.present? %>
+            <div class="destacadas-video-price">$<%= property.price %></div>
+          <% else %>
+            <div class="destacadas-video-price">Consultar</div>  
+          <% end%> 
+          <div class="destacadas-state"><%= property.state %></div>
+        </div>
+        <div class="destacadas-video-container">
+          <iframe src="<%= property.video %>" frameborder="0" allowfullscreen class="destacadas-video"></iframe>
+        </div>
       </div>
+      <div class="destacadas-img-container"></div>
     <% else %>
       <div class="destacadas-img-container">
         <img src="<%= property.pic_1.url %>" class="destacadas-img">

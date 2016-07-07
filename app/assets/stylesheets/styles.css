@@ -331,6 +331,18 @@
 .destacadas-video-play-img {
   margin: 80px auto;
 }
+.destacadas-video-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 378px;
+  height: 261px;
+  font-size: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
 .destacadas-video-price {
   color: #fff;
   background: #4a90e2;
@@ -361,7 +373,7 @@
   padding: 0.3em;
   font-size: 0.9em;
 }
-.destacadas .destacadas-video-overlay {
+.destacadas-video-overlay {
   top: 0;
   height: 261px;
   right: 0;
@@ -369,6 +381,7 @@
   background: rgba(0,0,0,0.5);
   position: absolute;
   cursor: pointer;
+  z-index: 10;
 }
 .novedades {
   margin-bottom: 2em;
