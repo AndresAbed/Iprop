@@ -51,3 +51,8 @@
 .m-r-1 {
   margin-right: 1em;
 }
+
+.flat{
+  page-break-before:always;
+  margin-bottom: 30px;
+}
