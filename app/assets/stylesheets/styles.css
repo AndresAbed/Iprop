@@ -331,18 +331,6 @@
 .destacadas-video-play-img {
   margin: 80px auto;
 }
-.destacadas-video-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 378px;
-  height: 261px;
-  font-size: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-}
 .destacadas-video-price {
   color: #fff;
   background: #4a90e2;
@@ -373,7 +361,7 @@
   padding: 0.3em;
   font-size: 0.9em;
 }
-.destacadas-video-overlay {
+.destacadas .destacadas-video-overlay {
   top: 0;
   height: 261px;
   right: 0;
@@ -381,7 +369,6 @@
   background: rgba(0,0,0,0.5);
   position: absolute;
   cursor: pointer;
-  z-index: 10;
 }
 .novedades {
   margin-bottom: 2em;
@@ -1212,14 +1199,19 @@
   outline: none;
   padding: 0.4em 1em;
 }
+.ficha-slider {
+  background: #000;
+}
 .ficha-slider-wrap {
   margin: 0 6em;
   position: relative;
+  max-height: 500px;
+  overflow: hidden;
 }
 .ficha-slider-controls {
   position: absolute;
   z-index: 10;
-  margin-top: 20%;
+  line-height: 550px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1227,8 +1219,8 @@
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .ficha-slider-controls-prev {
   margin-left: 1em;
@@ -1237,6 +1229,12 @@
 .ficha-slider-controls-next {
   margin-right: 1em;
   cursor: pointer;
+}
+.ficha-slider-img {
+  width: auto;
+  max-height: 100%;
+  margin: 0 auto;
+  right: 0;
 }
 .ficha-acciones {
   position: absolute;
@@ -1309,6 +1307,7 @@
 .ficha-planos-img-container {
   margin-top: 1em;
   margin-bottom: 2em;
+  width: 45%;
 }
 .ficha-planos-img {
   width: 100%;
@@ -1330,7 +1329,7 @@
 }
 .ficha-contacto-form {
   background-color: #e6e6e6;
-  padding: 1em;
+  padding: 1em 3em;
  }
 .consulting-cover {
   background: url("img_consulting.jpg");

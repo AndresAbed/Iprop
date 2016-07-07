@@ -61,34 +61,34 @@
     </div>
     <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow ficha-slider">
       <% if @property.pic_1.file? %>
-        <img src="<%= @property.pic_1.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_1.url %>" class="ficha-slider-img">
       <% end %>  
       <% if @property.pic_2.file? %>
-        <img src="<%= @property.pic_2.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_2.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_3.file? %>
-        <img src="<%= @property.pic_3.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_3.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_4.file? %>
-        <img src="<%= @property.pic_4.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_4.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_5.file? %>
-        <img src="<%= @property.pic_5.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_5.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_6.file? %>
-        <img src="<%= @property.pic_6.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_6.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_7.file? %>
-        <img src="<%= @property.pic_7.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_7.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_8.file? %>
-        <img src="<%= @property.pic_8.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_8.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_9.file? %>
-        <img src="<%= @property.pic_9.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_9.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_10.file? %>
-        <img src="<%= @property.pic_10.url %>" class="photo-slider-img">
+        <img src="<%= @property.pic_10.url %>" class="ficha-slider-img">
       <% end %>
     </div>
   </div>
@@ -200,8 +200,10 @@
   $(document).ready(function(){
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {
-        maxZoom: 17, 
-        minZoom: 13
+        draggable: false,
+        zoomControl: false,
+        scrollwheel: false,
+        disableDoubleClickZoom: true
       }, 
     internal: {id: "map"}}, function(){
       markers = handler.addMarkers([
@@ -212,7 +214,7 @@
       ]);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(15);
+      handler.getMap().setZoom(16);
     });
   })
 </script>
