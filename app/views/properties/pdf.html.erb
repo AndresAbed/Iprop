@@ -33,9 +33,9 @@
       <% end %>
     </ul>
   <% end %>  
+  <p class="pdf-link"><span class="bold">Publicación: </span><%= request.url.split('.pdf')[0] %></p>
   <% if @property.flat.present? %>
     <h2 class="pdf-subtitle flat">Planos:</h2>
     <%= wicked_pdf_image_tag (@property.flat.url), class: "pdf-image" %>
   <% end %>
-  <p class="pdf-link"><span class="bold">Publicación:</span><%= request.url.split('.pdf')[0] %></p>
 </div>
