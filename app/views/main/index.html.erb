@@ -76,7 +76,7 @@
             <div class="destacadas-video-overlay">
               <div class="destacadas-video-play"><img src="<%= image_path('play.png')%>" class="destacadas-video-play-img"></div>
               <% if property.price.present? %>
-                <div class="destacadas-video-price">$<%= property.price %></div>
+                <div class="destacadas-video-price">USD$<%= property.price %></div>
               <% else %>
                 <div class="destacadas-video-price">Consultar</div>  
               <% end%> 
@@ -92,7 +92,7 @@
             <img src="<%= property.pic_1.url %>" class="destacadas-img">
           </div>
           <% if property.price.present? %>
-            <div class="destacadas-price">$<%= property.price %></div>
+            <div class="destacadas-price">USD$<%= property.price %></div>
           <% else %>
             <div class="destacadas-price">Consultar</div>  
           <% end%>  
