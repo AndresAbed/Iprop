@@ -38,7 +38,7 @@
     <h2 class="ficha-header-title"><%=@property.title%></h2>
     <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
     <% if @property.price %>
-      <h2 class="ficha-header-price">$<%= @property.price %></h2>
+      <h2 class="ficha-header-price">USD$<%= @property.price %></h2>
     <% else %>
       <h2 class="ficha-header-price">Consultar</h2>
     <% end %>    

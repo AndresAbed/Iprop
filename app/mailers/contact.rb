@@ -3,16 +3,16 @@ class Contact < ApplicationMailer
 
   def appraisal_contact(message)
     @message = message
-    mail(to: 'test@iproponline.com.ar', subject: "Tasación")
+    mail(to: 'andres@macrolab.co', subject: "Tasación")
   end
 
   def contact_message(message)
     @message = message
-    mail(to: 'test@iproponline.com.ar', subject: "Contacto Iproponline")
+    mail(to: 'andres@macrolab.co', subject: "Contacto Iproponline")
   end
 
   def properties_contact(message)
     @message = message
-    mail(to: 'test@iproponline.com.ar', subject: "Contacto Iproponline")
+    mail(to: 'andres@macrolab.co', subject: "Contacto Iproponline")
   end
 end
