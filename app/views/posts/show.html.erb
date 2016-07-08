@@ -4,7 +4,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Iprop Online" />
     <meta property="og:title" content="<%= @post.title %>">
-    <meta property="og:description" content="<%= @post.body[0,200] %>...">
+    <meta property="og:description" content="<%= strip_tags(@post.body[0,200]) %>...">
     <meta property="og:image" content="<%= @post.image.url %>" />
   <% end %>
 </head>
