@@ -1776,7 +1776,6 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .novedades-img-container {
     width: 350px;
-    height: auto;
   }
   .novedades-video {
     height: 322.95px;
