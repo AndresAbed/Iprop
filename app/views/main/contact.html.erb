@@ -35,7 +35,7 @@
     <label required class="contacto-form-label">Teléfono:</label>
     <%= message.text_field :phone, class: "contacto-form-input"%><br>
     <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
-    <%= message.submit 'Enviar', class: "contacto-form-button" %>
+    <%= button_tag 'Enviar', class: "contacto-form-button", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
   <% end %>
 </section>
 <footer class="footer">

@@ -58,7 +58,8 @@
     <div class="tasaciones-form-left">  
       <label class="tasaciones-form-label">Comentarios adicionales:</label>
       <%= message.text_area :comments, class: "tasaciones-form-input tasaciones-form-textarea", rows: "6"%>
-      <%= message.submit '¡Tasar ya!', class: "tasaciones-form-button" %>
+      <%= button_tag '¡Tasar ya!', class: "tasaciones-form-button", 
+      data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
     </div>  
   <% end %>
   </section>
