@@ -367,11 +367,12 @@
 .destacadas-video-play-img {
   margin: 80px auto;
 }
-.destacadas .destacadas-video-container {
+.destacadas-video-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 378px;
   height: 261px;
   font-size: 0;
   overflow: hidden;
@@ -384,7 +385,7 @@
   display: inline-block;
   position: absolute;
   right: 0em;
-  bottom: 1em;
+  bottom: .5em;
   padding: 0.1em 0.3em;
   font-size: 1.2em;
 }
@@ -483,8 +484,6 @@
 }
 .novedades-img {
   width: 100%;
-  height: 100%;
-  background-size: cover;
 }
 .novedades-img-container {
   width: 280px;
@@ -705,10 +704,13 @@
   text-transform: uppercase;
   font-weight: 700;
   display: block;
-  width: 101%;
+  width: 100%;
   margin-top: 1em;
   font-size: 1.3em;
   color: #fff;
+}
+.tasaciones-form-button > i{
+  font-size: 15pt;
 }
 .tasaciones-form-textarea {
   height: 14em;
@@ -1363,24 +1365,39 @@
 .ficha-planos-img {
   width: 100%;
 }
+.ficha-mapas {
+  width: 100%;
+  position: relative;
+  height: 513px;
+}
 .ficha-mapa {
   width: 50%;
   font-size: 0;
   display: inline-block;
   vertical-align: bottom;
+  position: absolute;
 }
+.ficha-mapa-01 {
+  left: 0;
+ }
+.ficha-mapa-02 {
+  right: 0;
+}
+#street-view,
 #map {
   width: 100%;
   height: 513px;
 }
 .ficha-contacto {
-  width: 50%;
+  width: 100%;
   display: inline-block;
   margin-left: -5px;
+  background-color: #e6e6e6;
 }
 .ficha-contacto-form {
-  background-color: #e6e6e6;
-  padding: 1em 3em;
+  padding: 3em 3em;
+  width: 60%;
+  margin: 0 auto;
  }
 .consulting-cover {
   background: url("img_consulting.jpg");
@@ -1502,6 +1519,9 @@
 }
 .contacto-form-button:hover {
   background-color: #bb181c;
+}
+.contacto-form-button > i{
+  font-size: 15pt;
 }
 .novedades {
   text-align: center;
@@ -1776,6 +1796,7 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .novedades-img-container {
     width: 350px;
+    height: auto;
   }
   .novedades-video {
     height: 322.95px;

@@ -36,3 +36,12 @@
     <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $( ".video-overlay" ).click(function() {
+      $(this).find("iframe")[0].src += "&autoplay=1";
+      $(this).children(":first").fadeOut(800);
+    });
+  })
+</script>

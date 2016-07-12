@@ -146,14 +146,21 @@
     <span class="icon-google m-r-5"></span></a>
   </div>
 </section>
-<div class="contact_messages">
-</div>
-<section class="ficha-mapa">
-   <div id="map" data-latitude="<%= @property.latitude %>" 
-   data-longitude="<%= @property.longitude %>" 
-   data-markerName="Mark"></div>
+<section class="ficha-mapas">
+  <div class="ficha-mapa ficha-mapa-01">
+    <div id="map" data-latitude="<%= @property.latitude %>" 
+    data-longitude="<%= @property.longitude %>" 
+    data-markerName="Mark"></div>
+  </div>
+  <div class="ficha-mapa ficha-mapa-02">
+    <div id="street-view" data-latitude="<%= @property.latitude %>" 
+    data-longitude="<%= @property.longitude %>" 
+    data-markerName="Mark"></div>
+  </div>
 </section>
 <section class="ficha-contacto">
+  <div class="contact_messages">
+  </div>
   <%= form_for :contact_form, url: properties_contact_path, html: {class: "ficha-contacto-form"}, remote: true do |message| %>
     <label required class="contacto-form-label">Nombre:</label>
     <%= message.text_field :name, class: "contacto-form-input" %><br>
@@ -162,7 +169,7 @@
     <label required class="contacto-form-label">Teléfono:</label>
     <%= message.text_field :phone, class: "contacto-form-input"%><br>
     <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
-    <%= message.submit 'Enviar', class: "contacto-form-button" %>
+    <%= button_tag 'Enviar', class: "contacto-form-button", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
   <% end %>
 </section>
 <footer class="footer">
@@ -203,18 +210,26 @@
         draggable: false,
         zoomControl: false,
         scrollwheel: false,
-        disableDoubleClickZoom: true
+        disableDoubleClickZoom: true,
+        disableDefaultUI: true
       }, 
     internal: {id: "map"}}, function(){
       markers = handler.addMarkers([
         {
-          "lat": $("#map").data('latitude'),
-          "lng": $("#map").data('longitude'),
+          lat: $("#map").data('latitude'),
+          lng: $("#map").data('longitude')
         }
       ]);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       handler.getMap().setZoom(16);
     });
+    var panorama = new google.maps.StreetViewPanorama(
+    document.getElementById('street-view'),
+      {
+        position: {lat: $("#street-view").data('latitude'), lng: $("#street-view").data('longitude')},
+        pov: {heading: 200, pitch: 0},
+        zoom: 1
+      });
   })
 </script>
