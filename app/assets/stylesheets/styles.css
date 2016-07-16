@@ -127,7 +127,7 @@
   height: 100%;
   position: absolute;
   z-index: 9;
-  background-color: #000;
+  background-color: #4b4b4b;
   opacity: 0.3;
 }
 .propiedades-buscador {
@@ -1314,7 +1314,7 @@
 }
 .ficha-descripcion-title {
   font-size: 1.6em;
-  color: #9b9b9b;
+  color: #5e5c5c;
   text-transform: uppercase;
   margin: 1em 0 0;
 }
@@ -1323,8 +1323,8 @@
   color: #5e5c5c;
 }
 .ficha-descripcion-copy {
-  color: #9e9e9e;
-  border-left: 1px solid #9e9e9e;
+  color: #5e5c5c;
+  border-left: 1px solid #5e5c5c;
   margin-left: 4em;
   padding-left: 2em;
   padding-right: 4em;
@@ -1334,15 +1334,15 @@
 }
 .ficha-caracteristicas-title {
   font-size: 1.6em;
-  color: #9b9b9b;
+  color: #5e5c5c;
   text-transform: uppercase;
   margin: 1em 0 0;
 }
 .ficha-caracteristicas-lists {
-  border-left: 1px solid #9e9e9e;
+  border-left: 1px solid #5e5c5c;
   margin-left: 4em;
   padding-left: 2em;
-  color: #9e9e9e;
+  color: #5e5c5c;
   margin-top: 1em;
 }
 .caracteristicas-list {
@@ -1355,7 +1355,7 @@
 }
 .ficha-planos-title {
   font-size: 1.6em;
-  color: #9b9b9b;
+  color: #5e5c5c;
   text-transform: uppercase;
   margin: 1em 0 0;
 }
@@ -1367,39 +1367,44 @@
 .ficha-planos-img {
   width: 100%;
 }
-.ficha-mapas {
-  width: 100%;
-  position: relative;
-  height: 513px;
-}
 .ficha-mapa {
-  width: 50%;
+  width: 70%;
+  display: inline-block;
+  margin-left: -5px;
+  box-sizing: border-box;
+}
+.ficha-street {
   font-size: 0;
   display: inline-block;
   vertical-align: bottom;
-  position: absolute;
+  width: 100%;
 }
-.ficha-mapa-01 {
-  left: 0;
- }
-.ficha-mapa-02 {
-  right: 0;
+#street-view {
+  height: 300px;
+  width: 100%;
 }
 #street-view,
 #map {
   width: 100%;
-  height: 513px;
+  height: 480px;
 }
 .ficha-contacto {
   width: 100%;
-  display: inline-block;
-  margin-left: -5px;
-  background-color: #e6e6e6;
+  box-sizing: border-box;
+}
+.ficha-contacto-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 480px;
 }
 .ficha-contacto-form {
-  padding: 3em 3em;
-  width: 60%;
-  margin: 0 auto;
+  padding: 2em 3em;
+  width: 30%;
+  background-color: #e6e6e6;
+  display: inline-block;
+  font-size: 0.8em;
  }
 .consulting-cover {
   background: url("img_consulting.jpg");
