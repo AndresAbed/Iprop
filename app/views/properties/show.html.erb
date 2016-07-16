@@ -146,31 +146,31 @@
     <span class="icon-google m-r-5"></span></a>
   </div>
 </section>
-<section class="ficha-mapas">
-  <div class="ficha-mapa ficha-mapa-01">
-    <div id="map" data-latitude="<%= @property.latitude %>" 
-    data-longitude="<%= @property.longitude %>" 
-    data-markerName="Mark"></div>
+<section class="ficha-contacto">
+  <div class="contact_messages">
+    </div>
+  <div class="ficha-contacto-wrap">
+    <%= form_for :contact_form, url: properties_contact_path, html: {class: "ficha-contacto-form"}, remote: true do |message| %>
+      <label required class="contacto-form-label">Nombre:</label>
+      <%= message.text_field :name, class: "contacto-form-input" %><br>
+      <label required class="contacto-form-label">E-mail:</label>
+      <%= message.email_field :email, class: "contacto-form-input"%><br>
+      <label required class="contacto-form-label">Teléfono:</label>
+      <%= message.text_field :phone, class: "contacto-form-input"%><br>
+      <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
+      <%= button_tag 'Enviar', class: "contacto-form-button", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
+    <% end %>
+    <div class="ficha-mapa">
+      <div id="map" data-latitude="<%= @property.latitude %>" 
+      data-longitude="<%= @property.longitude %>" 
+      data-markerName="Mark"></div>
+    </div>
   </div>
-  <div class="ficha-mapa ficha-mapa-02">
+  <div class="ficha-street">
     <div id="street-view" data-latitude="<%= @property.latitude %>" 
     data-longitude="<%= @property.longitude %>" 
     data-markerName="Mark"></div>
   </div>
-</section>
-<section class="ficha-contacto">
-  <div class="contact_messages">
-  </div>
-  <%= form_for :contact_form, url: properties_contact_path, html: {class: "ficha-contacto-form"}, remote: true do |message| %>
-    <label required class="contacto-form-label">Nombre:</label>
-    <%= message.text_field :name, class: "contacto-form-input" %><br>
-    <label required class="contacto-form-label">E-mail:</label>
-    <%= message.email_field :email, class: "contacto-form-input"%><br>
-    <label required class="contacto-form-label">Teléfono:</label>
-    <%= message.text_field :phone, class: "contacto-form-input"%><br>
-    <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
-    <%= button_tag 'Enviar', class: "contacto-form-button", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
-  <% end %>
 </section>
 <footer class="footer">
   <div class="footer-column2 m-r-5">
