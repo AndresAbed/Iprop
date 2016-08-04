@@ -34,14 +34,16 @@
 </header>
 <section class="ficha">
   <div class="ficha-header">
-    <p class="ficha-header-state"><%= @property.state %></p>
-    <h2 class="ficha-header-title"><%=@property.title%></h2>
-    <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
+    <div class="ficha-header-wrap">
+      <p class="ficha-header-state"><%= @property.state %></p>
+      <h2 class="ficha-header-title"><%=@property.title%></h2>
+      <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
+    </div>
     <% if @property.price %>
       <h2 class="ficha-header-price">USD$<%= @property.price %></h2>
     <% else %>
       <h2 class="ficha-header-price">Consultar</h2>
-    <% end %>    
+    <% end %>
   </div>
   <div class="ficha-tags">
     <div class="ficha-tags-icon"><img src="<%=image_path('tag.png')%>" class="ficha-tags-icon-img"></div>
@@ -100,10 +102,18 @@
   <h2 class="ficha-descripcion-title">Descripción</h2>
   <p class="ficha-descripcion-short">
     <% if @property.bedrooms.present? %>
-      <strong><%=@property.bedrooms%></strong> Dormitorios  / 
+      <% if @property.bedrooms == 1 %>
+        <strong><%=@property.bedrooms%></strong> Dormitorio / 
+      <% else %>
+        <strong><%=@property.bedrooms%></strong> Dormitorios / 
+      <% end %>    
     <% end %>
     <% if @property.bathrooms.present? %>
-      <strong><%=@property.bathrooms%></strong> Baño  / 
+      <% if @property.bathrooms == 1 %>
+        <strong><%=@property.bathrooms%></strong> Baño / 
+      <% else %>
+        <strong><%=@property.bathrooms%></strong> Baños / 
+      <% end %>  
     <% end %>
     <strong><%=@property.size%></strong> mts2 
   </p>
@@ -121,12 +131,24 @@
     </div>
   </section>
 <% end %>
-<% if @property.bedrooms.present? %>
+<% if @property.flat.present? || @property.video.present? %>
   <section class="ficha-planos">
-    <h2 class="ficha-planos-title">Planos de la propiedad</h2>
-    <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
+    <% if @property.flat.present? %>
+      <div class="ficha-planos-box">
+        <h2 class="ficha-planos-title">Planos de la propiedad</h2>
+        <div class="ficha-planos-img-container"><img src="<%= @property.flat.url %>" class="ficha-planos-img"></div>
+      </div>
+    <% end %>
+    <% if @property.video.present? %>
+      <div class="ficha-video-box">
+        <h2 class="ficha-video-title">Video</h2>
+        <div class="ficha-video">
+          <iframe src="<%= @property.video %>" frameborder="0" allowfullscreen class="ficha-video-iframe"></iframe>
+        </div>
+      </div>
+    <% end %>
   </section>
-<% end %>
+<% end %>  
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>
   <div class="compartir-redes">

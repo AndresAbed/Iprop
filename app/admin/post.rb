@@ -56,7 +56,11 @@ ActiveAdmin.register Post do
       f.input :title
       f.input :subtitle
       f.input :body, as: :html_editor
-      f.input :image
+      if f.object.image_file_name.present?
+        f.input :image, hint: image_tag(f.object.image.url)
+      else
+        f.input :image
+      end
       f.input :shown
     end
     f.actions
