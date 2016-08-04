@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630190051) do
+ActiveRecord::Schema.define(version: 20160804153053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,46 @@ ActiveRecord::Schema.define(version: 20160630190051) do
     t.string   "pic_10_content_type"
     t.integer  "pic_10_file_size"
     t.datetime "pic_10_updated_at"
+    t.string   "pic_11_file_name"
+    t.string   "pic_11_content_type"
+    t.integer  "pic_11_file_size"
+    t.datetime "pic_11_updated_at"
+    t.string   "pic_12_file_name"
+    t.string   "pic_12_content_type"
+    t.integer  "pic_12_file_size"
+    t.datetime "pic_12_updated_at"
+    t.string   "pic_13_file_name"
+    t.string   "pic_13_content_type"
+    t.integer  "pic_13_file_size"
+    t.datetime "pic_13_updated_at"
+    t.string   "pic_14_file_name"
+    t.string   "pic_14_content_type"
+    t.integer  "pic_14_file_size"
+    t.datetime "pic_14_updated_at"
+    t.string   "pic_15_file_name"
+    t.string   "pic_15_content_type"
+    t.integer  "pic_15_file_size"
+    t.datetime "pic_15_updated_at"
+    t.string   "pic_16_file_name"
+    t.string   "pic_16_content_type"
+    t.integer  "pic_16_file_size"
+    t.datetime "pic_16_updated_at"
+    t.string   "pic_17_file_name"
+    t.string   "pic_17_content_type"
+    t.integer  "pic_17_file_size"
+    t.datetime "pic_17_updated_at"
+    t.string   "pic_18_file_name"
+    t.string   "pic_18_content_type"
+    t.integer  "pic_18_file_size"
+    t.datetime "pic_18_updated_at"
+    t.string   "pic_19_file_name"
+    t.string   "pic_19_content_type"
+    t.integer  "pic_19_file_size"
+    t.datetime "pic_19_updated_at"
+    t.string   "pic_20_file_name"
+    t.string   "pic_20_content_type"
+    t.integer  "pic_20_file_size"
+    t.datetime "pic_20_updated_at"
   end
 
   add_index "properties", ["slug"], name: "index_properties_on_slug", using: :btree
@@ -138,6 +178,11 @@ ActiveRecord::Schema.define(version: 20160630190051) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

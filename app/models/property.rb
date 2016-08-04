@@ -62,6 +62,36 @@ class Property < ActiveRecord::Base
   has_attached_file :pic_10, storage: :s3, bucket: ENV['bucket']
   validates_attachment :pic_10, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
+  has_attached_file :pic_11, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_11, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_12, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_12, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_13, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_13, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_14, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_14, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_15, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_15, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_16, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_16, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_17, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_17, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_18, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_18, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_19, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_19, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
+  has_attached_file :pic_20, storage: :s3, bucket: ENV['bucket']
+  validates_attachment :pic_20, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+
   has_attached_file :flat, storage: :s3, bucket: ENV['bucket']
   validates_attachment :flat, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 end

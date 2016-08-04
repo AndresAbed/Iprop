@@ -1,7 +1,8 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
   :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
-  :pic_8, :pic_9, :pic_10, :state, :video, 
+  :pic_8, :pic_9, :pic_10, :pic_11, :pic_12, :pic_13, :pic_14, :pic_15, 
+   :pic_16, :pic_17, :pic_18, :pic_19, :pic_20, :state, :video, 
   tag_ids: [], features_attributes: [:id, :feature, :property_id], tags_attributes: [:id, :name]
   menu label: "Propiedades"
 
@@ -71,6 +72,16 @@ ActiveAdmin.register Property do
       row :pic_8_file_name
       row :pic_9_file_name
       row :pic_10_file_name
+      row :pic_11_file_name
+      row :pic_12_file_name
+      row :pic_13_file_name
+      row :pic_14_file_name
+      row :pic_15_file_name
+      row :pic_16_file_name
+      row :pic_17_file_name
+      row :pic_18_file_name
+      row :pic_19_file_name
+      row :pic_20_file_name
       row :state
       row :video
       row "Tipo de propiedad" do |property|
@@ -157,7 +168,57 @@ ActiveAdmin.register Property do
         f.input :pic_10, hint: image_tag(f.object.pic_10.url)
       else
         f.input :pic_10
-      end 
+      end
+      if f.object.pic_11_file_name.present?
+        f.input :pic_11, hint: image_tag(f.object.pic_11.url)
+      else
+        f.input :pic_11
+      end
+      if f.object.pic_12_file_name.present?
+        f.input :pic_12, hint: image_tag(f.object.pic_12.url)
+      else
+        f.input :pic_12
+      end
+      if f.object.pic_13_file_name.present?
+        f.input :pic_13, hint: image_tag(f.object.pic_13.url)
+      else
+        f.input :pic_13
+      end
+      if f.object.pic_14_file_name.present?
+        f.input :pic_14, hint: image_tag(f.object.pic_14.url)
+      else
+        f.input :pic_14
+      end
+      if f.object.pic_15_file_name.present?
+        f.input :pic_15, hint: image_tag(f.object.pic_15.url)
+      else
+        f.input :pic_15
+      end
+      if f.object.pic_16_file_name.present?
+        f.input :pic_16, hint: image_tag(f.object.pic_16.url)
+      else
+        f.input :pic_16
+      end
+      if f.object.pic_17_file_name.present?
+        f.input :pic_17, hint: image_tag(f.object.pic_17.url)
+      else
+        f.input :pic_17
+      end
+      if f.object.pic_18_file_name.present?
+        f.input :pic_18, hint: image_tag(f.object.pic_18.url)
+      else
+        f.input :pic_18
+      end
+      if f.object.pic_19_file_name.present?
+        f.input :pic_19, hint: image_tag(f.object.pic_19.url)
+      else
+        f.input :pic_19
+      end
+      if f.object.pic_20_file_name.present?
+        f.input :pic_20, hint: image_tag(f.object.pic_20.url)
+      else
+        f.input :pic_20
+      end
       f.input :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
       f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.name}", u.id]}
     end
