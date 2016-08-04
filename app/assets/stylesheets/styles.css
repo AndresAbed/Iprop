@@ -1209,6 +1209,16 @@
 .ficha-header {
   margin: 3em 6em 1em;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ficha-header-wrap {
+  -webkit-box-flex: 5;
+  -webkit-flex-grow: 5;
+  -ms-flex-positive: 5;
+  flex-grow: 5;
 }
 .ficha-header-state {
   background: #ff191f;
@@ -1226,10 +1236,11 @@
   margin-top: 0;
 }
 .ficha-header-price {
-  position: absolute;
-  top: 0;
-  right: 0;
   font-size: 2em;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 .ficha-tags {
   margin-bottom: 1em;
@@ -1352,20 +1363,59 @@
 }
 .ficha-planos {
   padding: 0 6em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.ficha-planos-box {
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
 }
 .ficha-planos-title {
   font-size: 1.6em;
   color: #5e5c5c;
   text-transform: uppercase;
   margin: 1em 0 0;
+  padding-right: 1em;
 }
 .ficha-planos-img-container {
   margin-top: 1em;
   margin-bottom: 2em;
-  width: 45%;
+  width: 100%;
 }
 .ficha-planos-img {
   width: 100%;
+}
+.ficha-video {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.ficha-video-title {
+  font-size: 1.6em;
+  color: #5e5c5c;
+  text-transform: uppercase;
+  margin: 1em 0 0;
+}
+.ficha-video-box {
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+}
+.ficha-video-iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .ficha-mapa {
   width: 70%;
@@ -1956,6 +2006,23 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     overflow-x: hidden;
   }
 }
+@media (max-width: 700px) {
+  .ficha-contacto-wrap {
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    height: auto;
+  }
+  .ficha-contacto-form {
+    display: block;
+    width: 100%;
+  }
+  .ficha-mapa {
+    width: 100%;
+    margin-left: 0;
+    display: block;
+  }
+}
 @media (max-width: 610px) {
   .ficha-header-price {
     position: static;
@@ -1964,6 +2031,7 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .ficha-header {
     margin-bottom: 0.5em;
+    display: block;
   }
 }
 @media (max-width: 595px) {
@@ -2042,6 +2110,14 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     width: 90%;
   }
 }
+@media (max-width: 500px) {
+  .ficha-planos-box,
+  .ficha-video-box {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+}
 @media (max-width: 451px) {
   .photo-slider-propiedades-img,
   .photo-slider-img {
@@ -2086,6 +2162,9 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .destacadas-price {
     top: 40%;
+  }
+  .ficha-header-title {
+    font-size: 1.5em;
   }
 }
 @media (max-width: 390px) {

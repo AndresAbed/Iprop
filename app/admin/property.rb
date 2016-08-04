@@ -93,7 +93,7 @@ ActiveAdmin.register Property do
   filter :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
 
   form do |f|
-    f.inputs "Detalles de la propiedad" do
+    f.inputs "Detalles de la propiedad", :multipart => true do
       f.input :title
       f.input :address, input_html: {placeholder: "Dirección, Localidad, Provincia, País."}
       f.input :bedrooms
@@ -103,17 +103,61 @@ ActiveAdmin.register Property do
       f.input :price
       f.input :video, label: 'Video Url', input_html: {placeholder: "Ejemplo: https://www.youtube.com/embed/0obJrUjm-jw"}
       f.input :highlight, as: :boolean
-      f.input :flat
-      f.input :pic_1
-      f.input :pic_2
-      f.input :pic_3
-      f.input :pic_4
-      f.input :pic_5
-      f.input :pic_6
-      f.input :pic_7
-      f.input :pic_8
-      f.input :pic_9
-      f.input :pic_10
+      if f.object.flat_file_name.present?
+        f.input :flat, hint: image_tag(f.object.flat.url)
+      else
+        f.input :flat
+      end
+      if f.object.pic_1_file_name.present?
+        f.input :pic_1, hint: image_tag(f.object.pic_1.url)
+      else
+        f.input :pic_1
+      end
+      if f.object.pic_2_file_name.present?
+        f.input :pic_2, hint: image_tag(f.object.pic_2.url)
+      else
+        f.input :pic_2
+      end 
+      if f.object.pic_3_file_name.present?
+        f.input :pic_3, hint: image_tag(f.object.pic_3.url)
+      else
+        f.input :pic_3
+      end 
+      if f.object.pic_4_file_name.present?
+        f.input :pic_4, hint: image_tag(f.object.pic_4.url)
+      else
+        f.input :pic_4
+      end 
+      if f.object.pic_5_file_name.present?
+        f.input :pic_5, hint: image_tag(f.object.pic_5.url)
+      else
+        f.input :pic_5
+      end 
+      if f.object.pic_6_file_name.present?
+        f.input :pic_6, hint: image_tag(f.object.pic_6.url)
+      else
+        f.input :pic_6
+      end
+      if f.object.pic_7_file_name.present?
+        f.input :pic_7, hint: image_tag(f.object.pic_7.url)
+      else
+        f.input :pic_7
+      end 
+      if f.object.pic_8_file_name.present?
+        f.input :pic_8, hint: image_tag(f.object.pic_8.url)
+      else
+        f.input :pic_8
+      end 
+      if f.object.pic_9_file_name.present?
+        f.input :pic_9, hint: image_tag(f.object.pic_9.url)
+      else
+        f.input :pic_9
+      end 
+      if f.object.pic_10_file_name.present?
+        f.input :pic_10, hint: image_tag(f.object.pic_10.url)
+      else
+        f.input :pic_10
+      end 
       f.input :state, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
       f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.name}", u.id]}
     end
