@@ -76,8 +76,8 @@
           <div class="video-overlay">
             <div class="destacadas-video-overlay">
               <div class="destacadas-video-play">
-                <% if property.state == "En venta" %>
-                  <img src="<%= image_path('enventa-diagonal.png') %>" class="overlay-vendido">
+                <% if property.state == "Reservado" %>
+                  <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
                   <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                 <% else %>
                   <% if property.state == "Vendida" %>
@@ -107,8 +107,8 @@
           <div class="destacadas-img-container"></div>
         <% else %>
           <div class="destacadas-img-container">
-            <% if property.state == "En venta" %>
-              <img src="<%= image_path('enventa-diagonal.png') %>" class="overlay-vendido">
+            <% if property.state == "Reservado" %>
+              <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
               <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
             <% else %>
               <% if property.state == "Vendida" %>
@@ -142,37 +142,41 @@
   </div>
 </section>
 <!--novedades-->
-<% if @posts.present? %>
-  <section class="novedades">
-    <h2 class="novedades-title">Novedades</h2>
-    <div class="novedades-content">
-      <% @posts.each do |post| %>
-        <div class="novedades-item">
-          <div class="novedades-img-container"><img src=" " style="background-image: url('<%= post.image.url %>');" class="novedades-img"></div>
-          <p class="novedades-item-copy"><%= post.title %></p>
-          <div class="novedades-item-overlay">
-            <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
+<section class="novedades">
+  <% if @posts.present? %>
+    <div class="novedades-in">
+      <h2 class="novedades-title">Novedades</h2>
+      <div class="novedades-content">
+        <% @posts.each do |post| %>
+          <div class="novedades-item">
+            <div class="novedades-img-container"><img src=" " style="background-image: url('<%= post.image.url %>');" class="novedades-img"></div>
+            <p class="novedades-item-copy"><%= post.title %></p>
+            <div class="novedades-item-overlay">
+              <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
+            </div>
           </div>
-        </div>
-      <% end %>  
+        <% end %>  
+      </div>
     </div>
-  </section>
-<% end %>
-<section class="videos">
-  <h2 class="novedades-title">Videos</h2>
-  <div class="novedades-content">
-    <% @videos.each do |video| %>
-      <% if video.url.present? %>
-        <div class="novedades-item">
-          <div class="novedades-img-container">
-            <iframe src="<%= video.url %>" frameborder="0" allowfullscreen="" class="novedades-video"></iframe>
-          </div>
-          <p class="novedades-item-copy"><%= video.description %></p>
-        </div>
-      <% end %>  
-    <% end %>  
-  </div>  
-</section>
+  <% end %>
+  <% if @videos.present? %>
+    <div class="novedades-videos">
+      <h2 class="novedades-title">Videos</h2>
+      <div class="novedades-content">
+        <% @videos.each do |video| %>
+          <% if video.url.present? %>
+            <div class="novedades-item">
+              <div class="novedades-img-container">
+                <iframe src="<%= video.url %>" frameborder="0" allowfullscreen="" class="novedades-video"></iframe>
+              </div>
+              <p class="novedades-item-copy"><%= video.description %></p>
+            </div>
+          <% end %>  
+        <% end %>  
+      </div>  
+    </div>
+  <% end %>  
+</section>  
 <section class="compartir"> 
   <h2 class="compartir-title">Compartir en redes sociales</h2>
   <div class="compartir-redes">

@@ -104,7 +104,7 @@ ActiveAdmin.register Property do
   filter :highlight
   filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.name}", u.id]}}, as: :select
   filter :operation, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
-  filter :operation, as: :select, collection: ['En venta', 'Vendida', 'Alquilada']
+  filter :operation, as: :select, collection: ['Reservado', 'Vendida', 'Alquilada']
 
   form do |f|
     f.inputs "Detalles de la propiedad", :multipart => true do
@@ -223,7 +223,7 @@ ActiveAdmin.register Property do
         f.input :pic_20
       end
       f.input :operation, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
-      f.input :state, as: :select, collection: ['En venta', 'Vendida', 'Alquilada']
+      f.input :state, as: :select, collection: ['Reservado', 'Vendida', 'Alquilada']
       f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.name}", u.id]}
     end
     f.has_many :features, new_record: 'Nuevo item' do |f|
