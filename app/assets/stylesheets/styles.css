@@ -419,6 +419,10 @@
   cursor: pointer;
   z-index: 10;
 }
+.overlay-vendido {
+  position: absolute;
+  left: 198px;
+}
 .novedades {
   margin-bottom: 2em;
 }
@@ -1266,10 +1270,10 @@
   padding: 0.4em 1em;
 }
 .ficha-slider {
-  background: #000;
+  background: #2b2a2b;
 }
 .ficha-slider-wrap {
-  margin: 0 6em;
+  margin: 0 12em;
   position: relative;
   max-height: 500px;
   overflow: hidden;

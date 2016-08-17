@@ -9,7 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
           table_for Property.where('highlight = true').limit(20).each do |property|
             column("Título", :title) {|property| link_to(property.title, admin_property_path(property)) }
             column  "Dirección", :address
-            column "Tipo de operación", :state
+            column "Tipo de operación", :operation
           end
         end
       end

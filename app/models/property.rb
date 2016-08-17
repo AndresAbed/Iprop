@@ -15,16 +15,16 @@ class Property < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  validates :title, :address, :size, :description, :pic_1, :state, presence: {message: "Requerido"}
+  validates :title, :address, :size, :description, :pic_1, :operation, presence: {message: "Requerido"}
   validates :title, uniqueness: {message: "Ya existe una propiedad con este título"}
 
-  def self.search(address, property_type, state)
+  def self.search(address, property_type, operation)
     properties = Property.all
     if address.present?
       properties = properties.where('address ilike ?', "%#{address}%")
     end
-    if state.present?
-      properties = properties.where('state ilike ?', "%#{state}%")
+    if operation.present?
+      properties = properties.where('operation ilike ?', "%#{operation}%")
     end
     if property_type.present?
     properties = properties.joins(:tags).where('name ilike ?', "%#{property_type}%")

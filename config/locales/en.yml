@@ -163,7 +163,8 @@ en:
         pic_18_file_name: "Foto n°18"
         pic_19_file_name: "Foto n°19"
         pic_20_file_name: "Foto n°20"
-        state: "Tipo de operación"
+        operation: "Tipo de operación"
+        state: "Estado de la propiedad"
       feature:
         feature: "Característica"
   active_admin:

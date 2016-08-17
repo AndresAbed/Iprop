@@ -17,6 +17,7 @@
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
       <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
@@ -37,8 +38,8 @@
     <h1 class="photo-slider-slogan-title-propiedades">Transformamos tus ideas en realidad</h1>
   </div>
   <%= form_tag properties_path, method: 'post', class: "buscador" do %>
-    <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select buscador-select-01", id: "state", prompt: "Tipo de operación" %>
-    <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
+    <%= select_tag :operation, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:operation]), class: "buscador-select buscador-select-01", id: "operation" %>
+    <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.name }, params[:property_type]), class: "buscador-select" %>
     <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
     <%= button_tag(type: "submit", class: "buscador-button", name: nil) do %>
       <span class="icon-search buscador-icon"></span>
@@ -60,7 +61,7 @@
     <p class="features-item-copy">Aproveche las oportunidades para hacer un buen negocio inmobiliario</p><a href="/propiedades" class="features-item-link">Buscar Propiedades</a>
   </div>
   <div class="features-item">
-    <div class="features-logo-container"><img src="<%= image_path('tasaciones.svg')%>" class="features-logo"></div>
+    <div class="features-logo-container"><img src="<%= image_path('tasaciones.svg')%>" class="features-icon"></div>
     <h3 class="features-item-title">Tasaciones Online</h3>
     <p class="features-item-copy">Conozca el valor de su propiedad para hacer un negocio inmobiliario</p><a href="/tasaciones" class="features-item-link">¡Tasar ya!</a>
   </div>
@@ -74,13 +75,30 @@
         <% if property.video.present? %>
           <div class="video-overlay">
             <div class="destacadas-video-overlay">
-              <div class="destacadas-video-play"><img src="<%= image_path('play.png')%>" class="destacadas-video-play-img"></div>
+              <div class="destacadas-video-play">
+                <% if property.state == "En venta" %>
+                  <img src="<%= image_path('enventa-diagonal.png') %>" class="overlay-vendido">
+                  <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                <% else %>
+                  <% if property.state == "Vendida" %>
+                    <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
+                    <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                  <% else %>
+                    <% if property.state == "Alquilada" %>
+                      <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <% else %>  
+                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <% end %>  
+                  <% end %> 
+                <% end %>
+              </div>
               <% if property.price.present? %>
                 <div class="destacadas-video-price">USD$<%= property.price %></div>
               <% else %>
                 <div class="destacadas-video-price">Consultar</div>  
               <% end%> 
-              <div class="destacadas-state"><%= property.state %></div>
+              <div class="destacadas-state"><%= property.operation %></div>
             </div>
             <div class="destacadas-video-container">
               <iframe src="<%= property.video %>" frameborder="0" allowfullscreen class="destacadas-video"></iframe>
@@ -89,16 +107,30 @@
           <div class="destacadas-img-container"></div>
         <% else %>
           <div class="destacadas-img-container">
-            <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+            <% if property.state == "En venta" %>
+              <img src="<%= image_path('enventa-diagonal.png') %>" class="overlay-vendido">
+              <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+            <% else %>
+              <% if property.state == "Vendida" %>
+                <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
+                <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+              <% else %>
+                <% if property.state == "Alquilada" %>
+                  <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% else %>  
+                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% end %>  
+              <% end %> 
+            <% end %>
           </div>
           <% if property.price.present? %>
             <div class="destacadas-price">USD$<%= property.price %></div>
           <% else %>
             <div class="destacadas-price">Consultar</div>  
           <% end%>  
-          <div class="destacadas-state"><%= property.state %></div>  
+          <div class="destacadas-state"><%= property.operation %></div>  
         <%end%>
-        <div class="destacadas-state"><%= property.state %></div>
         <div class="destacadas-item-info">
           <h3 class="destacadas-item-title"><%= property.title %>,</h3>
           <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
@@ -178,8 +210,8 @@
     </ul>
   </div>
   <div class="footer-column1 m-r-5">
-    <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
-    <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
+    <p class="footer-contact">Iprop es una marca registrada</p>
+    <p class="footer-contact">Nestor H. Royo – Matrícula Nro. 6561</p>
     <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png')%>" class="footer-img"></div>
   </div>
   <div class="footer-column1">
@@ -187,5 +219,5 @@
   </div>
 </footer>
 <div class="footer-copyright">
-  <p> © Nestor H. Royo 2016</p>
+  <p> © Iprop 2016</p>
 </div>

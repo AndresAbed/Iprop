@@ -17,6 +17,7 @@
     </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
       <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
@@ -46,8 +47,8 @@
 </section>
 <section class="propiedades-buscador-container">
   <%= form_tag properties_path, method: 'post', class: "propiedades-buscador", remote: true do %>
-    <%= select_tag :state, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:state]), class: "buscador-select buscador-select-01", prompt: "Tipo de operación" %>
-    <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.name }, params[:property_type]), class: "buscador-select", prompt: "Tipos de propiedad" %>
+    <%= select_tag :operation, options_for_select(['Venta', 'Alquiler', 'Alquiler temporal'], params[:operation]), class: "buscador-select buscador-select-01" %>
+    <%= select_tag :property_type, options_for_select(Tag.all.collect{ |t| t.name }, params[:property_type]), class: "buscador-select" %>
     <%= text_field_tag :address, params[:address], placeholder: "Buscar por ubicación", class: "buscador-input", autocomplete: "off", id: "searchTextField" %>
     <%= button_tag(type: "submit", class: "buscador-button", name: nil) do %>
       <span class="icon-search buscador-icon"></span>
@@ -104,8 +105,8 @@
     </ul>
   </div>
   <div class="footer-column1 m-r-5">
-    <p class="footer-contact">Iprop es una marca registrada de Nestor H. Royo </p>
-    <p class="footer-contact">Nestor H. Royo – Matrícula N°</p>
+    <p class="footer-contact">Iprop es una marca registrada</p>
+    <p class="footer-contact">Nestor H. Royo – Matrícula Nro. 6561</p>
     <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png') %>" class="footer-img"></div>
   </div>
   <div class="footer-column1">
@@ -113,5 +114,5 @@
   </div>
 </footer>
 <div class="footer-copyright">
-  <p> © Nestor H. Royo 2016</p>
+  <p> © Iprop 2016</p>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804153053) do
+ActiveRecord::Schema.define(version: 20160817031201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20160804153053) do
     t.integer  "bathrooms"
     t.integer  "size"
     t.text     "description"
-    t.integer  "price"
+    t.string   "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.boolean  "highlight"
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 20160804153053) do
     t.float    "longitude"
     t.float    "latitude"
     t.string   "slug"
-    t.string   "state"
+    t.string   "operation"
     t.string   "video"
     t.string   "pic_9_file_name"
     t.string   "pic_9_content_type"
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 20160804153053) do
     t.string   "pic_20_content_type"
     t.integer  "pic_20_file_size"
     t.datetime "pic_20_updated_at"
+    t.string   "state"
   end
 
   add_index "properties", ["slug"], name: "index_properties_on_slug", using: :btree
