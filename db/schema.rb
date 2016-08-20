@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817031201) do
+ActiveRecord::Schema.define(version: 20160820091108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 20160817031201) do
     t.integer  "bathrooms"
     t.integer  "size"
     t.text     "description"
-    t.string   "price"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.boolean  "highlight"
@@ -168,6 +167,7 @@ ActiveRecord::Schema.define(version: 20160817031201) do
     t.integer  "pic_20_file_size"
     t.datetime "pic_20_updated_at"
     t.string   "state"
+    t.integer  "price"
   end
 
   add_index "properties", ["slug"], name: "index_properties_on_slug", using: :btree
@@ -179,11 +179,6 @@ ActiveRecord::Schema.define(version: 20160817031201) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tests", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
