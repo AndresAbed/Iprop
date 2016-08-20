@@ -23,9 +23,15 @@
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
       <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
       <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
+      <li class="header-list-item currency-select">
+        <span>Divisa: </span>
+        <%= form_tag set_currency_path, method: 'post', class: "currency-form" do %>
+          <%= select_tag :currency_item, options_for_select(['$ARS', '$USD'], params[:currency_item] = selected_currency), onchange: "this.form.submit();" %>
+        <% end %>
+      </li>
       <li class="header-list-item">
         <div class="icon-phone header-icon"> </div>
-        <div class="header-list-item-phone">11 4776 7176      </div>
+        <div class="header-list-item-phone">11 4776 7176</div>
       </li>
     </ul>
   </nav>
@@ -70,74 +76,86 @@
 <section class="destacadas">
   <h2 class="destacadas-title">Propiedades destacadas</h2>
   <div class="destacadas-content">
-    <% @featured_properties.each do |property| %>
-      <div class="destacadas-item">
-        <% if property.video.present? %>
-          <div class="video-overlay">
-            <div class="destacadas-video-overlay">
-              <div class="destacadas-video-play">
-                <% if property.state == "Reservado" %>
-                  <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
-                  <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
-                <% else %>
-                  <% if property.state == "Vendida" %>
-                    <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
+    <% if @featured_properties.present? %>
+      <% @featured_properties.each do |property| %>
+        <div class="destacadas-item">
+          <% if property.video.present? %>
+            <div class="video-overlay">
+              <div class="destacadas-video-overlay">
+                <div class="destacadas-video-play">
+                  <% if property.state == "Reservado" %>
+                    <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
                     <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                   <% else %>
-                    <% if property.state == "Alquilada" %>
-                      <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                    <% if property.state == "Vendida" %>
+                      <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
                       <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
-                    <% else %>  
-                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
-                    <% end %>  
-                  <% end %> 
-                <% end %>
+                    <% else %>
+                      <% if property.state == "Alquilada" %>
+                        <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                        <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                      <% else %>  
+                        <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                      <% end %>  
+                    <% end %> 
+                  <% end %>
+                </div>
+                <% if property.price.present? %>
+                  <% if selected_currency == "$USD" %>
+                    <div class="destacadas-video-price">USD$<%= number_with_delimiter(property.price) %></div>
+                  <% else %>
+                    <div class="destacadas-video-price">ARS$<%= number_with_delimiter((property.price*dollar_price).to_i) %></div>
+                  <% end %>
+                <% else %>
+                  <div class="destacadas-video-price">Consultar</div>  
+                <% end%> 
+                <div class="destacadas-state"><%= property.operation %></div>
               </div>
-              <% if property.price.present? %>
-                <div class="destacadas-video-price">USD$<%= property.price %></div>
-              <% else %>
-                <div class="destacadas-video-price">Consultar</div>  
-              <% end%> 
-              <div class="destacadas-state"><%= property.operation %></div>
+              <div class="destacadas-video-container">
+                <iframe src="<%= property.video %>" frameborder="0" allowfullscreen class="destacadas-video"></iframe>
+              </div>
             </div>
-            <div class="destacadas-video-container">
-              <iframe src="<%= property.video %>" frameborder="0" allowfullscreen class="destacadas-video"></iframe>
-            </div>
-          </div>
-          <div class="destacadas-img-container"></div>
-        <% else %>
-          <div class="destacadas-img-container">
-            <% if property.state == "Reservado" %>
-              <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
-              <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
-            <% else %>
-              <% if property.state == "Vendida" %>
-                <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
+            <div class="destacadas-img-container"></div>
+          <% else %>
+            <div class="destacadas-img-container">
+              <% if property.state == "Reservado" %>
+                <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
                 <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
               <% else %>
-                <% if property.state == "Alquilada" %>
-                  <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                <% if property.state == "Vendida" %>
+                  <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
                   <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
-                <% else %>  
-                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
-                <% end %>  
-              <% end %> 
-            <% end %>
+                <% else %>
+                  <% if property.state == "Alquilada" %>
+                    <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                    <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <% else %>  
+                    <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <% end %>  
+                <% end %> 
+              <% end %>
+            </div>
+            <% if property.price.present? %>
+              <% if selected_currency == "$USD" %>
+                <div class="destacadas-price">USD$<%= number_with_delimiter(property.price) %></div>
+              <% else %>
+                <div class="destacadas-price">ARS$<%= number_with_delimiter((property.price*dollar_price).to_i) %></div>
+              <% end %>
+            <% else %>
+              <div class="destacadas-price">Consultar</div>  
+            <% end%>  
+            <div class="destacadas-state"><%= property.operation %></div>  
+          <%end%>
+          <div class="destacadas-item-info">
+            <h3 class="destacadas-item-title"><%= property.title %>,</h3>
+            <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
+            <p class="destacadas-item-copy"><%= property.description[0,200] %>...</p>
           </div>
-          <% if property.price.present? %>
-            <div class="destacadas-price">USD$<%= property.price %></div>
-          <% else %>
-            <div class="destacadas-price">Consultar</div>  
-          <% end%>  
-          <div class="destacadas-state"><%= property.operation %></div>  
-        <%end%>
-        <div class="destacadas-item-info">
-          <h3 class="destacadas-item-title"><%= property.title %>,</h3>
-          <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
-          <p class="destacadas-item-copy"><%= property.description[0,200] %>...</p>
+          <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
         </div>
-        <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
-      </div>
+      <% end %>
+    <% else %>
+      <p class="destacadas-vacio">No hay propiedades destacadas</p>
     <% end %>
   </div>
 </section>
@@ -219,7 +237,7 @@
     <div class="footer-img-cuci"><img src="<%= image_path('cucicba.png')%>" class="footer-img"></div>
   </div>
   <div class="footer-column1">
-    <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>
+    <div class="footer-img-qr"><a href="http://qr.afip.gob.ar/?qr=5JvULkrJij4qBY0ljYW3NA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="100px" margin-top="19px"></a></div>-->
   </div>
 </footer>
 <div class="footer-copyright">
