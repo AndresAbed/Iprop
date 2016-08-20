@@ -324,6 +324,12 @@
           align-content: space-between;
   margin: 0 1em;
 }
+.destacadas-vacio{
+  font-size: 1.5em;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
 .destacadas-item {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;

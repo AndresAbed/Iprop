@@ -32,66 +32,66 @@ class Property < ActiveRecord::Base
     return properties
   end
 
-  has_attached_file :pic_1, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_1
+  validates_attachment :pic_1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_2, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_2, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_2
+  validates_attachment :pic_2, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_3, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_3, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_3
+  validates_attachment :pic_3, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_4, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_4, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_4
+  validates_attachment :pic_4, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_5, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_5, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_5
+  validates_attachment :pic_5, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_6, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_6, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_6
+  validates_attachment :pic_6, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_7, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_7, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_7
+  validates_attachment :pic_7, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_8, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_8, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_8
+  validates_attachment :pic_8, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_9, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_9, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_9
+  validates_attachment :pic_9, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_10, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_10, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_10
+  validates_attachment :pic_10, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_11, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_11, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_11
+  validates_attachment :pic_11, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_12, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_12, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_12
+  validates_attachment :pic_12, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_13, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_13, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_13
+  validates_attachment :pic_13, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_14, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_14, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_14
+  validates_attachment :pic_14, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_15, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_15, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_15
+  validates_attachment :pic_15, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_16, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_16, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_16
+  validates_attachment :pic_16, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_17, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_17, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_17
+  validates_attachment :pic_17, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_18, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_18, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_18
+  validates_attachment :pic_18, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_19, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_19, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_19
+  validates_attachment :pic_19, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_20, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :pic_20, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :pic_20
+  validates_attachment :pic_20, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :flat, storage: :s3, bucket: ENV['bucket']
-  validates_attachment :flat, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  has_attached_file :flat
+  validates_attachment :flat, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 end
