@@ -23,12 +23,6 @@
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
       <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
       <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
-      <li class="header-list-item currency-select">
-        <span>Divisa: </span>
-        <%= form_tag set_currency_path, method: 'post', class: "currency-form" do %>
-          <%= select_tag :currency_item, options_for_select(['$ARS', '$USD'], params[:currency_item] = selected_currency), onchange: "this.form.submit();" %>
-        <% end %>
-      </li>
       <li class="header-list-item">
         <div class="icon-phone header-icon"> </div>
         <div class="header-list-item-phone">11 4776 7176      </div>
