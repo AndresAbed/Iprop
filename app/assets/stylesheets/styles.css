@@ -1355,6 +1355,7 @@
   margin-left: 4em;
   padding-left: 2em;
   padding-right: 4em;
+  word-wrap: break-word;
 }
 .ficha-caracteristicas {
   padding: 0 6em;

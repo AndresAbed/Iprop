@@ -25,6 +25,7 @@
   border-top: 1px solid #505050;
   border-bottom: 1px solid #505050;
   display: inline-block;
+  margin-bottom: 20px;
 }
 .pdf-subtitle {
   font-size: 1.6em;
@@ -35,6 +36,7 @@
 .pdf-copy {
   color: #505050;
   margin-bottom: 2.5em;
+  word-wrap: break-word;
 }
 .pdf-list {
   color: #505050;
@@ -55,4 +57,14 @@
 .flat{
   page-break-before:always;
   margin-bottom: 30px;
+}
+
+.company-footer{
+  border-top: 1px solid #505050;
+  border-bottom: 1px solid #505050;
+  page-break-before: always;
+}
+
+.company-info{
+  text-align: center;
 }
