@@ -9,15 +9,20 @@
                 <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
                 <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
               <% else %>
-                <% if property.state == "Vendida" %>
+                <% if property.state == "Vendido" %>
                   <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
                   <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                 <% else %>
-                  <% if property.state == "Alquilada" %>
+                  <% if property.state == "Alquilado" %>
                     <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
                     <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
-                  <% else %>  
-                    <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                  <% else %>
+                    <% if property.state == "Suspendido" %>
+                      <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
+                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <% else %>  
+                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <% end %>
                   <% end %>  
                 <% end %> 
               <% end %>
@@ -44,15 +49,20 @@
             <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
             <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
           <% else %>
-            <% if property.state == "Vendida" %>
+            <% if property.state == "Vendido" %>
               <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
               <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
             <% else %>
-              <% if property.state == "Alquilada" %>
+              <% if property.state == "Alquilado" %>
                 <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
                 <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
               <% else %>  
-                <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% if property.state == "Suspendido" %>
+                  <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
+                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% else %>
+                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% end %>
               <% end %>  
             <% end %> 
           <% end %>

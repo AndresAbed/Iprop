@@ -343,6 +343,7 @@
 .destacadas-item-copy {
   color: #9b9b9b;
   margin-top: 0.3em;
+  word-wrap: break-word;
 }
 .destacadas-item-link {
   font-size: 1em;
