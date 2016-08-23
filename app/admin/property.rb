@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
-  :price, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
+  :price, :price_ars, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
   :pic_8, :pic_9, :pic_10, :pic_11, :pic_12, :pic_13, :pic_14, :pic_15, 
   :pic_16, :pic_17, :pic_18, :pic_19, :pic_20, :operation, :state, :video, 
   tag_ids: [], features_attributes: [:id, :feature, :property_id]
@@ -33,12 +33,10 @@ ActiveAdmin.register Property do
     selectable_column
     column :title
     column :address
-    column :bedrooms
-    column :bathrooms
+    column :price
+    column :price_ars
     column :size
     column :operation
-    column :state
-    column :price
     column :highlight
     actions
   end
@@ -60,6 +58,7 @@ ActiveAdmin.register Property do
       row :size
       row :description
       row :price
+      row :price_ars
       row :created_at
       row :highlight
       row :flat_file_name
@@ -101,6 +100,7 @@ ActiveAdmin.register Property do
   filter :bathrooms
   filter :size
   filter :price
+  filter :price_ars
   filter :highlight
   filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.name}", u.id]}}, as: :select
   filter :operation, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
@@ -115,6 +115,7 @@ ActiveAdmin.register Property do
       f.input :size
       f.input :description
       f.input :price
+      f.input :price_ars
       f.input :video, label: 'Video Url', input_html: {placeholder: "Ejemplo: https://www.youtube.com/embed/0obJrUjm-jw"}
       f.input :highlight, as: :boolean
       if f.object.flat_file_name.present?

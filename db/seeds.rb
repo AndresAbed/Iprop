@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Admin.create!(name: 'Admin', last_name: 'Iprop', email: 'admin@example.com', password: '123456', password_confirmation: '123456')
 
-Tag.create(name:'Casas')
 Tag.create(name:'Departamentos')
+Tag.create(name:'Casas')
 Tag.create(name:'Countries y barrios cerrados')
 Tag.create(name:'Cocheras')
 Tag.create(name:'Bauleras')
