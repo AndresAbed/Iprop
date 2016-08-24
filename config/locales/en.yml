@@ -119,6 +119,7 @@ en:
         size: "Tamaño m2"
         description: "Descripción"
         price: "Precio (USD)"
+        price_ars: "Precio (ARS)"
         created_at: "Fecha de creación"
         highlight: "Propiedad destacada"
         flat: "Planos"

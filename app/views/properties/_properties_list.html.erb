@@ -9,24 +9,29 @@
                 <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
                 <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
               <% else %>
-                <% if property.state == "Vendida" %>
+                <% if property.state == "Vendido" %>
                   <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
                   <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                 <% else %>
-                  <% if property.state == "Alquilada" %>
+                  <% if property.state == "Alquilado" %>
                     <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
                     <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
-                  <% else %>  
-                    <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                  <% else %>
+                    <% if property.state == "Suspendido" %>
+                      <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
+                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <% else %>  
+                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <% end %>
                   <% end %>  
                 <% end %> 
               <% end %>
             </div>
-            <% if property.price.present? %>
-              <% if selected_currency == "$USD" %>
+            <% if property.price.present? || property.price_ars.present? %>
+              <% if property.price.present? %>
                 <div class="destacadas-video-price">USD$<%= number_with_delimiter(property.price) %></div>
               <% else %>
-                <div class="destacadas-video-price">ARS$<%= number_with_delimiter((property.price*dollar_price).to_i) %></div>
+                <div class="destacadas-video-price">ARS$<%= number_with_delimiter(property.price_ars) %></div>
               <% end %>
             <% else %>
               <div class="destacadas-video-price">Consultar</div>  
@@ -44,24 +49,29 @@
             <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
             <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
           <% else %>
-            <% if property.state == "Vendida" %>
+            <% if property.state == "Vendido" %>
               <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
               <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
             <% else %>
-              <% if property.state == "Alquilada" %>
+              <% if property.state == "Alquilado" %>
                 <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
                 <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
               <% else %>  
-                <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% if property.state == "Suspendido" %>
+                  <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
+                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% else %>
+                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <% end %>
               <% end %>  
             <% end %> 
           <% end %>
         </div>
-        <% if property.price.present? %>
-          <% if selected_currency == "$USD" %>
+        <% if property.price.present? || property.price_ars.present? %>
+          <% if property.price.present? %>
             <div class="destacadas-price">USD$<%= number_with_delimiter(property.price) %></div>
           <% else %>
-            <div class="destacadas-price">ARS$<%= number_with_delimiter((property.price*dollar_price).to_i) %></div>
+            <div class="destacadas-price">ARS$<%= number_with_delimiter(property.price_ars) %></div>
           <% end %>
         <% else %>
           <div class="destacadas-price">Consultar</div>  

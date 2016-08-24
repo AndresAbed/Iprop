@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   post '/propiedades/:id', to: 'properties#contact', as: :properties_contact
   resources :posts, only: [:show], path: '/novedades'
 
-  post "application/set_currency", as: :set_currency
-
   #get  'appraisals/tasaciones', as: :appraisals_excel
 
   devise_for :admins, ActiveAdmin::Devise.config

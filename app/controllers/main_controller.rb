@@ -18,6 +18,7 @@ class MainController < ApplicationController
     message = ContactMessage.new(params[:contact_form])
     if message.valid?
       Contact.contact_message(message).deliver_now
+      Contact.contact_notification(message).deliver_now
       @flag = true
       respond_to do |format|
         format.js {flash.now[:notice] = "Mensaje enviado. Gracias por contactarnos"}

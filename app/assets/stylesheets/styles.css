@@ -68,21 +68,6 @@
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.header-list-item.currency-select{
-  display: -webkit-inline-box !important;
-  display: inline-flex !important;
-}
-.currency-select > .currency-form{
-  margin-left: 8px;
-}
-.currency-select > .currency-form > select{
-  background-color: transparent;
-  padding: 0 10px;
-  outline: none;
-}
-.currency-select > .currency-form > select > option{
-  background-color: #2b2a2b !important;
-}
 .header-list-item-link {
   color: #fff;
   font-weight: 300;
@@ -358,6 +343,7 @@
 .destacadas-item-copy {
   color: #9b9b9b;
   margin-top: 0.3em;
+  word-wrap: break-word;
 }
 .destacadas-item-link {
   font-size: 1em;
@@ -1370,6 +1356,7 @@
   margin-left: 4em;
   padding-left: 2em;
   padding-right: 4em;
+  word-wrap: break-word;
 }
 .ficha-caracteristicas {
   padding: 0 6em;
