@@ -21,6 +21,7 @@ class PropertiesController < ApplicationController
     message = PropertiesMessage.new(params[:contact_form])
     if message.valid?
       Contact.properties_contact(message).deliver_now
+      Contact.contact_notification(message).deliver_now
       @flag = true
       respond_to do |format|
         format.js {flash.now[:notice] = "Mensaje enviado. Gracias por contactarnos"}

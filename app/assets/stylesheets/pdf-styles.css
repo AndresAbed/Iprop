@@ -55,14 +55,13 @@
 }
 
 .flat{
-  page-break-before:always;
   margin-bottom: 30px;
 }
 
 .company-footer{
+  margin-top: 40px;
   border-top: 1px solid #505050;
   border-bottom: 1px solid #505050;
-  page-break-before: always;
 }
 
 .company-info{

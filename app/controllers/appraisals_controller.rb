@@ -13,6 +13,7 @@ class AppraisalsController < ApplicationController
     message = AppraisalsMessage.new(params[:contact_form])
     if message.valid?
       Contact.appraisal_contact(message).deliver_now
+      Contact.appraisal_notification(message).deliver_now
       @flag = true
       respond_to do |format|
         format.js {flash.now[:notice] = "Mensaje enviado. Gracias por contactarnos"}
