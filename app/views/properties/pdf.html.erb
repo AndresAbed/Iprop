@@ -10,9 +10,9 @@
     <%= @property.operation %> 
     <% if @property.price.present? || @property.price_ars.present? %>
       <% if @property.price.present? %>
-        - Precio: USD$<%= @property.price %>
+        - Precio: USD$<%= number_with_delimiter(@property.price, delimiter: ".") %>
       <% else %>
-        - Precio: ARS$<%= @property.price_ars %>
+        - Precio: $<%= number_with_delimiter(@property.price_ars, delimiter: ".") %>
       <% end %>    
     <% else %>
       - Precio: Consultar  
@@ -27,7 +27,7 @@
     <% end %>
     <p class="pdf-data">Tamaño: <span class="bold"><%= @property.size %>m2</span></p>
   </div>
-  <%= wicked_pdf_image_tag (@property.pic_1.url), class: "pdf-image" %>
+  <%= wicked_pdf_image_tag (@property.pic_1.url), class: "pdf-property-image" %>
   <h2 class="pdf-subtitle">Descripción</h2> 
   <p class="pdf-copy"><%= @property.description %></p>
   <% if @property.features.present? %>
@@ -41,10 +41,11 @@
   <p><span class="bold">Publicación: </span><%= request.url.split('.pdf')[0] %></p>
   <% if @property.flat.present? %>
     <h2 class="pdf-subtitle flat">Planos:</h2>
-    <%= wicked_pdf_image_tag (@property.flat.url), class: "pdf-image" %>
+    <%= wicked_pdf_image_tag (@property.flat.url), class: "pdf-flat-image" %>
   <% end %>
   <footer class="company-footer">
-    <p class="company-info"><b>Iproponline</b> Teodoro García 1721 Of.704 C.A.B.A. <b>Teléfono:</b> (11) 4776-7176</p>
+    <p><%= wicked_pdf_image_tag 'logo.png', class: "logo" %></p>
+    <p class="company-info">Teodoro García 1721 Of.704 C.A.B.A. <b>Teléfono:</b> (11) 4776-7176</p>
     <p class="company-info"><b>www.iproponline.com.ar - info@iproponline.com.ar</b></p>
   </footer>
 </div>

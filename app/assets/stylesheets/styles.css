@@ -1321,8 +1321,8 @@
 }
 .ficha-acciones {
   position: absolute;
-  right: 6em;
-  margin-top: 0.5em;
+  right: 12em;
+  margin-top: 2em;
 }
 .ficha-acciones-compartir,
 .ficha-acciones-imprimir {

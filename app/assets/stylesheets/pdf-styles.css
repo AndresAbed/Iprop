@@ -44,9 +44,15 @@
   padding: 0;
   margin-bottom: 2.5em;
 }
-.pdf-image {
-  width: 100%;
+.pdf-property-image {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  page-break-before: auto;
+  page-break-after: auto;
+  page-break-inside: avoid;
 }
+
 .bold {
   font-weight: 700;
 }
@@ -58,12 +64,28 @@
   margin-bottom: 30px;
 }
 
-.company-footer{
-  margin-top: 40px;
-  border-top: 1px solid #505050;
-  border-bottom: 1px solid #505050;
+.pdf-flat-image {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  page-break-before: auto;
+  page-break-after: auto;
+  page-break-inside: avoid;
 }
 
-.company-info{
+.company-footer{
+  margin-top: 40px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  background-color: #2b2a2b;
+}
+
+.company-footer .logo{
+  margin: 0 auto;
+  display: block;
+}
+
+.company-footer .company-info{
   text-align: center;
+  color: #fff;
 }
