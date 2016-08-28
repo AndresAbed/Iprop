@@ -42,9 +42,9 @@
     </div>
     <% if @property.price.present? || @property.price_ars.present? %>
       <% if @property.price.present? %>
-        <h2 class="ficha-header-price">USD$<%= number_with_delimiter(@property.price) %></h2>
+        <h2 class="ficha-header-price">USD$<%= number_with_delimiter(@property.price, delimiter: ".") %></h2>
       <% else %>
-        <h2 class="ficha-header-price">ARS$<%= number_with_delimiter(@property.price_ars) %></h2>
+        <h2 class="ficha-header-price">$<%= number_with_delimiter(@property.price_ars, delimiter: ".") %></h2>
       <% end %>
     <% else %>
       <h2 class="ficha-header-price">Consultar</h2>
@@ -130,7 +130,7 @@
     </div>
   </div>
   <div class="ficha-acciones">
-    <%= link_to 'Ver en PDF', property_path(@property, :format => :pdf), target: "_blank", class: "ficha-acciones-imprimir" %>
+    <%= link_to 'Ver en PDF', property_path(@property, format: :pdf), target: "_blank", class: "ficha-acciones-imprimir" %>
   </div>
 </section>
 <section class="ficha-descripcion">
