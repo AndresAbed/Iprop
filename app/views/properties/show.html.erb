@@ -42,7 +42,7 @@
     </div>
     <% if @property.price.present? || @property.price_ars.present? %>
       <% if @property.price.present? %>
-        <h2 class="ficha-header-price">USD$<%= number_with_delimiter(@property.price, delimiter: ".") %></h2>
+        <h2 class="ficha-header-price">U$S<%= number_with_delimiter(@property.price, delimiter: ".") %></h2>
       <% else %>
         <h2 class="ficha-header-price">$<%= number_with_delimiter(@property.price_ars, delimiter: ".") %></h2>
       <% end %>

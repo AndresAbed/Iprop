@@ -10,7 +10,7 @@
     <%= @property.operation %> 
     <% if @property.price.present? || @property.price_ars.present? %>
       <% if @property.price.present? %>
-        - Precio: USD$<%= number_with_delimiter(@property.price, delimiter: ".") %>
+        - Precio: U$S<%= number_with_delimiter(@property.price, delimiter: ".") %>
       <% else %>
         - Precio: $<%= number_with_delimiter(@property.price_ars, delimiter: ".") %>
       <% end %>    
