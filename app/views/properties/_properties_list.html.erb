@@ -21,7 +21,12 @@
                       <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
                       <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                     <% else %>  
-                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                      <% if property.state == "A Estrenar" %>
+                        <img src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
+                        <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                      <% else %>
+                        <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                      <% end %>  
                     <% end %>
                   <% end %>  
                 <% end %> 
@@ -61,7 +66,12 @@
                   <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
                   <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
                 <% else %>
-                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <% if property.state == "A Estrenar" %>
+                    <img src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
+                    <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <% else %>
+                    <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <% end %>  
                 <% end %>
               <% end %>  
             <% end %> 
