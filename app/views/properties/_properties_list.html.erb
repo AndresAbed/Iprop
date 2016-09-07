@@ -34,7 +34,7 @@
             </div>
             <% if property.price.present? || property.price_ars.present? %>
               <% if property.price.present? %>
-                <div class="destacadas-video-price">USD$<%= number_with_delimiter(property.price, delimiter: ".") %></div>
+                <div class="destacadas-video-price">U$S<%= number_with_delimiter(property.price, delimiter: ".") %></div>
               <% else %>
                 <div class="destacadas-video-price">$<%= number_with_delimiter(property.price_ars, delimiter: ".") %></div>
               <% end %>
@@ -79,7 +79,7 @@
         </div>
         <% if property.price.present? || property.price_ars.present? %>
           <% if property.price.present? %>
-            <div class="destacadas-price">USD$<%= number_with_delimiter(property.price, delimiter: ".") %></div>
+            <div class="destacadas-price">U$S<%= number_with_delimiter(property.price, delimiter: ".") %></div>
           <% else %>
             <div class="destacadas-price">$<%= number_with_delimiter(property.price_ars, delimiter: ".") %></div>
           <% end %>
