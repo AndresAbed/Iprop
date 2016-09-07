@@ -23,5 +23,3 @@ Tag.create(name:'Estacionamiento')
 
 Video.create(url: '', description: '')
 Video.create(url: '', description: '')
-Video.create(url: '', description: '')
-Video.create(url: '', description: '')

@@ -15,7 +15,7 @@ class Property < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  validates :title, :address, :size, :description, :pic_1, :operation, presence: {message: "Requerido"}
+  validates :title, :address, :size, :description, :operation, presence: {message: "Requerido"}
   validates :title, uniqueness: {message: "Ya existe una propiedad con este título"}
 
   def self.search(address, property_type, operation)
@@ -31,6 +31,32 @@ class Property < ActiveRecord::Base
     end
     return properties
   end
+
+  attr_accessor :delete_flat, :delete_pic_2, :delete_pic_3, :delete_pic_4, :delete_pic_5, :delete_pic_6, 
+  :delete_pic_7, :delete_pic_8, :delete_pic_9, :delete_pic_10, :delete_pic_11, :delete_pic_12,
+  :delete_pic_13, :delete_pic_14, :delete_pic_15, :delete_pic_16, :delete_pic_17, :delete_pic_18, 
+  :delete_pic_19, :delete_pic_20
+
+  before_validation { self.flat.clear if self.delete_flat == '1' }
+  before_validation { self.pic_2.clear if self.delete_pic_2 == '1' }
+  before_validation { self.pic_3.clear if self.delete_pic_3 == '1' }
+  before_validation { self.pic_4.clear if self.delete_pic_4 == '1' }
+  before_validation { self.pic_5.clear if self.delete_pic_5 == '1' }
+  before_validation { self.pic_6.clear if self.delete_pic_6 == '1' }
+  before_validation { self.pic_7.clear if self.delete_pic_7 == '1' }
+  before_validation { self.pic_8.clear if self.delete_pic_8 == '1' }
+  before_validation { self.pic_9.clear if self.delete_pic_9 == '1' }
+  before_validation { self.pic_10.clear if self.delete_pic_10 == '1' }
+  before_validation { self.pic_11.clear if self.delete_pic_11 == '1' }
+  before_validation { self.pic_12.clear if self.delete_pic_12 == '1' }
+  before_validation { self.pic_13.clear if self.delete_pic_13 == '1' }
+  before_validation { self.pic_14.clear if self.delete_pic_14 == '1' }
+  before_validation { self.pic_15.clear if self.delete_pic_15 == '1' }
+  before_validation { self.pic_16.clear if self.delete_pic_16 == '1' }
+  before_validation { self.pic_17.clear if self.delete_pic_17 == '1' }
+  before_validation { self.pic_18.clear if self.delete_pic_18 == '1' }
+  before_validation { self.pic_19.clear if self.delete_pic_19 == '1' }
+  before_validation { self.pic_20.clear if self.delete_pic_20 == '1' }
 
   has_attached_file :pic_1
   validates_attachment :pic_1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy

@@ -75,14 +75,16 @@
 
 .company-footer{
   margin-top: 40px;
-  padding-bottom: 20px;
-  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   background-color: #2b2a2b;
+  border-radius: 2px;
 }
 
 .company-footer .logo{
   margin: 0 auto;
   display: block;
+  width: 150px;
 }
 
 .company-footer .company-info{
