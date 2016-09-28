@@ -528,7 +528,7 @@
 .compartir-redes-fb,
 .compartir-redes-twitter,
 .compartir-redes-google,
-.compartir-redes-linkedin {
+.compartir-redes-youtube {
   padding: 0.5em;
   display: inline-block;
   font-size: 2em;
@@ -543,8 +543,8 @@
 .compartir-redes-google:hover {
   color: #d92a14;
 }
-.compartir-redes-linkedin:hover {
-  color: #005fa9;
+svg:hover #facebook {
+  fill: #f00;
 }
 .empresa-cover {
   background: url("empresa.png");
