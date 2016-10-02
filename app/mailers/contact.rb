@@ -1,5 +1,5 @@
 class Contact < ApplicationMailer
-  default from: 'iprop no-reply@iproponline.com.ar'
+  default from: 'iprop <no-reply@iproponline.com.ar>'
 
   def appraisal_contact(message)
     @message = message
