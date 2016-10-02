@@ -131,9 +131,24 @@
   </div>
   <div class="ficha-acciones">
     <%= link_to 'Imprimir ficha', property_path(@property, format: :pdf), target: "_blank", class: "ficha-acciones-imprimir" %>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
-    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
-    title="Compartir en Facebook" class="ficha-acciones-imprimir">Enviar a un amigo</a>
+    <button type="button" class="ficha-acciones-imprimir" data-toggle="modal" data-target="#myModal">Enviar a un amigo</button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="send-to-friend-messages"></div>
+          <div class="modal-body">
+            <%= form_for :send_to_friend_form, url: send_to_friend_path, html: {class: "ficha-contacto-form send-to-friend-form"}, remote: true do |message| %>
+              <label required class="contacto-form-label">Tu nombre completo:</label>
+              <%= message.text_field :sender, class: "contacto-form-input" %><br>
+              <label required class="contacto-form-label">E-mail del destinatario:</label>
+              <%= message.email_field :friend_email, class: "contacto-form-input"%>
+              <%= message.text_field :url, value: "#{request.url}", hidden: true %>
+              <%= button_tag 'Enviar', class: "contacto-form-button", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <section class="ficha-descripcion">

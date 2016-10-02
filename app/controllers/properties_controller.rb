@@ -32,4 +32,19 @@ class PropertiesController < ApplicationController
       end
     end
   end
+
+  def send_to_friend
+    message = SendToFriend.new(params[:send_to_friend_form])
+    if message.valid?
+      Contact.send_to_friend(message).deliver_now
+      @flag = true
+      respond_to do |format|
+        format.js {flash.now[:notice] = "Mensaje enviado."}
+      end
+    else
+      respond_to do |format|
+        format.js {flash.now[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."}
+      end
+    end
+  end
 end

@@ -1,0 +1,16 @@
+<% if @flag %>
+  $(".send-to-friend-messages").html("<%= escape_javascript(render("success")) %>");
+  $(".send-to-friend-form")[0].reset();
+  $(document).ready(function() {
+    setTimeout(function() {
+      $(".send-to-friend-messages .alert").slideUp();
+    }, 5000);
+  });
+<% else %>
+  $(".send-to-friend-messages").html("<%= escape_javascript(render("error")) %>");
+  $(document).ready(function() {
+    setTimeout(function() {
+      $(".send-to-friend-messages .alert").slideUp();
+    }, 5000);
+  });
+<% end %>

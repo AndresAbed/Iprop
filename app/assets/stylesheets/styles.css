@@ -1284,6 +1284,8 @@ svg:hover #facebook {
 }
 .ficha-slider {
   background: #2b2a2b;
+  max-height: 500px;
+  overflow: hidden;
 }
 .ficha-slider-wrap {
   margin: 0 12em;
@@ -1332,10 +1334,14 @@ svg:hover #facebook {
   padding: 0.5em 1em;
   text-transform: uppercase;
   display: inline-block;
+  border: none;
 }
 .ficha-acciones-compartir:hover,
 .ficha-acciones-imprimir:hover {
   opacity: 0.5;
+}
+.ficha-acciones-imprimir:focus{
+  outline: none;
 }
 .ficha-descripcion {
   padding: 0 6em;
@@ -2278,3 +2284,13 @@ input#show-menu[type=checkbox]:checked ~ #menu {
 }
 
 .pac-logo:after { content: none !important;}
+
+/* Property show modal */
+
+.modal-body{
+  padding: 0;
+}
+
+.send-to-friend-form{
+  width: 100%;
+}
