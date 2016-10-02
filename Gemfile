@@ -24,6 +24,8 @@ gem 'kaminari'
 gem "figaro"
 gem "passenger"
 gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
+gem "therubyracer"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -35,4 +37,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'meta_request'
+  gem 'guard-livereload', '~> 2.5', require: false
 end

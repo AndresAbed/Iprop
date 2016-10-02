@@ -25,4 +25,9 @@ class Contact < ApplicationMailer
     @message = message
     mail(to: 'info@iproponline.com.ar', subject: "Contacto propiedad")
   end
+
+  def send_to_friend(message)
+    @message = message
+    mail(to: "#{@message.friend_email}", subject: "iprop - #{@message.sender} te recomienda esta propiedad")
+  end
 end
