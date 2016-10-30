@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/consultoria', to: 'main#consultancy', as: :consultancy
   get '/contacto', to: 'main#contact'
   post '/contacto', to: 'main#contact_message', as: :contact
+  get '/success', to: 'main#success', as: :success
 
   resources :properties, only: [:index, :show], path: '/propiedades'
   post '/propiedades', to: 'properties#index'

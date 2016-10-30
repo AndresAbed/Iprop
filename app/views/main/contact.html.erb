@@ -27,8 +27,13 @@
 </section>
 <section class="contacto-info-formulario">
   <div class="contact_messages">
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
   </div>
-  <%= form_for :contact_form, url: contact_path, html: {class: "contacto-form"}, remote: true do |message| %>
+  <%= form_for :contact_form, url: contact_path, html: {class: "contacto-form"} do |message| %>
     <label required class="contacto-form-label">Nombre:</label>
     <%= message.text_field :name, class: "contacto-form-input" %><br>
     <label required class="contacto-form-label">E-mail:</label>

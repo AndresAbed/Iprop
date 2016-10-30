@@ -17,6 +17,22 @@
 .m-l-10 {
   margin-left: 10px;
 }
+.volver-button {
+  margin: 35px auto;
+  position: relative;
+  background: #ff191f;
+  color: #fff;
+  border: 0;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  display: block;
+  width: 110px;
+}
+.volver-button:hover {
+  text-decoration: none !important;
+  color: #fff !important;
+}
 .cycle-slideshow {
   z-index: 2;
 }
@@ -106,7 +122,8 @@
 }
 .photo-slider-slogan {
   position: absolute;
-  top: 10em;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
   margin: 0 auto;
   left: 0;
@@ -1924,10 +1941,6 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     margin-bottom: 0.5em;
     width: 94.8%;
   }
-  .photo-slider-slogan {
-    top: 2em;
-    display: none;
-  }
   .empresa-mvv {
     padding: 0 1em;
   }
@@ -1987,9 +2000,6 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     left: 35%;
     text-align: center;
     margin: 10px 0 0;
-  }
-  .photo-slider-slogan {
-    top: 1em;
   }
   .buscador {
     top: 6em;
@@ -2170,7 +2180,6 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     overflow-x: hidden;
   }
   .photo-slider-slogan {
-    top: 0.5em;
     padding: 0 1em;
   }
   .buscador {

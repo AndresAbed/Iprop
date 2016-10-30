@@ -14,14 +14,10 @@ class AppraisalsController < ApplicationController
     if message.valid?
       Contact.appraisal_contact(message).deliver_now
       Contact.appraisal_notification(message).deliver_now
-      @flag = true
-      respond_to do |format|
-        format.js {flash.now[:notice] = "Mensaje enviado. Gracias por contactarnos"}
-      end
+      redirect_to success_path
     else
-      respond_to do |format|
-        format.js {flash.now[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."}
-      end
+      flash[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."
+      redirect_to :back
     end
   end
 end

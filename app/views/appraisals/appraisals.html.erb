@@ -15,7 +15,6 @@
 
       fbq('init', '648748478636283');
       fbq('track', "Lead");
-      fbq('track', 'CompleteRegistration');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
@@ -51,9 +50,14 @@
   <h1 class="tasaciones-title">El éxito de una operación inmobiliaria depende en gran parte de una buena tasación</h1>
 </section>
 <div class="contact_messages">
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
 </div>
 <section class="tasaciones-form-container">
-<%= form_for :contact_form, url: appraisals_contact_path, html: {class: "tasaciones-form"}, remote: true do |message| %>
+<%= form_for :contact_form, url: appraisals_contact_path, html: {class: "tasaciones-form"} do |message| %>
   <div class="tasaciones-form-left">
     <label required class="tasaciones-form-label">Nombre:</label>
     <%= message.text_field :name, class: "tasaciones-form-input" %><br>
