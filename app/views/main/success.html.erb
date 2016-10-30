@@ -1,0 +1,57 @@
+<head>
+  <% content_for :head do %>
+    <meta property="og:url" content="<%= request.url %>" />    
+    <meta property="og:site_name" content="Iprop Online" />
+    <meta property="og:title" content="Tasaciones">
+    <meta property="og:description" content="Iproponline tasaciones">
+    <meta property="og:image" content="<%= image_path('buenos-aires-aerea.jpg')%>" />
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '648748478636283');
+      fbq('track', 'CompleteRegistration');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+  <% end %>
+</head>
+<header class="header">
+  <nav id="nav" class="header-nav">
+    <label for="show-menu" class="show-menu">Menu</label>
+    <input id="show-menu" type="checkbox" role="button">
+    <div class="header-responsive-logo"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
+    <div class="header-responsive-phone">
+      <div class="icon-phone header-icon"> </div>
+      <div class="header-list-item-phone">11 4776 7176</div>
+    </div>
+    <ul id="menu" class="header-list">
+      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
+      <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
+      <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
+      <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
+      <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
+      <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
+      <li class="header-list-item">
+        <div class="icon-phone header-icon"> </div>
+        <div class="header-list-item-phone">11 4776 7176</div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section class="photo-slider">
+  <div class="overlay-darken"></div>
+  <div class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg')%>" class="photo-slider-img"><img src="<%= image_path('pileta.jpg')%>" class="photo-slider-img"><img src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img src="<%= image_path('livingroom.jpg')%>" class="photo-slider-img"></div>
+  <div class="photo-slider-slogan">
+    <h1 class="photo-slider-slogan-title">¡Gracias!<br>Hemos recibido tu consulta. <br>Nos contactaremos a la brevedad. </h1>
+    <%= link_to "Volver", :back, class: "volver-button" %>
+  </div>
+</section>
+<%= render 'shared/footer' %>
