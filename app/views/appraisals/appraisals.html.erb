@@ -15,6 +15,7 @@
 
       fbq('init', '648748478636283');
       fbq('track', "Lead");
+      fbq('track', "PageView");
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
@@ -59,26 +60,27 @@
 <section class="tasaciones-form-container">
 <%= form_for :contact_form, url: appraisals_contact_path, html: {class: "tasaciones-form"} do |message| %>
   <div class="tasaciones-form-left">
-    <label required class="tasaciones-form-label">Nombre:</label>
+    <label required class="tasaciones-form-label"><b class="asterisks">*</b>Nombre:</label>
     <%= message.text_field :name, class: "tasaciones-form-input" %><br>
-    <label required class="tasaciones-form-label">E-mail:</label>
+    <label required class="tasaciones-form-label"><b class="asterisks">*</b>E-mail:</label>
     <%= message.email_field :email, class: "tasaciones-form-input"%><br>
-    <label required class="tasaciones-form-label">Teléfono:</label>
+    <label required class="tasaciones-form-label"><b class="asterisks">*</b>Teléfono:</label>
     <%= message.text_field :phone, class: "tasaciones-form-input"%><br>
-    <label required class="tasaciones-form-label">Dirección:</label>
+    <label required class="tasaciones-form-label"><b class="asterisks">*</b>Dirección:</label>
     <%= message.text_field :address, class: "tasaciones-form-input"%><br>
     <div class="tasaciones-form-group m-r-1em">
-      <label required class="tasaciones-form-group-label">Superficie (m2):</label>
+      <label required class="tasaciones-form-group-label"><b class="asterisks">*</b>Superficie (m2):</label>
       <%= message.number_field :size, class: "tasaciones-form-group-input"%>
     </div>
     <div class="tasaciones-form-group">
-      <label required class="tasaciones-form-group-label">Cantidad de ambientes:</label>
+      <label required class="tasaciones-form-group-label"><b class="asterisks">*</b>Cantidad de ambientes:</label>
       <%= message.number_field :rooms_amount, class: "tasaciones-form-group-input"%>
     </div>
   </div>
   <div class="tasaciones-form-left">  
     <label class="tasaciones-form-label">Comentarios adicionales:</label>
     <%= message.text_area :comments, class: "tasaciones-form-input tasaciones-form-textarea", rows: "6"%>
+    <%= recaptcha_tags %>
     <%= button_tag '¡Tasar ya!', class: "tasaciones-form-button", 
     data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
   </div>  
