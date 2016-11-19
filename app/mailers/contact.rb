@@ -3,7 +3,7 @@ class Contact < ApplicationMailer
 
   def appraisal_contact(message)
     @message = message
-    mail(to: 'info@iproponline.com.ar', subject: "Tasación")
+    mail(from: @message.email, to: 'info@iproponline.com.ar', subject: "Tasación")
   end
 
   def appraisal_notification(message)
@@ -13,7 +13,7 @@ class Contact < ApplicationMailer
 
   def contact_message(message)
     @message = message
-    mail(to: 'info@iproponline.com.ar', subject: "Contacto Iproponline")
+    mail(from: @message.email, to: 'info@iproponline.com.ar', subject: "Contacto Iproponline")
   end
 
   def contact_notification(message)
@@ -23,7 +23,7 @@ class Contact < ApplicationMailer
 
   def properties_contact(message)
     @message = message
-    mail(to: 'info@iproponline.com.ar', subject: "Contacto propiedad")
+    mail(from: @message.email, to: 'info@iproponline.com.ar', subject: "Contacto propiedad")
   end
 
   def send_to_friend(message)
