@@ -712,6 +712,11 @@ svg:hover #facebook {
   text-align: center;
   background: #f1f1f1;
 }
+.asterisks{
+  color: red;
+  margin-right: 5px;
+  font-size: 12pt;
+}
 .tasaciones-form-left,
 .tasaciones-form-right {
   width: 42%;
@@ -721,7 +726,10 @@ svg:hover #facebook {
 }
 .tasaciones-form-left {
   margin: 2%;
-}  
+}
+.g-recaptcha > div{
+  margin: 15px auto 0;
+}
 .tasaciones-form-input {
   background: #fff;
   display: block;

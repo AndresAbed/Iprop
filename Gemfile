@@ -26,6 +26,7 @@ gem "passenger"
 gem 'active_admin_editor', github: 'boontdustie/active_admin_editor'
 gem "therubyracer"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "recaptcha", require: "recaptcha/rails"
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
