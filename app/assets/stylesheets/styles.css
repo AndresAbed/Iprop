@@ -92,10 +92,10 @@
   display: inline-block;
   padding-right: 1.5em;
 }
-.header-list-item:last-child {
+/*.header-list-item:last-child {
   border-left: 1px solid #6b6161;
   padding-left: 1.5em;
-}
+}*/
 .header-icon {
   vertical-align: top;
   display: inline-block;
@@ -1588,10 +1588,11 @@ svg:hover #facebook {
 }
 .contacto-form {
   background-color: #e6e6e6;
-  margin: 2em auto;
   border-radius: 3px;
   padding: 2em;
   width: 60%;
+  margin: 50px 20px;
+  display: inline-block;
 }
 .contacto-form-textarea {
   height: 8em;
@@ -1631,6 +1632,25 @@ svg:hover #facebook {
 .contacto-form-button > i{
   font-size: 15pt;
 }
+
+.contacto-info-formulario #contact-info{
+  display: inline-block;
+  vertical-align: top;
+  margin: 50px 20px 0;
+}
+
+.contacto-info-formulario #contact-info ul{
+  padding: 0;
+  list-style: none;
+}
+
+.contacto-info-formulario #contact-info ul li > div,
+.contacto-info-formulario #contact-info ul li > p{
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+}
+
 .novedades {
   text-align: center;
 }
@@ -2089,6 +2109,18 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     width: 100%;
     margin-left: 0;
     display: block;
+  }
+  .contacto-form{
+    width: 70%;
+    margin: 50px auto;
+    display: block;
+  }
+  .contacto-info-formulario #contact-info {
+      display: block;
+  }
+  .contacto-info-formulario #contact-info ul {    
+    width: 200px;
+    margin: 0 auto 30px;
   }
 }
 @media (max-width: 610px) {

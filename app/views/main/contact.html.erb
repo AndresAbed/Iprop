@@ -43,10 +43,6 @@
     <label for="show-menu" class="show-menu">Menu</label>
     <input id="show-menu" type="checkbox" role="button">
     <div class="header-responsive-logo"><img alt="logo" src="<%= image_path('logo.png')%>" class="header-logo-img"></div>
-    <div class="header-responsive-phone">
-      <div class="icon-phone header-icon"> </div>
-      <div class="header-list-item-phone">11 4776 7176</div>
-    </div>
     <ul id="menu" class="header-list">
       <li class="header-logo-container"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
       <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
@@ -55,10 +51,6 @@
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
       <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
       <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
-      <li class="header-list-item">
-        <div class="icon-phone header-icon"> </div>
-        <div class="header-list-item-phone">11 4776 7176      </div>
-      </li>
     </ul>
   </nav>
 </header>
@@ -83,5 +75,21 @@
     <%= message.text_area :message, class: "contacto-form-input", rows: "5", cols: "50"%>
     <%= button_tag 'Enviar', class: "contacto-form-button", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Enviando..."} %>
   <% end %>
+  <div id="contact-info">
+    <ul>
+      <li> 
+        <div class="icon-phone"> </div>
+        <p>(11) 4776‐7176</p>
+      </li>
+      <li> 
+        <div class="icon-envelope"> </div>
+        <p>info@iproponline.com.ar</p>
+      </li>
+      <li> 
+        <div class="icon-location"></div>
+        <p>Teodoro García 1721<br>Of. 704 (C1426DMC) <br>C.A.B.A.</p>
+      </li>
+    </ul>
+  </div>
 </section>
 <%= render partial:'shared/footer' %>
