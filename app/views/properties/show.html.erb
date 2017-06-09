@@ -4,7 +4,7 @@
   <meta property="og:site_name" content="Iprop Online" />
   <meta property="og:title" content="<%= @property.title %>">
   <meta property="og:description" content="<%= @property.description[0,200] %>...">
-  <meta property="og:image" content="<%= @property.pic_1.url %>" />
+  <meta property="og:image" content="<%= @property.pic_1.url(:medium) %>" />
   <meta property="og:title" content="ContWeb">
   <!-- Facebook Pixel Code -->
   <script>
@@ -93,7 +93,7 @@
     </div>
     <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow ficha-slider">
       <% if @property.pic_1.file? %>
-        <img alt="property-image" src="<%= @property.pic_1.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_1.url(:medium) %>" class="ficha-slider-img">
       <% end %>  
       <% if @property.pic_2.file? %>
         <img alt="property-image" src="<%= @property.pic_2.url %>" class="ficha-slider-img">

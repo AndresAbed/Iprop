@@ -58,64 +58,64 @@ class Property < ActiveRecord::Base
   before_validation { self.pic_19.clear if self.delete_pic_19 == '1' }
   before_validation { self.pic_20.clear if self.delete_pic_20 == '1' }
 
-  has_attached_file :pic_1
+  has_attached_file :pic_1, styles: { medium: "400x270" }
   validates_attachment :pic_1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_2
+  has_attached_file :pic_2, styles: { medium: "400x270" }
   validates_attachment :pic_2, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_3
+  has_attached_file :pic_3, styles: { medium: "400x270" }
   validates_attachment :pic_3, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_4
+  has_attached_file :pic_4, styles: { medium: "400x270" }
   validates_attachment :pic_4, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_5
+  has_attached_file :pic_5, styles: { medium: "400x270" }
   validates_attachment :pic_5, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_6
+  has_attached_file :pic_6, styles: { medium: "400x270" }
   validates_attachment :pic_6, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_7
+  has_attached_file :pic_7, styles: { medium: "400x270" }
   validates_attachment :pic_7, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_8
+  has_attached_file :pic_8, styles: { medium: "400x270" }
   validates_attachment :pic_8, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_9
+  has_attached_file :pic_9, styles: { medium: "400x270" }
   validates_attachment :pic_9, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_10
+  has_attached_file :pic_10, styles: { medium: "400x270" }
   validates_attachment :pic_10, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_11
+  has_attached_file :pic_11, styles: { medium: "400x270" }
   validates_attachment :pic_11, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_12
+  has_attached_file :pic_12, styles: { medium: "400x270" }
   validates_attachment :pic_12, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_13
+  has_attached_file :pic_13, styles: { medium: "400x270" }
   validates_attachment :pic_13, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_14
+  has_attached_file :pic_14, styles: { medium: "400x270" }
   validates_attachment :pic_14, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_15
+  has_attached_file :pic_15, styles: { medium: "400x270" }
   validates_attachment :pic_15, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_16
+  has_attached_file :pic_16, styles: { medium: "400x270" }
   validates_attachment :pic_16, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_17
+  has_attached_file :pic_17, styles: { medium: "400x270" }
   validates_attachment :pic_17, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_18
+  has_attached_file :pic_18, styles: { medium: "400x270" }
   validates_attachment :pic_18, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_19
+  has_attached_file :pic_19, styles: { medium: "400x270" }
   validates_attachment :pic_19, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
-  has_attached_file :pic_20
+  has_attached_file :pic_20, styles: { medium: "400x270" }
   validates_attachment :pic_20, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, dependent: :destroy
 
   has_attached_file :flat

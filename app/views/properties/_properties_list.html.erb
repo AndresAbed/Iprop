@@ -52,25 +52,25 @@
         <div class="destacadas-img-container">
           <% if property.state == "Reservado" %>
             <img alt="reservado" src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
-            <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+            <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
           <% else %>
             <% if property.state == "Vendido" %>
               <img alt="vendido" src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
-              <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+              <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
             <% else %>
               <% if property.state == "Alquilado" %>
                 <img alt="alquilado" src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
-                <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
               <% else %>  
                 <% if property.state == "Suspendido" %>
                   <img alt="suspendido" src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
-                  <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
                 <% else %>
                   <% if property.state == "A Estrenar" %>
                     <img alt="estrenar" src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
-                    <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                    <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
                   <% else %>
-                    <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                    <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
                   <% end %>  
                 <% end %>
               <% end %>  
