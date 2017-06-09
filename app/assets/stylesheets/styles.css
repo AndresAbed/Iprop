@@ -545,11 +545,13 @@
 .compartir-redes-fb,
 .compartir-redes-twitter,
 .compartir-redes-google,
-.compartir-redes-youtube {
+.compartir-redes-youtube,
+.compartir-redes-linkedin {
   padding: 0.5em;
   display: inline-block;
   font-size: 2em;
   color: #4a4a4a;
+  text-decoration: none !important;
 }
 .compartir-redes-fb:hover {
   color: #43609c;
@@ -1800,6 +1802,12 @@ svg:hover #facebook {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+
+.footer .footer-column1:nth-child(3){
+  text-align: right;
+  padding-right: 4em;
+}
+
 .footer-column2 {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
@@ -1827,9 +1835,6 @@ svg:hover #facebook {
 }
 .footer-img {
   width: 100%;
-}
-.footer-img-qr {
-  width: 150px;
 }
 .footer-img-cuci {
   width: 200px;
