@@ -546,12 +546,14 @@
 .compartir-redes-twitter,
 .compartir-redes-google,
 .compartir-redes-youtube,
-.compartir-redes-linkedin {
+.compartir-redes-linkedin,
+.compartir-redes-instagram {
   padding: 0.5em;
   display: inline-block;
   font-size: 2em;
   color: #4a4a4a;
   text-decoration: none !important;
+  vertical-align: top;
 }
 .compartir-redes-fb:hover {
   color: #43609c;
