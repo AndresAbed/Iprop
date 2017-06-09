@@ -23,13 +23,13 @@
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
     <input id="show-menu" type="checkbox" role="button">
-    <div class="header-responsive-logo"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
+    <div class="header-responsive-logo"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
     <div class="header-responsive-phone">
       <div class="icon-phone header-icon"> </div>
       <div class="header-list-item-phone">11 4776 7176</div>
     </div>
     <ul id="menu" class="header-list">
-      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-logo-container"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
       <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
       <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
@@ -46,7 +46,7 @@
 <!--slider-->
 <section class="photo-slider">
   <div class="overlay-darken"></div>
-    <div class="slider cycle-slideshow"><img src="<%= image_path('puerto-madero.jpg')%>" class="photo-slider-img"><img src="<%= image_path('pileta.jpg')%>" class="photo-slider-img"><img src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img src="<%= image_path('livingroom.jpg')%>" class="photo-slider-img"></div>
+    <div class="slider cycle-slideshow"><img alt="" src="<%= image_path('puerto-madero.jpg')%>" class="photo-slider-img"><img alt="" src="<%= image_path('pileta.jpg')%>" class="photo-slider-img"><img alt="" src="<%= image_path('edificios-estilo.jpg') %>" class="photo-slider-img"><img alt="" src="<%= image_path('livingroom.jpg')%>" class="photo-slider-img"></div>
   <div class="photo-slider-slogan photo-slider-slogan-propiedades">
     <h1 class="photo-slider-slogan-title-propiedades">Transformamos tus ideas en realidad</h1>
   </div>
@@ -69,12 +69,12 @@
 </section>
 <div class="features-item-wrap">
   <div class="features-item">
-    <div class="features-icon-container"><img src="<%= image_path('ionline.svg')%>" class="features-icon"></div>
+    <div class="features-icon-container"><img alt="" src="<%= image_path('ionline.svg')%>" class="features-icon"></div>
     <h3 class="features-item-title">Iprop Online</h3>
     <p class="features-item-copy">Aproveche las oportunidades para hacer un buen negocio inmobiliario</p><a href="/propiedades" class="features-item-link">Buscar Propiedades</a>
   </div>
   <div class="features-item">
-    <div class="features-logo-container"><img src="<%= image_path('tasaciones.svg')%>" class="features-icon"></div>
+    <div class="features-logo-container"><img alt="tasaciones" src="<%= image_path('tasaciones.svg')%>" class="features-icon"></div>
     <h3 class="features-item-title">Tasaciones Online</h3>
     <p class="features-item-copy">Conozca el valor de su propiedad para hacer un negocio inmobiliario</p><a href="/tasaciones" class="features-item-link">¡Tasar ya!</a>
   </div>
@@ -91,26 +91,26 @@
               <div class="destacadas-video-overlay">
                 <div class="destacadas-video-play">
                   <% if property.state == "Reservado" %>
-                    <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
-                    <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                    <img alt="reservado" src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
+                    <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                   <% else %>
                     <% if property.state == "Vendido" %>
-                      <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
-                      <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                      <img alt="vendido" src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
+                      <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                     <% else %>
                       <% if property.state == "Alquilado" %>
-                        <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
-                        <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                        <img alt="alquilado" src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                        <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                       <% else %>
                         <% if property.state == "Suspendido" %>
-                          <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
-                          <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                          <img alt="suspendido" src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
+                          <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                         <% else %>
                           <% if property.state == "A Estrenar" %>
-                            <img src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
-                            <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                            <img alt="estrenar"> src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
+                            <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                           <% else %>
-                            <img src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
+                            <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                           <% end %>  
                         <% end %>  
                       <% end %>
@@ -136,26 +136,26 @@
           <% else %>
             <div class="destacadas-img-container">
               <% if property.state == "Reservado" %>
-                <img src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
-                <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                <img alt="reservado" src="<%= image_path('reservado-diagonal.png') %>" class="overlay-vendido">
+                <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
               <% else %>
                 <% if property.state == "Vendido" %>
-                  <img src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
-                  <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                  <img alt="vendido" src="<%= image_path('vendido-diagonal.png') %>" class="overlay-vendido">
+                  <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
                 <% else %>
                   <% if property.state == "Alquilado" %>
-                    <img src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
-                    <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                    <img alt="alquilado" src="<%= image_path('alquilado-diagonal.png') %>" class="overlay-vendido">
+                    <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
                   <% else %>  
                     <% if property.state == "Suspendido" %>
-                      <img src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
-                      <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                      <img alt="suspendido" src="<%= image_path('suspendido-diagonal.png') %>" class="overlay-vendido">
+                      <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
                     <% else %>
                       <% if property.state == "A Estrenar" %>
-                        <img src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
-                        <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                        <img alt="estrenar"> src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
+                        <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
                       <% else %>
-                        <img src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
+                        <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url %>');" class="destacadas-img">
                       <% end %>  
                     <% end %>
                   <% end %>  
@@ -194,7 +194,7 @@
       <div class="novedades-content">
         <% @posts.each do |post| %>
           <div class="novedades-item">
-            <div class="novedades-img-container"><img src=" " style="background-image: url('<%= post.image.url %>');" class="novedades-img"></div>
+            <div class="novedades-img-container"><img alt="post-image"> src=" " style="background-image: url('<%= post.image.url %>');" class="novedades-img"></div>
             <p class="novedades-item-copy"><%= post.title %></p>
             <div class="novedades-item-overlay">
               <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>

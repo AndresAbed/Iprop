@@ -44,13 +44,13 @@
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
     <input id="show-menu" type="checkbox" role="button">
-    <div class="header-responsive-logo"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
+    <div class="header-responsive-logo"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
     <div class="header-responsive-phone">
       <div class="icon-phone header-icon"> </div>
       <div class="header-list-item-phone">11 4776 7176</div>
     </div>
     <ul id="menu" class="header-list">
-      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-logo-container"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
       <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
       <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
@@ -82,7 +82,7 @@
     <% end %>
   </div>
   <div class="ficha-tags">
-    <div class="ficha-tags-icon"><img src="<%=image_path('tag.png')%>" class="ficha-tags-icon-img"></div>
+    <div class="ficha-tags-icon"><img alt="tag" src="<%=image_path('tag.png')%>" class="ficha-tags-icon-img"></div>
     <% @property.tags.each do |tag| %>
       <%= form_tag properties_path, method: 'post', class: "ficha-tags-item" do %>
         <%= text_field_tag :property_type, params[:property_type], value: "#{tag.name}", type: "hidden" %>
@@ -93,70 +93,70 @@
   <div class="ficha-slider-wrap">
     <div class="ficha-slider-controls">
       <span id="prev" class="ficha-slider-controls-prev">
-      <img src="<%= image_path('left-arrow.png') %>"></span>
+      <img alt="left-arrow" src="<%= image_path('left-arrow.png') %>"></span>
       <span id="next" class="ficha-slider-controls-next">
-      <img src="<%= image_path('right-arrow.png') %>"></span>
+      <img alt="right-arrow" src="<%= image_path('right-arrow.png') %>"></span>
     </div>
     <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow ficha-slider">
       <% if @property.pic_1.file? %>
-        <img src="<%= @property.pic_1.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_1.url %>" class="ficha-slider-img">
       <% end %>  
       <% if @property.pic_2.file? %>
-        <img src="<%= @property.pic_2.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_2.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_3.file? %>
-        <img src="<%= @property.pic_3.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_3.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_4.file? %>
-        <img src="<%= @property.pic_4.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_4.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_5.file? %>
-        <img src="<%= @property.pic_5.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_5.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_6.file? %>
-        <img src="<%= @property.pic_6.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_6.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_7.file? %>
-        <img src="<%= @property.pic_7.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_7.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_8.file? %>
-        <img src="<%= @property.pic_8.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_8.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_9.file? %>
-        <img src="<%= @property.pic_9.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_9.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_10.file? %>
-        <img src="<%= @property.pic_10.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_10.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_11.file? %>
-        <img src="<%= @property.pic_11.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_11.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_12.file? %>
-        <img src="<%= @property.pic_12.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_12.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_13.file? %>
-        <img src="<%= @property.pic_13.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_13.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_14.file? %>
-        <img src="<%= @property.pic_14.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_14.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_15.file? %>
-        <img src="<%= @property.pic_15.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_15.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_16.file? %>
-        <img src="<%= @property.pic_16.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_16.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_17.file? %>
-        <img src="<%= @property.pic_17.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_17.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_18.file? %>
-        <img src="<%= @property.pic_18.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_18.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_19.file? %>
-        <img src="<%= @property.pic_19.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_19.url %>" class="ficha-slider-img">
       <% end %>
       <% if @property.pic_20.file? %>
-        <img src="<%= @property.pic_20.url %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_20.url %>" class="ficha-slider-img">
       <% end %>
     </div>
   </div>
