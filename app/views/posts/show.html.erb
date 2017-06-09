@@ -1,28 +1,26 @@
-<head>
-  <% content_for :head do %>
-    <meta property="og:url" content="<%= request.url %>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Iprop Online" />
-    <meta property="og:title" content="<%= @post.title %>">
-    <meta property="og:description" content="<%= Nokogiri::HTML(@post.body[0,200]).text %>...">
-    <meta property="og:image" content="<%= @post.image.url %>" />
-    <!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<% content_for :head do %>
+  <meta property="og:url" content="<%= request.url %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Iprop Online" />
+  <meta property="og:title" content="<%= @post.title %>">
+  <meta property="og:description" content="<%= Nokogiri::HTML(@post.body[0,200]).text %>...">
+  <meta property="og:image" content="<%= @post.image.url %>" />
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '648748478636283');
-      fbq('track', "PageView");
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
-  <% end %>
-</head>
+    fbq('init', '648748478636283');
+    fbq('track', "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+<% end %>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>

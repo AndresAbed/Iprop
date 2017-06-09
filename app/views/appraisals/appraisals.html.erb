@@ -1,28 +1,44 @@
-<head>
-  <% content_for :head do %>
-    <meta property="og:url" content="<%= request.url %>" />    
-    <meta property="og:site_name" content="Iprop Online" />
-    <meta property="og:title" content="Tasaciones">
-    <meta property="og:description" content="Iproponline tasaciones">
-    <meta property="og:image" content="<%= image_path('buenos-aires-aerea.jpg')%>" />
-    <!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<% content_for :head do %>
+  <meta property="og:url" content="<%= request.url %>" />    
+  <meta property="og:site_name" content="Iprop Online" />
+  <meta property="og:title" content="Tasaciones">
+  <meta property="og:description" content="Iproponline tasaciones">
+  <meta property="og:image" content="<%= image_path('buenos-aires-aerea.jpg')%>" />
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '648748478636283');
-      fbq('track', "Lead");
-      fbq('track', "PageView");
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
-  <% end %>
-</head>
+    fbq('init', '648748478636283');
+    fbq('track', "Lead");
+    fbq('track', "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+  <!-- Google Code for Conversion de Tasaciones Conversion Page -->
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 853475677;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "T9UmCIbl4XAQ3YL8lgM";
+    var google_remarketing_only = false;
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/853475677/?label=T9UmCIbl4XAQ3YL8lgM&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+<% end %>
 <header class="header">
 <nav id="nav" class="header-nav">
   <label for="show-menu" class="show-menu">Menu</label>
