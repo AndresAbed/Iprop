@@ -100,7 +100,7 @@
                           <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                         <% else %>
                           <% if property.state == "A Estrenar" %>
-                            <img alt="estrenar"> src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
+                            <img alt="estrenar" src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
                             <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
                           <% else %>
                             <img alt="play" src="<%= image_path('play.png')%>" class="destacadas-video-play-img">
@@ -145,7 +145,7 @@
                       <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
                     <% else %>
                       <% if property.state == "A Estrenar" %>
-                        <img alt="estrenar"> src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
+                        <img alt="estrenar" src="<%= image_path('aestrenar-diagonal.png') %>" class="overlay-vendido">
                         <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
                       <% else %>
                         <img alt="property-image" src="" style="background-image: url('<%= property.pic_1.url(:medium) %>');" class="destacadas-img">
@@ -187,7 +187,7 @@
       <div class="novedades-content">
         <% @posts.each do |post| %>
           <div class="novedades-item">
-            <div class="novedades-img-container"><img alt="post-image" src=" " style="background-image: url('<%= post.image.url %>');" class="novedades-img"></div>
+            <div class="novedades-img-container"><img alt="post-image" src="" style="background-image: url('<%= post.image.url %>');" class="novedades-img"></div>
             <p class="novedades-item-copy"><%= post.title %></p>
             <div class="novedades-item-overlay">
               <%= link_to '+', post_path(post), class: 'novedades-item-mas' %>
