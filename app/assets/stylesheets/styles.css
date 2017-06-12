@@ -2362,3 +2362,7 @@ input#show-menu[type=checkbox]:checked ~ #menu {
 .send-to-friend-form{
   width: 100%;
 }
+
+.pagination > span{
+  vertical-align: top;
+}
