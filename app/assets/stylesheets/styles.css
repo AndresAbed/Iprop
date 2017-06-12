@@ -1313,7 +1313,7 @@ svg:hover #facebook {
 }
 .ficha-slider {
   background: #2b2a2b;
-  max-height: 500px;
+  min-height: 500px;
   overflow: hidden;
 }
 .ficha-slider-wrap {
