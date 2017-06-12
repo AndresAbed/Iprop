@@ -27,7 +27,7 @@
     <% end %>
     <p class="pdf-data">Tamaño: <span class="bold"><%= @property.size %>m2</span></p>
   </div>
-  <%= wicked_pdf_image_tag (@property.pic_1.url), class: "pdf-property-image" %>
+  <%= wicked_pdf_image_tag (@property.pic_1.url(:medium)), class: "pdf-property-image" %>
   <h2 class="pdf-subtitle">Descripción</h2> 
   <p class="pdf-copy"><%= @property.description %></p>
   <% if @property.features.present? %>

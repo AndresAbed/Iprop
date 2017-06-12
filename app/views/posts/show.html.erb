@@ -1,49 +1,41 @@
-<head>
-  <% content_for :head do %>
-    <meta property="og:url" content="<%= request.url %>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Iprop Online" />
-    <meta property="og:title" content="<%= @post.title %>">
-    <meta property="og:description" content="<%= Nokogiri::HTML(@post.body[0,200]).text %>...">
-    <meta property="og:image" content="<%= @post.image.url %>" />
-    <!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<% content_for :head do %>
+  <meta property="og:url" content="<%= request.url %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Iprop Online" />
+  <meta property="og:title" content="<%= @post.title %>">
+  <meta property="og:description" content="<%= Nokogiri::HTML(@post.body[0,200]).text %>...">
+  <meta property="og:image" content="<%= @post.image.url %>" />
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '648748478636283');
-      fbq('track', "PageView");
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
-  <% end %>
-</head>
+    fbq('init', '648748478636283');
+    fbq('track', "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=648748478636283&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+<% end %>
 <header class="header">
   <nav id="nav" class="header-nav">
     <label for="show-menu" class="show-menu">Menu</label>
     <input id="show-menu" type="checkbox" role="button">
-    <div class="header-responsive-logo"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
-    <div class="header-responsive-phone">
-      <div class="icon-phone header-icon"> </div>
-      <div class="header-list-item-phone">11 4776 7176</div>
-    </div>
+    <div class="header-responsive-logo"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></div>
+    
     <ul id="menu" class="header-list">
-      <li class="header-logo-container"><a href="/"><img src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
+      <li class="header-logo-container"><a href="/"><img alt="logo" src="<%= image_path('logo.png') %>" class="header-logo-img"></a></li>
       <li class="header-list-item"><a href="/" class="header-list-item-link">Home</a></li>
       <li class="header-list-item"><a href="/propiedades" class="header-list-item-link">Propiedades</a></li>
       <li class="header-list-item"><a href="/tasaciones" class="header-list-item-link">Tasaciones</a></li>
       <li class="header-list-item"><a href="/empresa" class="header-list-item-link">Empresa</a></li>
       <li class="header-list-item"><a href="/consultoria" class="header-list-item-link">Consultoría</a></li>
       <li class="header-list-item"><a href="/contacto" class="header-list-item-link">Contacto</a></li>
-      <li class="header-list-item">
-        <div class="icon-phone header-icon"> </div>
-        <div class="header-list-item-phone">11 4776 7176      </div>
-      </li>
+      
     </ul>
   </nav>
 </header>
@@ -55,7 +47,7 @@
       <h4 class="novedades-inside-header-subtitle"><%= @post.subtitle %></h4>
       <p class="novedades-inside-date"> <span class="icon-clock"> </span><%= l @post.created_at, format: "%B %d - %Y, %H:%M" %></p>
     </header>
-    <div class="novedades-inside-img-container"><img src="<%= @post.image.url %>" class="novedades-inside-img"></div>
+    <div class="novedades-inside-img-container"><img alt="post-image" src="<%= @post.image.url %>" class="novedades-inside-img"></div>
     <p class="novedades-inside-copy"><%= raw(@post.body) %></p>
   </article>  
   <aside class="novedades-aside">
@@ -72,22 +64,6 @@
 </section>
 <novedades-inside-aside class="jade"></novedades-inside-aside>
 <section class="compartir"> 
-  <h2 class="compartir-title">Compartir en redes sociales</h2>
-  <div class="compartir-redes">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=request.url%>" target="popup"
-    onClick="window.open(this.href, this.target, 'width=600,height=400, top=200, left=300'); return false;"
-    title="Compartir en Facebook" class="compartir-redes-fb">
-    <span class="icon-facebook m-r-5"></a>
-    <a href="http://twitter.com/share?url=<%=request.url%>&text=Iproponline&via=Iprop&hashtags=iprop"
-    target="popup" onClick="window.open(this.href, this.target, 
-    'width=600,height=400, top=200, left=300'); return false;" 
-    title="Tweet" class="compartir-redes-twitter">
-    <span class="icon-twitter m-r-5"></span></a>
-    <a href="https://plus.google.com/share?url=<%= request.url%>" 
-    target="popup" onClick="window.open(this.href, this.target, 
-    'width=600,height=400, top=200, left=300'); return false;" 
-    title="Compartir en Google+" class="compartir-redes-google">
-    <span class="icon-google m-r-5"></span></a>
-  </div>
+  <%= render 'shared/social_media' %>
 </section>
 <%= render partial:'shared/footer' %>

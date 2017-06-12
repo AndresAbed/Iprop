@@ -92,10 +92,10 @@
   display: inline-block;
   padding-right: 1.5em;
 }
-.header-list-item:last-child {
+/*.header-list-item:last-child {
   border-left: 1px solid #6b6161;
   padding-left: 1.5em;
-}
+}*/
 .header-icon {
   vertical-align: top;
   display: inline-block;
@@ -545,11 +545,15 @@
 .compartir-redes-fb,
 .compartir-redes-twitter,
 .compartir-redes-google,
-.compartir-redes-youtube {
+.compartir-redes-youtube,
+.compartir-redes-linkedin,
+.compartir-redes-instagram {
   padding: 0.5em;
   display: inline-block;
   font-size: 2em;
   color: #4a4a4a;
+  text-decoration: none !important;
+  vertical-align: top;
 }
 .compartir-redes-fb:hover {
   color: #43609c;
@@ -1586,10 +1590,11 @@ svg:hover #facebook {
 }
 .contacto-form {
   background-color: #e6e6e6;
-  margin: 2em auto;
   border-radius: 3px;
   padding: 2em;
   width: 60%;
+  margin: 50px 20px;
+  display: inline-block;
 }
 .contacto-form-textarea {
   height: 8em;
@@ -1629,6 +1634,25 @@ svg:hover #facebook {
 .contacto-form-button > i{
   font-size: 15pt;
 }
+
+.contacto-info-formulario #contact-info{
+  display: inline-block;
+  vertical-align: top;
+  margin: 50px 20px 0;
+}
+
+.contacto-info-formulario #contact-info ul{
+  padding: 0;
+  list-style: none;
+}
+
+.contacto-info-formulario #contact-info ul li > div,
+.contacto-info-formulario #contact-info ul li > p{
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+}
+
 .novedades {
   text-align: center;
 }
@@ -1800,6 +1824,12 @@ svg:hover #facebook {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+
+.footer .footer-column1:nth-child(3){
+  text-align: right;
+  padding-right: 4em;
+}
+
 .footer-column2 {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
@@ -1827,9 +1857,6 @@ svg:hover #facebook {
 }
 .footer-img {
   width: 100%;
-}
-.footer-img-qr {
-  width: 150px;
 }
 .footer-img-cuci {
   width: 200px;
@@ -1935,9 +1962,19 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
 }
 @media (max-width: 845px) {
+  .photo-slider{
+    height: 400px;
+  }
+  .photo-slider-propiedades-img,
+  .photo-slider-img {    
+    height: 400px;
+  }
+  .photo-slider-slogan-title-propiedades{
+    font-size: 5vw;
+  }
   .buscador {
-    top: 7em;
-    width: 60%;
+    top: 12em;
+    width: 70%;
     overflow-x: hidden;
   }
   .buscador-select {
@@ -1948,6 +1985,11 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .buscador-input {
     margin-bottom: 0.5em;
     width: 94.8%;
+  }
+  .buscador-button{
+    width: 100%;
+    text-align: center;
+    display: block;
   }
   .empresa-mvv {
     padding: 0 1em;
@@ -2008,9 +2050,6 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     left: 35%;
     text-align: center;
     margin: 10px 0 0;
-  }
-  .buscador {
-    top: 6em;
   }
   .features-main-copy {
     padding: 0 2em;
@@ -2085,6 +2124,18 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     margin-left: 0;
     display: block;
   }
+  .contacto-form{
+    width: 70%;
+    margin: 50px auto;
+    display: block;
+  }
+  .contacto-info-formulario #contact-info {
+      display: block;
+  }
+  .contacto-info-formulario #contact-info ul {    
+    width: 200px;
+    margin: 0 auto 30px;
+  }
 }
 @media (max-width: 610px) {
   .ficha-header-price {
@@ -2105,7 +2156,7 @@ input#show-menu[type=checkbox]:checked ~ #menu {
     font-size: 1.5em;
   }
   .buscador {
-    top: 5em;
+    top: 10em;
   }
   .empresa-mvv-item {
     -webkit-flex-basis: 90%;
@@ -2132,6 +2183,7 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   .footer-column2 {
     display: block;
     text-align: center;
+    padding-right: 0 !important;
   }
   .footer-list {
     text-align: center;
@@ -2141,6 +2193,8 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .footer-img-qr {
     margin: 1em auto;
+    width: 100%;
+    text-align: center;
   }
   .ficha-slider {
     width: 100%;
@@ -2189,9 +2243,6 @@ input#show-menu[type=checkbox]:checked ~ #menu {
   }
   .photo-slider-slogan {
     padding: 0 1em;
-  }
-  .buscador {
-    top: 6em;
   }
   .empresa-cover-title {
     padding: 2em;
