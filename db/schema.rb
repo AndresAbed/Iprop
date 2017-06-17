@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822233305) do
+ActiveRecord::Schema.define(version: 20170617074832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,9 @@ ActiveRecord::Schema.define(version: 20160822233305) do
     t.string   "state"
     t.integer  "price"
     t.integer  "price_ars"
+    t.boolean  "approved"
+    t.boolean  "priority"
+    t.text     "comment"
   end
 
   add_index "properties", ["slug"], name: "index_properties_on_slug", using: :btree
