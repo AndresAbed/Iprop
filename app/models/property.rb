@@ -19,15 +19,15 @@ class Property < ActiveRecord::Base
   validates :title, uniqueness: {message: "Ya existe una propiedad con este título"}
 
   def self.search(address, property_type, operation)
-    properties = Property.all
+    properties = Property.all.where(approved: true)
     if address.present?
-      properties = properties.where('address ilike ?', "%#{address}%")
+      properties = properties.where('address ilike ? and approved = ?', "%#{address}%", true)
     end
     if operation.present?
-      properties = properties.where('operation ilike ?', "%#{operation}%")
+      properties = properties.where('operation ilike ? and approved = ?', "%#{operation}%", true)
     end
     if property_type.present?
-    properties = properties.joins(:tags).where('name ilike ?', "%#{property_type}%")
+    properties = properties.joins(:tags).where('name ilike ? and approved = ?', "%#{property_type}%", true)
     end
     return properties
   end

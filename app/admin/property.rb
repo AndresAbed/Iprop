@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
   permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
-  :price, :price_ars, :highlight, :flat, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
+  :price, :price_ars, :highlight, :approved, :priority, :flat, :comment, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
   :pic_8, :pic_9, :pic_10, :pic_11, :pic_12, :pic_13, :pic_14, :pic_15, 
   :pic_16, :pic_17, :pic_18, :pic_19, :pic_20, :operation, :state, :video, :delete_flat, :delete_pic_2, :delete_pic_3,
   :delete_pic_4, :delete_pic_5, :delete_pic_6, :delete_pic_7, :delete_pic_8, :delete_pic_9, :delete_pic_10,
@@ -41,6 +41,7 @@ ActiveAdmin.register Property do
     column :size
     column :operation
     column :highlight
+    column :approved
     actions
   end
 
@@ -64,6 +65,8 @@ ActiveAdmin.register Property do
       row :price_ars
       row :created_at
       row :highlight
+      row :approved
+      row :priority
       row :flat_file_name
       row :pic_1_file_name
       row :pic_2_file_name
@@ -91,6 +94,7 @@ ActiveAdmin.register Property do
       row "Tipo de propiedad" do |property|
         (property.tags.map{ |p| p.name }).join(' - ').html_safe
       end
+      row :comment
       row "Características" do |property|
         (property.features.map { |p| p.feature }).join(' - ').html_safe
       end
@@ -105,6 +109,7 @@ ActiveAdmin.register Property do
   filter :price
   filter :price_ars
   filter :highlight
+  filter :approved
   filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.name}", u.id]}}, as: :select
   filter :operation, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
   filter :operation, as: :select, collection: ['Reservado', 'Vendido', 'Alquilado', 'Suspendido']
@@ -121,6 +126,8 @@ ActiveAdmin.register Property do
       f.input :price_ars
       f.input :video, label: 'Video Url', input_html: {placeholder: "Ejemplo: https://www.youtube.com/embed/0obJrUjm-jw"}
       f.input :highlight, as: :boolean
+      f.input :approved, as: :boolean
+      f.input :priority, as: :boolean
       if f.object.flat_file_name.present?
         f.input :flat, hint: image_tag(f.object.flat.url)
         f.input :delete_flat, as: :boolean, required: false, label: 'Eliminar plano'
@@ -249,6 +256,7 @@ ActiveAdmin.register Property do
       f.input :operation, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
       f.input :state, as: :select, collection: ['A Estrenar','Reservado', 'Vendido', 'Alquilado', 'Suspendido']
       f.input :tags, label: 'Tipo de propiedad', as: :check_boxes, multiple: true, collection: Tag.all.map{|u| ["#{u.name}", u.id]}
+      f.input :comment
     end
     f.has_many :features, new_record: 'Nuevo item' do |f|
       f.input :feature

@@ -1,4 +1,10 @@
 ActiveAdmin.setup do |config|
+  Rails.application.config.after_initialize do
+    javascripts = [] 
+    javascripts << "//maps.google.com/maps/api/js?v=3&key=AIzaSyCYi_W7sxblhQm0owAMMVmQUCLX-RsuvV0&libraries=places"
+    javascripts += ActiveAdmin.application.javascripts.to_a
+    ActiveAdmin.application.javascripts.replace javascripts
+  end
   config.download_links = false
   # == Site Title
   #
@@ -190,7 +196,7 @@ ActiveAdmin.setup do |config|
   #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
   #
   # To load a javascript file:
-  #   config.register_javascript 'my_javascript.js'
+  config.register_javascript 'admin_autocomplete.js'
 
   # == CSV options
   #
