@@ -127,7 +127,7 @@ ActiveAdmin.register Property do
       f.input :video, label: 'Video Url', input_html: {placeholder: "Ejemplo: https://www.youtube.com/embed/0obJrUjm-jw"}
       f.input :highlight, as: :boolean
       f.input :approved, as: :boolean
-      f.input :priority, as: :boolean
+      f.input :priority
       if f.object.flat_file_name.present?
         f.input :flat, hint: image_tag(f.object.flat.url)
         f.input :delete_flat, as: :boolean, required: false, label: 'Eliminar plano'
