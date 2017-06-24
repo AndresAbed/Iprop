@@ -42,6 +42,7 @@ ActiveAdmin.register Property do
     column :operation
     column :highlight
     column :approved
+    column :priority
     actions
   end
 
@@ -109,6 +110,7 @@ ActiveAdmin.register Property do
   filter :price
   filter :price_ars
   filter :highlight
+  filter :priority
   filter :approved
   filter :tags, label: 'Tipo de propiedad', collection: proc {Tag.all.map{|u| ["#{u.name}", u.id]}}, as: :select
   filter :operation, as: :select, collection: ['Venta', 'Alquiler', 'Alquiler temporal']
