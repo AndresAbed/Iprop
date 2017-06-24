@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.search(params[:address], params[:property_type], params[:operation]).page(params[:page]).per(16).order("created_at DESC")
+    @properties = Property.search(params[:address], params[:property_type], params[:operation]).page(params[:page]).per(16).order("highlight desc, priority desc, created_at desc")
     respond_to do |format|
       format.html
       format.js
