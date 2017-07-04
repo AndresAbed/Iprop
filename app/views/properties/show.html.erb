@@ -45,7 +45,10 @@
     <div class="ficha-header-wrap">
       <p class="ficha-header-state"><%= @property.operation %></p>
       <h2 class="ficha-header-title"><%=@property.title%></h2>
-      <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%></p>
+      <p class="ficha-header-direccion"><%= @property.address.split(',')[0] %> - <%= @property.address.split(',')[1]%>
+      <% if @property.location %>
+        <p class="ficha-header-direccion"><%= @property.location.split(',')[0] %></p>
+      <% end %>
     </div>
     <% if @property.price.present? || @property.price_ars.present? %>
       <% if @property.price.present? %>

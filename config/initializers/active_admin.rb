@@ -196,7 +196,8 @@ ActiveAdmin.setup do |config|
   #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
   #
   # To load a javascript file:
-  config.register_javascript 'admin_autocomplete.js'
+  config.register_javascript 'admin_address_autocomplete.js'
+  config.register_javascript 'admin_location_autocomplete.js'
 
   # == CSV options
   #

@@ -21,7 +21,7 @@ class Property < ActiveRecord::Base
   def self.search(address, property_type, operation)
     properties = Property.all.where(approved: true)
     if address.present?
-      properties = properties.where('address ilike ? and approved = ?', "%#{address}%", true)
+      properties = properties.where('address ilike ? or location ilike ? and approved = ?', "%#{address}%", "%#{address}%", true)
     end
     if operation.present?
       properties = properties.where('operation ilike ? and approved = ?', "%#{operation}%", true)

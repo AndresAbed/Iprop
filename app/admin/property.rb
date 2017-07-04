@@ -1,5 +1,5 @@
 ActiveAdmin.register Property do
-  permit_params :title, :address, :bedrooms, :bathrooms, :size, :description, 
+  permit_params :title, :address, :location, :bedrooms, :bathrooms, :size, :description, 
   :price, :price_ars, :highlight, :approved, :priority, :flat, :comment, :pic_1, :pic_2, :pic_3, :pic_4, :pic_5, :pic_6, :pic_7, 
   :pic_8, :pic_9, :pic_10, :pic_11, :pic_12, :pic_13, :pic_14, :pic_15, 
   :pic_16, :pic_17, :pic_18, :pic_19, :pic_20, :operation, :state, :video, :delete_flat, :delete_pic_2, :delete_pic_3,
@@ -36,6 +36,7 @@ ActiveAdmin.register Property do
     selectable_column
     column :title
     column :address
+    column :location
     column :price
     column :price_ars
     column :size
@@ -58,6 +59,7 @@ ActiveAdmin.register Property do
     attributes_table do
       row :title
       row :address
+      row :location
       row :bedrooms
       row :bathrooms
       row :size
@@ -104,6 +106,7 @@ ActiveAdmin.register Property do
 
   filter :title
   filter :address
+  filter :location
   filter :bedrooms
   filter :bathrooms
   filter :size
@@ -119,7 +122,8 @@ ActiveAdmin.register Property do
   form do |f|
     f.inputs "Detalles de la propiedad", :multipart => true do
       f.input :title
-      f.input :address, input_html: {placeholder: "Dirección, Localidad, Provincia, País."}
+      f.input :address
+      f.input :location
       f.input :bedrooms
       f.input :bathrooms
       f.input :size

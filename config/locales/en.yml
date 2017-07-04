@@ -114,6 +114,7 @@ en:
       property:
         title: "Título"
         address: "Dirección"
+        location: "Localidad"
         bedrooms: "Dormitorios"
         bathrooms: "Baños"
         size: "Tamaño m2"

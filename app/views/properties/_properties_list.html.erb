@@ -91,6 +91,9 @@
       <div class="destacadas-item-info">
         <h3 class="destacadas-item-title"><%= property.title %>,</h3>
         <h4 class="destacadas-item-subtitle"><%= property.address.split(',')[0] %> - <%= property.address.split(',')[1]%></h4>
+        <% if property.location %>
+          <h4 class="destacadas-item-subtitle"><%= property.location.split(',')[0] %></h4>
+        <% end %>
         <p class="destacadas-item-copy"><%= property.description[0,200] %>...</p>
       </div>
       <%= link_to 'Ver más >>', property_path(property), class: 'destacadas-item-link' %>
