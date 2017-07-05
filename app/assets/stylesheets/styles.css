@@ -1319,8 +1319,11 @@ svg:hover #facebook {
 .ficha-slider-wrap {
   margin: 0 12em;
   position: relative;
-  max-height: 500px;
+  max-height: 600px;
   overflow: hidden;
+  display: block;
+  height: 600px;
+  background: #2b2a2b;
 }
 .ficha-slider-controls {
   position: absolute;
@@ -1349,6 +1352,8 @@ svg:hover #facebook {
   max-height: 100%;
   margin: 0 auto;
   right: 0;
+  height: 600px;
+  width: 500px;
 }
 .ficha-acciones {
   position: absolute;
