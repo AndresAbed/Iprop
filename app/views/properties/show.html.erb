@@ -78,7 +78,7 @@
     </div>
     <div data-cycle-prev="#prev" data-cycle-next="#next" class="slider cycle-slideshow ficha-slider">
       <% if @property.pic_1.file? %>
-        <img alt="property-image" src="<%= @property.pic_1.url(:medium) %>" class="ficha-slider-img">
+        <img alt="property-image" src="<%= @property.pic_1.url %>" class="ficha-slider-img">
       <% end %>  
       <% if @property.pic_2.file? %>
         <img alt="property-image" src="<%= @property.pic_2.url %>" class="ficha-slider-img">
