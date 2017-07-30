@@ -1,7 +1,7 @@
 <% content_for :head do %>
   <meta property="og:url" content="<%= request.url %>" />
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Iprop Online" />
+  <meta property="og:site_name" content="iproponline" />
   <meta property="og:title" content="<%= @post.title %>">
   <meta property="og:description" content="<%= Nokogiri::HTML(@post.body[0,200]).text %>...">
   <meta property="og:image" content="<%= @post.image.url %>" />
