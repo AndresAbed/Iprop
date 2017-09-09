@@ -22,7 +22,7 @@ class PropertiesController < ApplicationController
     if message.valid?
       Contact.properties_contact(message).deliver_now
       Contact.contact_notification(message).deliver_now
-      redirect_to success_path
+      redirect_to contact_success_path
     else
       flash[:alert] = "Mensaje no enviado. Asegúrate de completar todos los campos."
       redirect_to :back
