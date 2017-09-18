@@ -1656,7 +1656,15 @@ svg:hover #facebook {
 .contacto-info-formulario #contact-info ul li > div,
 .contacto-info-formulario #contact-info ul li > p{
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.contacto-info-formulario #contact-info ul li > img{
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
   margin: 5px;
 }
 
